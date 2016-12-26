@@ -1,4 +1,7 @@
 <?php
+  //error_reporting(E_ALL);
+  //ini_set('display_errors', '1');
+
   include('conexion.php');
   include("Zebra_Pagination.php");
 	function imprimirMenu(){    
@@ -224,6 +227,7 @@
 
   function getSelect($tabla,$dato1,$dato2,$seleccion){
     $con = conectarse();
+    mysql_set_charset("utf8",$con);
     $sql="SELECT " . $dato1 . ", " . $dato2 . " FROM " . $tabla;
     echo "<select name='$dato1' class='form-control' id='$dato1' required>";
     $resultado = mysql_query($sql,$con);
@@ -533,32 +537,42 @@
     return $fila['RUT'];
   }
   
-    function getPasesDiarios(){
+  function getPasesDiarios(){
     $con = conectarse();
     mysql_set_charset("utf8",$con);
-    $sql="SELECT * FROM pasesDiarios";
+    $sql="SELECT * FROM personal_acreditado WHERE ID_TIPO_PASE<>'1'";
     $resultado = mysql_query($sql,$con);
-    while($row = mysql_fetch_array($resultado)){
-      $hoy = date('y/m/d');
-      $fechaInicio = date('y/m/d',strtotime($row['fechaInicio']));
-      $fechaTermino = date('y/m/d',strtotime($row['fechaTermino']));
+    $hoy = date('y/m/d');
+    while($row = mysql_fetch_array($resultado)){ 
+      //Segunda consulta
+      $id = $row['ID_ORDEN_CONTRATO'];
+      $sql = "SELECT oc.N_CONTRATO, ec.N_FANTASIA 
+              FROM orden_contrato oc, empresa_contratista ec 
+              WHERE oc.ID_OC = $id AND
+              oc.ID_CONTRATISTA = ec.ID_CONTRATISTA";        
+      $resultado = mysql_query($sql,$con);
+      $row2 = mysql_fetch_array($resultado);
+      $fechaInicio = date('y/m/d',strtotime($row['FECHAINICIO']));
       echo "
           <tr>
-              <td>".$row['id'] . "</td>
-              <td>".$row['nombre'] . "</td>
-              <td>".$row['rut'] . "</td>
-              <td>".$row['empresa'] . "</td>
-              <td>".date('d/m/y',strtotime($row['fechaInicio'])) . "</td>
-              <td>".date('d/m/y',strtotime($row['fechaTermino'])). "</td>";
-      if($fechaInicio<= $hoy && $hoy<=$fechaTermino){
+              <td>".$row['ID_ACREDITADO'] . "</td>
+              <td>".$row['NOMBRES'] . " " . $row['APELLIDOS'] ."</td>
+              <td>".$row['RUT'] . "</td>
+              <td>".$row2['N_CONTRATO'] . "</td>
+              <td>".$row2['N_FANTASIA'] . "</td>
+              <td>". $fechaInicio . "</td>";
+
+      if($row['ID_ESTADO']==1){
         echo "<td><span style='cursor:default' class='btn btn-xs btn-success'>activo</span></td>";        
-      }else{
+      }
+      if($row['ID_ESTADO']==2){
         echo "<td><span style='cursor:default' class='btn btn-xs btn-danger'>inactivo</span></td>";     
       }
-      echo "<td><a class='btn btn-xs btn-danger' href='eliminarPases.php?id=".$row['id']."' role='button'>eliminar</a></td>";
+      if($row['ID_ESTADO']==3){
+        echo "<td><span style='cursor:default' class='btn btn-xs btn-warning'>pendiente</span></td>";     
+      }
       echo "</tr>";
     }    
-
     mysql_close($con);
   }
 

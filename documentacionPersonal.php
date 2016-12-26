@@ -18,75 +18,75 @@ if($_SESSION['nombreUsuario']){
 	    	$contenido = getVerDocumentacion($id);
 	    	list($url1,$val1,$obs1,$mod1,$url2,$val2,$obs2,$mod2,$url3,$val3,$obs3,$mod3,$url4,$val4,$obs4,$mod4,$url5,$val5,$obs5,$mod5,$url6,$val6,$obs6,$mod6,$url7,$val7,$obs7,$mod7,$url8,$val8,$obs8,$mod8,$url9,$val9,$obs9,$mod9,$url10,$val10,$obs10,$mod10,$url11,$val11,$obs11,$mod11,$url12,$val12,$obs12,$mod12,$url13,$val13,$obs13,$mod13,$url14,$val14,$obs14,$mod14) = explode("%$", $contenido);
 			$time = strtotime($val1);
-		if($time === false or $time === -62169968592){ 
-		$date1 = '00-00-0000'; } 
-		else {$date1 = date('d-m-Y', $time);
-		}
-		$time2 = strtotime($val2);
-		if($time2 === false or $time2 === -62169968592){ 
-		$date2 = '00-00-0000'; } 
-		else {$date2 = date('d-m-Y', $time2);
-		}
-		$time3 = strtotime($val3);
-		if($time3 === false or $time3 === -62169968592){ 
-		$date3 = '00-00-0000'; } 
-		else {$date3 = date('d-m-Y', $time3);
-		}
-		$time4 = strtotime($val4);
-		if($time4 === false or $time4 === -62169968592){ 
-		$date4 = '00-00-0000'; } 
-		else {$date4 = date('d-m-Y', $time4);
-		}
-		$time5 = strtotime($val5);
-		if($time5 === false or $time5 === -62169968592){ 
-		$date5 = '00-00-0000'; } 
-		else {$date5 = date('d-m-Y', $time5);
-		}
-		$time6 = strtotime($val6);
-		if($time6 === false or $time6 === -62169968592){ 
-		$date6 = '00-00-0000'; } 
-		else {$date6 = date('d-m-Y', $time6);
-		}
-		$time7 = strtotime($val7);
-		if($time7 === false or $time7 === -62169968592){ 
-		$date7 = '00-00-0000'; } 
-		else {$date7 = date('d-m-Y', $time7);
-		}
-		$time8 = strtotime($val8);
-		if($time8 === false or $time8 === -62169968592){ 
-		$date8 = '00-00-0000'; } 
-		else {$date8 = date('d-m-Y', $time8);
-		}
-		$time9 = strtotime($val9);
-		if($time9 === false or $time9 === -62169968592){ 
-		$date9 = '00-00-0000'; } 
-		else {$date9 = date('d-m-Y', $time9);
-		}
-		$time10 = strtotime($val10);
-		if($time10 === false or $time10 === -62169968592){ 
-		$date10 = '00-00-0000'; } 
-		else {$date10 = date('d-m-Y', $time10);
-		}
-		$time11 = strtotime($val11);
-		if($time11 === false or $time11 === -62169968592){ 
-		$date11 = '00-00-0000'; } 
-		else {$date11 = date('d-m-Y', $time11);
-		}
-		$time12 = strtotime($val12);
-		if($time12 === false or $time12 === -62169968592){ 
-		$date12 = '00-00-0000'; } 
-		else {$date12 = date('d-m-Y', $time12);
-		}
-		$time13 = strtotime($val13);
-		if($time13 === false or $time13 === -62169968592){ 
-		$date13 = '00-00-0000'; } 
-		else {$date13 = date('d-m-Y', $time13);
-		}
-		$time14 = strtotime($val14);
-		if($time14 === false or $time14 === -62169968592){ 
-		$date14 = '00-00-0000'; } 
-		else {$date14 = date('d-m-Y', $time14);
-		}
+			if($time === false or $time === -62169968592){ 
+			$date1 = '00-00-0000'; } 
+			else {$date1 = date('d-m-Y', $time);
+			}
+			$time2 = strtotime($val2);
+			if($time2 === false or $time2 === -62169968592){ 
+			$date2 = '00-00-0000'; } 
+			else {$date2 = date('d-m-Y', $time2);
+			}
+			$time3 = strtotime($val3);
+			if($time3 === false or $time3 === -62169968592){ 
+			$date3 = '00-00-0000'; } 
+			else {$date3 = date('d-m-Y', $time3);
+			}
+			$time4 = strtotime($val4);
+			if($time4 === false or $time4 === -62169968592){ 
+			$date4 = '00-00-0000'; } 
+			else {$date4 = date('d-m-Y', $time4);
+			}
+			$time5 = strtotime($val5);
+			if($time5 === false or $time5 === -62169968592){ 
+			$date5 = '00-00-0000'; } 
+			else {$date5 = date('d-m-Y', $time5);
+			}
+			$time6 = strtotime($val6);
+			if($time6 === false or $time6 === -62169968592){ 
+			$date6 = '00-00-0000'; } 
+			else {$date6 = date('d-m-Y', $time6);
+			}
+			$time7 = strtotime($val7);
+			if($time7 === false or $time7 === -62169968592){ 
+			$date7 = '00-00-0000'; } 
+			else {$date7 = date('d-m-Y', $time7);
+			}
+			$time8 = strtotime($val8);
+			if($time8 === false or $time8 === -62169968592){ 
+			$date8 = '00-00-0000'; } 
+			else {$date8 = date('d-m-Y', $time8);
+			}
+			$time9 = strtotime($val9);
+			if($time9 === false or $time9 === -62169968592){ 
+			$date9 = '00-00-0000'; } 
+			else {$date9 = date('d-m-Y', $time9);
+			}
+			$time10 = strtotime($val10);
+			if($time10 === false or $time10 === -62169968592){ 
+			$date10 = '00-00-0000'; } 
+			else {$date10 = date('d-m-Y', $time10);
+			}
+			$time11 = strtotime($val11);
+			if($time11 === false or $time11 === -62169968592){ 
+			$date11 = '00-00-0000'; } 
+			else {$date11 = date('d-m-Y', $time11);
+			}
+			$time12 = strtotime($val12);
+			if($time12 === false or $time12 === -62169968592){ 
+			$date12 = '00-00-0000'; } 
+			else {$date12 = date('d-m-Y', $time12);
+			}
+			$time13 = strtotime($val13);
+			if($time13 === false or $time13 === -62169968592){ 
+			$date13 = '00-00-0000'; } 
+			else {$date13 = date('d-m-Y', $time13);
+			}
+			$time14 = strtotime($val14);
+			if($time14 === false or $time14 === -62169968592){ 
+			$date14 = '00-00-0000'; } 
+			else {$date14 = date('d-m-Y', $time14);
+			}
 	    }
 	    ?>
 
@@ -139,12 +139,10 @@ if($_SESSION['nombreUsuario']){
 	              </div>
 	            </header>
 	          </div>
-
 	          <div id="content">
 	            <header class="clearfix">
 	              <div class="col-xs-8 col-sm-8 col-md-8"><b>Contratos Vigentes <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Listar Personal <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Documentación - <?php echo $_SESSION['trabajadorActual']; ?></b></div>
 	            </header>
-
 	            <div class="content-inner">
 	            	<div class="row comments-row">
 	            		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
