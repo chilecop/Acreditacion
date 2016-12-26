@@ -1,0 +1,79 @@
+.admin-content-con{
+	margin-top: 20px;
+	background-color: white;
+	border-top: 4px #e7eaec solid;
+	padding: 15px;
+}
+
+.dashboard-left-cell{
+	padding-right: 5px;
+	z-index: 2;
+}
+
+.dashboard-right-cell{
+	padding-left: 5px;
+}
+
+.admin-content-con header{
+	margin-bottom: 20px;
+	border-bottom: 1px #eee solid;
+	padding-bottom: 10px;
+}
+
+.admin-content-con h5{
+	margin: 0px;
+	padding-top: 3px;
+}
+
+.text-link{
+	color: #676a6c;
+}
+
+	.text-link:hover{
+		color: #676a6c;	
+	}
+
+.commenter-name-dash{
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.comment-head-dash{
+	margin-bottom: 6px;
+}
+
+.comment-dash{
+	margin-bottom: 5px;
+}
+
+.comment-date-dash{
+	color: #999;
+}
+
+#dashboard-con{
+	padding-bottom: 100px;
+}
+
+.caja {
+	position: relative; /*Para poder ubicar la info dentro de la caja*/
+}
+
+.info {
+	position: absolute; /*Info sobre la imagen*/
+	top: 5%;
+	left: 10%; /*Desplazamos a partir de la esquina superior izquierda*/
+	zoom: 1;
+	filter: alpha(opacity=0); /*Opacidad Para IE */
+	opacity: 0; /*Inicialmente transparente */
+	padding: 5px;
+	color: white;
+	background: black;
+	-moz-transition:all ease .8s; /*Aplicamos una ligera transición*/
+	-webkit-transition:all ease .8s ;
+	transition:all ease .8s;
+	width: 300px;
+}
+.caja:hover .info {
+	filter: alpha(opacity=80);
+	opacity: .8; /*Al hacer hover sobre la caja hacemos visible los datos*/
+}

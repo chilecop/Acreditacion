@@ -1,0 +1,18 @@
+article{
+	margin-top: 20px;
+}
+
+input#rut, input#nombre, input#cargo{
+	font-size: 20px;
+	height: 30px;
+}
+
+select#empresa{
+	font-size: 20px;
+}
+
+input#enviar_btn{
+	border-radius: 10px;
+	font-size: 25px;
+	margin-top: 10px;
+}

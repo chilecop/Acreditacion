@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="anuncio.php" server="ftp.chilecop.cl/public_html/" local="131219595059879569" remote="131217920400000000" Dst="2" />
+<file name="crearUsuario.php" server="ftp.chilecop.cl/public_html/" local="131219595064924071" remote="131217920400000000" Dst="2" />
+<file name="buscador.php" server="ftp.chilecop.cl/public_html/" local="131219595059962411" remote="131217920400000000" Dst="2" />
+<file name="documentacionPersonal.php" server="ftp.chilecop.cl/public_html/" local="131219595074566660" remote="131217920400000000" Dst="2" />
+<file name="escritorio.php" server="ftp.chilecop.cl/public_html/" local="131219595092017086" remote="131217920400000000" Dst="2" />
+<file name="ingresarContratista.php" server="ftp.chilecop.cl/public_html/" local="131219595120999195" remote="131217920400000000" Dst="2" />
+<file name="ingresarMandante.php" server="ftp.chilecop.cl/public_html/" local="131219595125884152" remote="131217920400000000" Dst="2" />
+<file name="ingresarOrdenContrato.php" server="ftp.chilecop.cl/public_html/" local="131219595131288040" remote="131217920400000000" Dst="2" />
+<file name="ingresarTrabajador.php" server="ftp.chilecop.cl/public_html/" local="131219595139255496" remote="131217971400000000" Dst="2" />
+<file name="listarContratistas.php" server="ftp.chilecop.cl/public_html/" local="131219595146338732" remote="131217920400000000" Dst="2" />
+<file name="listarContratos.php" server="ftp.chilecop.cl/public_html/" local="131219595146378736" remote="131217920400000000" Dst="2" />
+<file name="listarMandantes.php" server="ftp.chilecop.cl/public_html/" local="131219595146579048" remote="131217920400000000" Dst="2" />
+<file name="listarPersonal.php" server="ftp.chilecop.cl/public_html/" local="131219595151859931" remote="131217978000000000" Dst="2" />
+<file name="editarContratista.php" server="ftp.chilecop.cl/public_html/" local="131219595069805073" remote="131217920400000000" Dst="2" />
+<file name="editarMandante.php" server="ftp.chilecop.cl/public_html/" local="131219595069965065" remote="131217920400000000" Dst="2" />
+<file name="editarOrdenContrato.php" server="ftp.chilecop.cl/public_html/" local="131219595074566660" remote="131217920400000000" Dst="2" />
+<file name="editarVehiculo.php" server="ftp.chilecop.cl/public_html/" local="131219595074847253" remote="131219391600000000" Dst="2" />
+<file name="ingresarVehiculo.php" server="ftp.chilecop.cl/public_html/" local="131219595139615595" remote="131219390400000000" Dst="2" />
+<file name="reunion14-10.html" server="ftp.chilecop.cl/public_html/" local="131219595182575153" remote="131217920400000000" Dst="2" />
+<file name="vehiculos.php" server="ftp.chilecop.cl/public_html/" local="131219595182776933" remote="131219386800000000" Dst="2" />
+<file name="verContratista.php" server="ftp.chilecop.cl/public_html/" local="131219595190619056" remote="131217920400000000" Dst="2" />
+<file name="verContrato.php" server="ftp.chilecop.cl/public_html/" local="131219595190619056" remote="131217920400000000" Dst="2" />
+<file name="verPersona.php" server="ftp.chilecop.cl/public_html/" local="131219595190699086" remote="131219378400000000" Dst="2" />
+<file name="editarPersonal.php" server="ftp.chilecop.cl/public_html/" local="131229357716489180" remote="131227939800000000" Dst="2" />
+<file name="ingresarTrabajador2.php" server="ftp.chilecop.cl/public_html/" local="131229357722116559" remote="131228371800000000" Dst="2" />
+<file name="anuncio.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331698310263" remote="131254418400000000" Dst="2" />
+<file name="crearUsuario.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331740965867" remote="131242432200000000" Dst="2" />
+<file name="buscador.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331747911496" remote="131255947800000000" Dst="2" />
+<file name="documentacionControlRemuneraciones.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331755290765" remote="131250327000000000" Dst="2" />
+<file name="documentacionEmpresa.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332010833169" remote="131262767400000000" Dst="2" />
+<file name="documentacionPersonal - Copy.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332019924262" remote="131250327000000000" Dst="2" />
+<file name="documentacionPersonal.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332028948497" remote="131262770400000000" Dst="2" />
+<file name="editarContratista.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332058976584" remote="131254459200000000" Dst="2" />
+<file name="editarMandante.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332102181952" remote="131242432200000000" Dst="2" />
+<file name="editarOrdenContrato - Copy.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332151987460" remote="131242432200000000" Dst="2" />
+<file name="editarVehiculo.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332279538504" remote="131242432200000000" Dst="2" />
+<file name="editarPersonal.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332288378521" remote="131248643400000000" Dst="2" />
+<file name="escritorio.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332361442142" remote="131254437600000000" Dst="2" />
+<file name="generarPase.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332372339191" remote="131250798600000000" Dst="2" />
+<file name="editarOrdenContrato.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332384987183" remote="131242432200000000" Dst="2" />
+<file name="ingresarContratista.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332439727513" remote="131254462200000000" Dst="2" />
+<file name="ingresarMandante.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332448557512" remote="131242432800000000" Dst="2" />
+<file name="ingresarOrdenContrato - Copy.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332575448013" remote="131242432800000000" Dst="2" />
+<file name="ingresarOrdenContrato.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332595470233" remote="131245782600000000" Dst="2" />
+<file name="ingresarTrabajador.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332705648883" remote="131267246400000000" Dst="2" />
+<file name="ingresarTrabajador2.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332713176879" remote="131256387600000000" Dst="2" />
+<file name="ingresarVehiculo.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332741929971" remote="131242432800000000" Dst="2" />
+<file name="listarContratistas.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332782296235" remote="131250319800000000" Dst="2" />
+<file name="listarContratos - Copy.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332857119731" remote="131250327600000000" Dst="2" />
+<file name="listarContratos.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332913418701" remote="131250319200000000" Dst="2" />
+<file name="listarMandantes.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332931982178" remote="131250326400000000" Dst="2" />
+<file name="listarPersonal.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332944768422" remote="131250904200000000" Dst="2" />
+<file name="listarUsuarios.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332950685657" remote="131269624200000000" Dst="2" />
+<file name="pasesDiarios.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332958467417" remote="131250793800000000" Dst="2" />
+<file name="reunion14-10.html" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332968993660" remote="131242432800000000" Dst="2" />
+<file name="vehiculos.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272333001368328" remote="131242432800000000" Dst="2" />
+<file name="verContratista.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272333011986504" remote="131262843600000000" Dst="2" />
+<file name="verContrato.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272333024238259" remote="131242432800000000" Dst="2" />
+<file name="verDocumento.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272333035964582" remote="131235585000000000" Dst="2" />
+<file name="verPersona.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272333042311441" remote="131269428600000000" Dst="2" />
+</dwsync>

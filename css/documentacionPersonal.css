@@ -1,0 +1,14 @@
+.comments-row{
+	margin-bottom: 5em;
+}
+
+.documento{
+	background-color: #E3E4EB;
+	padding: 15px;
+	margin: 10px;
+}
+
+.documento b{
+	text-transform: uppercase;
+	font-size: 13px;
+}

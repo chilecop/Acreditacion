@@ -1,0 +1,60 @@
+*{
+	margin: 0;
+	border:0;
+}
+
+img{
+	max-width: 100%;
+}
+
+body{
+	background-color: #2b78c1;
+	text-align: center;
+}
+
+h2{
+	color: #383838;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 2em 0 2em 0;
+	text-transform: uppercase;
+}
+
+.login{
+	background-color: rgba(255,255,255,0.85);
+	padding-bottom: 10px;
+	position: relative;
+	top: 150px;
+	opacity: 0;
+	-webkit-box-shadow: 11px 11px 9px -4px rgba(0,0,0,0.25);
+	-moz-box-shadow: 11px 11px 9px -4px rgba(0,0,0,0.25);
+	box-shadow: 11px 11px 9px -4px rgba(0,0,0,0.25);
+}
+
+#login{		
+	transition: opacity 1.5s linear;
+	-webkit-transition: opacity 1.5s linear;
+}
+
+#inicio{
+	background-image: url("../images/fondo2.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 70%;
+	min-height: 650px;
+	margin: 0 auto;
+}
+
+.logo{
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+button#ingresar{
+	position: relative;
+	top: 580px;
+}
+
+label{
+	font-weight: bold;
+}
