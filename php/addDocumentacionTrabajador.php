@@ -4,9 +4,9 @@
 
 	session_start();
 	//SE COMPRUEBA CUAL ES EL ARCHIVO QUE SE QUIERE SUBIR
-	if(isset($_FILES["file"]))
+	if(isset($_FILES["file1"]))
 	{
-		$file = $_FILES["file"];
+		$file = $_FILES["file1"];
 	}
 
 	if(isset($_FILES["file2"]))
@@ -75,11 +75,57 @@
 		$file = $_FILES["file14"];
 	}
 
+	if(isset($_FILES["file15"]))
+	{
+		$file = $_FILES["file15"];
+	}
 
+	if(isset($_FILES["file16"]))
+	{
+		$file = $_FILES["file16"];
+	}
+
+	if(isset($_FILES["file17"]))
+	{
+		$file = $_FILES["file17"];
+	}
+
+	if(isset($_FILES["file18"]))
+	{
+		$file = $_FILES["file18"];
+	}
+
+	if(isset($_FILES["file19"]))
+	{
+		$file = $_FILES["file19"];
+	}
+
+	if(isset($_FILES["file20"]))
+	{
+		$file = $_FILES["file20"];
+	}
+
+	if(isset($_FILES["file21"]))
+	{
+		$file = $_FILES["file21"];
+	}
+
+	if(isset($_FILES["file22"]))
+	{
+		$file = $_FILES["file22"];
+	}
+
+	if(isset($_FILES["file23"]))
+	{
+		$file = $_FILES["file23"];
+	}
+
+
+	$fecha = new DateTime();
 	//SE SUBE EL ARCHIVO
 	if(isset($file) && isset($imagen))
 	{
-		$nombre = addslashes($file["name"]);
+		$nombre = $fecha->getTimestamp() . addslashes($file["name"]);
 		$tipo = $file["type"];
 		$ruta_provisional = $file["tmp_name"];
 		$size = $file["size"];
@@ -97,7 +143,7 @@
 			}	
 		}	
 	} else {
-		$nombre = addslashes($file["name"]);
+		$nombre = $fecha->getTimestamp() . addslashes($file["name"]);
 		$tipo = $file["type"];
 		$ruta_provisional = $file["tmp_name"];
 		$size = $file["size"];
@@ -187,7 +233,52 @@
 		if(isset($_FILES["file14"]))
 		{
 			$sql = "UPDATE documentacion SET URL_14='$nombre', MOD_14=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
-			$_SESSION['doc14Refresh']="Certificado Aprobación";
+			$_SESSION['doc14Refresh']="Certificado de Aprobación";
+		}
+		if(isset($_FILES["file15"]))
+		{
+			$sql = "UPDATE documentacion SET URL_15='$nombre', MOD_15=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
+			$_SESSION['doc15Refresh']="Anexo 1";
+		}
+		if(isset($_FILES["file16"]))
+		{
+			$sql = "UPDATE documentacion SET URL_16='$nombre', MOD_16=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
+			$_SESSION['doc16Refresh']="Anexo 2";
+		}
+		if(isset($_FILES["file17"]))
+		{
+			$sql = "UPDATE documentacion SET URL_17='$nombre', MOD_17=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
+			$_SESSION['doc17Refresh']="Anexo 3";
+		}
+		if(isset($_FILES["file18"]))
+		{
+			$sql = "UPDATE documentacion SET URL_18='$nombre', MOD_18=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
+			$_SESSION['doc18Refresh']="Otros";
+		}
+		if(isset($_FILES["file19"]))
+		{
+			$sql = "UPDATE documentacion SET URL_19='$nombre', MOD_19=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
+			$_SESSION['doc19Refresh']="Guía de despacho o factura del material";
+		}
+		if(isset($_FILES["file20"]))
+		{
+			$sql = "UPDATE documentacion SET URL_20='$nombre', MOD_20=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
+			$_SESSION['doc20Refresh']="Documentación legal del Vehículo";
+		}
+		if(isset($_FILES["file21"]))
+		{
+			$sql = "UPDATE documentacion SET URL_21='$nombre', MOD_21=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
+			$_SESSION['doc21Refresh']="Check list del vehículo";
+		}
+		if(isset($_FILES["file22"]))
+		{
+			$sql = "UPDATE documentacion SET URL_22='$nombre', MOD_22=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
+			$_SESSION['doc22Refresh']="Licencia municipal de conducir vigente";
+		}
+		if(isset($_FILES["file23"]))
+		{
+			$sql = "UPDATE documentacion SET URL_23='$nombre', MOD_23=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
+			$_SESSION['doc23Refresh']="Visa de trabajo";
 		}
 	}
 

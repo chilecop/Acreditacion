@@ -440,7 +440,30 @@
     $resultado = mysql_query($query, $con);
     $fila = mysql_fetch_array($resultado);
     mysql_close($con);
-    return $fila['URL_1'] . "%$" . $fila['VAL_1'] . "%$" . $fila['OBS_1'] . "%$" . $fila['MOD_1'] . "%$" . $fila['URL_2'] . "%$" . $fila['VAL_2'] . "%$" . $fila['OBS_2'] . "%$" . $fila['MOD_2'] . "%$" . $fila['URL_3'] . "%$" . $fila['VAL_3'] . "%$" . $fila['OBS_3'] . "%$" . $fila['MOD_3'] . "%$" . $fila['URL_4'] . "%$" . $fila['VAL_4'] . "%$" . $fila['OBS_4'] . "%$" . $fila['MOD_4'] . "%$" . $fila['URL_5'] . "%$" . $fila['VAL_5'] . "%$" . $fila['OBS_5'] . "%$" . $fila['MOD_5'] . "%$" . $fila['URL_6'] . "%$" . $fila['VAL_6'] . "%$" . $fila['OBS_6'] . "%$" . $fila['MOD_6'] . "%$" . $fila['URL_7'] . "%$" . $fila['VAL_7'] . "%$" . $fila['OBS_7'] . "%$" . $fila['MOD_7'] . "%$" . $fila['URL_8'] . "%$" . $fila['VAL_8'] . "%$" . $fila['OBS_8'] . "%$" . $fila['MOD_8'] . "%$" . $fila['URL_9'] . "%$" . $fila['VAL_9'] . "%$" . $fila['OBS_9'] . "%$" . $fila['MOD_9'] . "%$" . $fila['URL_10'] . "%$" . $fila['VAL_10'] . "%$" . $fila['OBS_10'] . "%$" . $fila['MOD_10'] . "%$" . $fila['URL_11'] . "%$" . $fila['VAL_11'] . "%$" . $fila['OBS_11'] . "%$" . $fila['MOD_11'] . "%$" . $fila['URL_12'] . "%$" . $fila['VAL_12'] . "%$" . $fila['OBS_12'] . "%$" . $fila['MOD_12'] . "%$" . $fila['URL_13'] . "%$" . $fila['VAL_13'] . "%$" . $fila['OBS_13'] . "%$" . $fila['MOD_13'] . "%$" . $fila['URL_14'] . "%$" . $fila['VAL_14'] . "%$" . $fila['OBS_14'] . "%$" . $fila['MOD_14'];
+    return 
+    $fila['URL_1'] . "%$" . $fila['VAL_1'] . "%$" . $fila['OBS_1'] . "%$" . $fila['MOD_1'] . "%$" . 
+    $fila['URL_2'] . "%$" . $fila['VAL_2'] . "%$" . $fila['OBS_2'] . "%$" . $fila['MOD_2'] . "%$" . 
+    $fila['URL_3'] . "%$" . $fila['VAL_3'] . "%$" . $fila['OBS_3'] . "%$" . $fila['MOD_3'] . "%$" . 
+    $fila['URL_4'] . "%$" . $fila['VAL_4'] . "%$" . $fila['OBS_4'] . "%$" . $fila['MOD_4'] . "%$" . 
+    $fila['URL_5'] . "%$" . $fila['VAL_5'] . "%$" . $fila['OBS_5'] . "%$" . $fila['MOD_5'] . "%$" . 
+    $fila['URL_6'] . "%$" . $fila['VAL_6'] . "%$" . $fila['OBS_6'] . "%$" . $fila['MOD_6'] . "%$" . 
+    $fila['URL_7'] . "%$" . $fila['VAL_7'] . "%$" . $fila['OBS_7'] . "%$" . $fila['MOD_7'] . "%$" . 
+    $fila['URL_8'] . "%$" . $fila['VAL_8'] . "%$" . $fila['OBS_8'] . "%$" . $fila['MOD_8'] . "%$" . 
+    $fila['URL_9'] . "%$" . $fila['VAL_9'] . "%$" . $fila['OBS_9'] . "%$" . $fila['MOD_9'] . "%$" . 
+    $fila['URL_10'] . "%$" . $fila['VAL_10'] . "%$" . $fila['OBS_10'] . "%$" . $fila['MOD_10'] . "%$" . 
+    $fila['URL_11'] . "%$" . $fila['VAL_11'] . "%$" . $fila['OBS_11'] . "%$" . $fila['MOD_11'] . "%$" . 
+    $fila['URL_12'] . "%$" . $fila['VAL_12'] . "%$" . $fila['OBS_12'] . "%$" . $fila['MOD_12'] . "%$" . 
+    $fila['URL_13'] . "%$" . $fila['VAL_13'] . "%$" . $fila['OBS_13'] . "%$" . $fila['MOD_13'] . "%$" . 
+    $fila['URL_14'] . "%$" . $fila['VAL_14'] . "%$" . $fila['OBS_14'] . "%$" . $fila['MOD_14'] . "%$" .
+    $fila['URL_15'] . "%$" . $fila['VAL_15'] . "%$" . $fila['OBS_15'] . "%$" . $fila['MOD_15'] . "%$" .
+    $fila['URL_16'] . "%$" . $fila['VAL_16'] . "%$" . $fila['OBS_16'] . "%$" . $fila['MOD_16'] . "%$" .
+    $fila['URL_17'] . "%$" . $fila['VAL_17'] . "%$" . $fila['OBS_17'] . "%$" . $fila['MOD_17'] . "%$" .
+    $fila['URL_18'] . "%$" . $fila['VAL_18'] . "%$" . $fila['OBS_18'] . "%$" . $fila['MOD_18'] . "%$" .
+    $fila['URL_19'] . "%$" . $fila['VAL_19'] . "%$" . $fila['OBS_19'] . "%$" . $fila['MOD_19'] . "%$" .
+    $fila['URL_20'] . "%$" . $fila['VAL_20'] . "%$" . $fila['OBS_20'] . "%$" . $fila['MOD_20'] . "%$" .
+    $fila['URL_21'] . "%$" . $fila['VAL_21'] . "%$" . $fila['OBS_21'] . "%$" . $fila['MOD_21'] . "%$" .
+    $fila['URL_22'] . "%$" . $fila['VAL_22'] . "%$" . $fila['OBS_22'] . "%$" . $fila['MOD_22'] . "%$" .
+    $fila['URL_23'] . "%$" . $fila['VAL_23'] . "%$" . $fila['OBS_23'] . "%$" . $fila['MOD_23'];
   }
   
   	function getVerDocEECC($id){
@@ -590,6 +613,57 @@
       }else{
         echo "images/personal/noimg.jpg";
       }
+  }
+
+  function imprimirDocumento($nombre,$date,$mod,$obs,$trabajadorActual,$url,$val,$ndoc){
+    echo '
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="documento col-sm-12 col-md-12">
+          <div class="row">
+            <div class="col-xs-8 col-sm-8 col-md-8">
+              <b>'. $nombre .'</b><br>
+              <small>Caduca el ' . $date . '</small>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <div class="clearfix">
+                <div class="pull-right comments-age"><small>Ultima Modificación: <br>'. $mod .'</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="well well-sm comments-well">
+            <textarea id="obs'. $ndoc . '" style="width:100%;">' . $obs . '</textarea>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+            <form method="post" id="formulario' . $ndoc . '" enctype="multipart/form-data">
+              <div class="form-group">
+                <label class="">
+                  <div id="respuesta'. $ndoc .'">              
+                    <a target="_blank" href="http://www.chilecop.cl/acreditacion/archivos/'. $trabajadorActual . '/'. $url .'">' . $url . '</a>
+                  </div>
+                </label>
+                <span class="btn btn-default btn-file">                            
+                  Subir Archivo <input type="file" name="file' . $ndoc . '">
+                </span>
+              </div>
+            </form>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <label class="">Caduca:</label>
+              <input id="val'. $ndoc . '" type="date" value="'. $val . '">
+            </div>                        
+          </div>
+        </div>
+      </div>';
+  }
+
+  function getTipoPase($id){
+    $con = conectarse();
+    mysql_set_charset("utf8",$con);
+    $sql = "SELECT ID_TIPO_PASE FROM personal_acreditado WHERE ID_ACREDITADO='$id'";
+    $resultado = mysql_query($sql,$con);
+    $row = mysql_fetch_array($resultado);
+    return $row['ID_TIPO_PASE'];
   }
   
 ?>
