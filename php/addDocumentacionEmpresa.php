@@ -62,7 +62,7 @@
 		$size = $file["size"];
 		$carpeta = "../archivoseecc/" . $_SESSION['empresaActual'] . "/";
 
-		if($size> 1024*1024*2){
+		if($size> 1024*1024*8){
 			echo "Error, el tamaño m&aacute;ximo permitido es 1MB";
 		}else{
 			$src = $carpeta . $nombre;
