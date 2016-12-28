@@ -45,6 +45,7 @@
               <ul class="collapse collapseable" id="personal">
                 <li><a href="buscador.php">Buscador</a></li>
                 <li><a href="ingresarTrabajador2.php">Ingresar Trabajador</a></li>
+                <li><a href="reportePersonal.php">Reporte Personal</a></li>
               </ul>
             </li>
 			
