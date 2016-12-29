@@ -28,3 +28,18 @@ además no debería permitir guardar la documentación si aún se encuentra subi
 
 SOLICITADO POR: Alfredo - FECHA 29/12/2016
 En el escritorio agregar a Stefany a la administración Chilecop.
+
+SOLICITADO POR: Stefy - FECHA 29/12/2016
+Generar cambio de clave al iniciar por primera vez con un usuario.
+
+SOLICITADO POR: Stefany - FECHA 29/12/2016
+Quitar el caduca de la documentación para la vista de contratista.
+
+***URGENTE***
+SOLICITADO POR: Stefy - FECHA 29/12/2016
+Término de pase debe estar ligado con el contrato comercial adjudicado. El contratista no puede ver
+el inicio ni termino de pase.
+*************
+
+SOLICITADO POR: Stefy - FECHA 29/12/2016
+No se puede ingresar dos contratos con el mismo número de contrato. Y al crear contrato debe mostrar una alerta.

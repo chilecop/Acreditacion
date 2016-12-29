@@ -164,8 +164,8 @@ if($_SESSION['nombreUsuario']){
                       </div>
                       <div class="form-group">
                           <label class="">Sexo</label><br>
-                          <input type="radio" name="sexo" value="1"> Masculino<br>
-                          <input type="radio" name="sexo" value="2"> Femenino<br>
+                          <input type="radio" name="sexo" value="1" required> Masculino<br>
+                          <input type="radio" name="sexo" value="2" required> Femenino<br>
                       </div>
                       <div class="form-group">
                         <label class="sr-only">Nacionalidad</label>
@@ -211,7 +211,7 @@ if($_SESSION['nombreUsuario']){
                       </div>
                       <div id="terminoContrato" style="display:none;" class="form-group">
                         <label class="">Término Contrato</label>
-                        <input class="pull-right" type="date" name="fechatermino" value="<?php echo date('Y-m-d'); ?>" required/>
+                        <input class="pull-right" type="date" name="fechatermino" required/>
                       </div>
                       <div class="form-group">
                         <label class="">Inicio de Pase</label>
@@ -219,7 +219,7 @@ if($_SESSION['nombreUsuario']){
                       </div>
                       <div id="terminoPase" style="display:none;" class="form-group">
                         <label class="">Término de Pase</label>
-                        <input class="pull-right" type="date" name="terminopase" value="<?php echo date('Y-m-d'); ?>" required/>
+                        <input class="pull-right" type="date" name="terminopase" required/>
                       </div> 
                     </div>
                     <div class="col-md-4 col-lg-4">                           
