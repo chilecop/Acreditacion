@@ -233,7 +233,7 @@
     $con = conectarse();
     mysql_set_charset("utf8",$con);
     $sql="SELECT " . $dato1 . ", " . $dato2 . " FROM " . $tabla;
-    echo "<select name='$dato1' class='form-control' id='$dato1' required>";
+    echo "<select id='". $dato1 ."' name='$dato1' class='form-control' id='$dato1' required>";
     $resultado = mysql_query($sql,$con);
     $selected = "";
     while($row = mysql_fetch_array($resultado)){

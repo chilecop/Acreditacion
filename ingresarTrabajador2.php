@@ -41,29 +41,40 @@ if($_SESSION['nombreUsuario']){
             url: "php/getContratos.php",
             success: function(response)
             {
-              var contratosRecibidos = JSON.parse(response);
-              var length = contratos.options.length;
-              for(i=0; i<length;i++){
-                contratos.options[i] = null;
-              }
-              if(contratosRecibidos.length<1){
-                for(i=0; i<length;i++){
-                  contratos.options[i] = null;
+              contratos.options.length = 0;
+              if(response!=0){
+                var contratosRecibidos = JSON.parse(response); 
+                if(contratosRecibidos.length<1){    
+                  contratos.options[0] = new Option("Seleccionar Empresa...","");
+                }else{
+                  for (var i = 0; i < contratosRecibidos.length; i++)
+                  {                
+                    contratos.options[i] = new Option(contratosRecibidos[i].numero,contratosRecibidos[i].id);
+                  }
                 }
-                contratos.options[0] = new Option("Seleccionar Empresa...",0);
               }else{
-                for (var i = 0; i < contratosRecibidos.length; i++)
-                {                
-                  contratos.options[i] = new Option(contratosRecibidos[i].numero,contratosRecibidos[i].id);
-                }
-              }              
+                contratos.options[0] = new Option("No existen contratos definidos","");
+              }            
             }
           });
         }else{
-
-          contratos.options[0] = new Option("Seleccionar Empresa...",0);
+          contratos.options.length = 0;
+          contratos.options[0] = new Option("Seleccionar Empresa...","");
         }
-      }  
+      }
+
+      $(document).ready(function(){
+        $("select[name=id_tipo_contrato]").change(function(){
+          if($('select[name=id_tipo_contrato]').val()==1){
+            document.getElementById("terminoContrato").style.display='none';
+            document.getElementById("terminoPase").style.display='none';
+
+          } else {
+            document.getElementById("terminoContrato").style.display='block';
+            document.getElementById("terminoPase").style.display='block';
+          }
+        });
+      });
     </script>
   </head>
   <body>
@@ -135,9 +146,6 @@ if($_SESSION['nombreUsuario']){
 
                     <?php } ?>
 
-
-
-
                        <div class="form-group">
                         <label class="sr-only">Rut</label>
                         <?php echo inputrut("rut",$rut);?>
@@ -192,29 +200,29 @@ if($_SESSION['nombreUsuario']){
                       <div class="form-group">
                         <label class="sr-only">Fono</label>
                         <input type="text" class="form-control" id="title" placeholder="Fono" name="fono" required>
-                      </div> 
+                      </div>       
+                      <div class="form-group">
+                        <label>Tipo de Contrato</label>
+                        <?php getSelect(tipo_contrato,id_tipo_contrato,descripcion); ?>
+                      </div>                  
                       <div class="form-group">
                         <label class="">Inicio Contrato</label>
                         <input class="pull-right" type="date" name="fechainicio" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio Contrato" required/>
                       </div>
-                      <div class="form-group">
+                      <div id="terminoContrato" style="display:none;" class="form-group">
                         <label class="">Término Contrato</label>
-                        <input class="pull-right" type="date" name="fechatermino" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Termino Contrato" required/>
+                        <input class="pull-right" type="date" name="fechatermino" value="<?php echo date('Y-m-d'); ?>" required/>
                       </div>
                       <div class="form-group">
                         <label class="">Inicio de Pase</label>
                         <input class="pull-right" type="date" name="iniciopase" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio Pase" required/>
                       </div>
-                      <div class="form-group">
+                      <div id="terminoPase" style="display:none;" class="form-group">
                         <label class="">Término de Pase</label>
-                        <input class="pull-right" type="date" name="terminopase" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Termino Pase" required/>
+                        <input class="pull-right" type="date" name="terminopase" value="<?php echo date('Y-m-d'); ?>" required/>
                       </div> 
                     </div>
-                    <div class="col-md-4 col-lg-4">
-                      <div class="form-group">
-                        <label>Tipo de Contrato</label>
-                        <?php getSelect(tipo_contrato,id_tipo_contrato,descripcion); ?>
-                      </div>       
+                    <div class="col-md-4 col-lg-4">                           
                       <div class="form-group">
                         <label>Tipo de Pase</label>
                         <?php getSelect(tipo_pase,id_tipo_pase,descripcion); ?>

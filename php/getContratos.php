@@ -8,12 +8,13 @@
     if($fila = mysql_fetch_array($resultado))
     {
     	$jsondata = '[{"id":"'. $fila['ID_OC'] . '","numero":"'.$fila['N_CONTRATO'].'"}';
+    	while($fila = mysql_fetch_array($resultado)){
+			$jsondata =  $jsondata . ',{"id":"'. $fila['ID_OC'] . '","numero":"'.$fila['N_CONTRATO'].'"}';
+		}
+		$jsondata = $jsondata . ']';
+    }else{
+    	$jsondata = 0;
     }
 	
-
-	while($fila = mysql_fetch_array($resultado)){
-		$jsondata =  $jsondata . ',{"id":"'. $fila['ID_OC'] . '","numero":"'.$fila['N_CONTRATO'].'"}';
-	}
-	$jsondata = $jsondata . ']';
 	echo $jsondata;
 ?>
