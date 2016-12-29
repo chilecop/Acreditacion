@@ -1,6 +1,8 @@
 <?php
 session_start();
 if($_SESSION['nombreUsuario']){
+  $nombreUsuario = $_SESSION['nombreUsuario'];
+  $id = $_SESSION['idContratista'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +13,6 @@ if($_SESSION['nombreUsuario']){
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <?php 
     include('php/consultasAcreditacion.php');
-    if(isset($_GET['id'])){
-      $id = $_GET['id'];
-    }
     tituloPanel();?>
 
     <!-- Bootstrap -->
@@ -110,6 +109,9 @@ if($_SESSION['nombreUsuario']){
                 <form action="php/addTrabajador.php" method="post">
                   <div class="row">
                     <div class="col-md-4 col-lg-4">
+
+                    <!-- SI ES VISTA ADMINISTRADOR-->
+                    <?php if($nombreUsuario=="Admin"){ ?>
                       <div class="form-group">
                         <label class="">Empresa</label>
                         <?php getSelectEmpresas(); ?>
@@ -120,6 +122,22 @@ if($_SESSION['nombreUsuario']){
                           <option value="">Seleccionar Empresa...</option>
                         </select>
                       </div>
+                    <?php }?>
+
+                    <!-- SI ES VISTA CONTRATISTA-->
+                    <?php if($nombreUsuario=="Contratista"){?>
+                      <div class="form-group">
+                        <label class="">Contrato</label>
+                        <select name="idcontrato" id="contratos" required>
+                          <?php getSelectContratos($id);?>
+                        </select>
+                      </div>
+
+                    <?php } ?>
+
+
+
+
                        <div class="form-group">
                         <label class="sr-only">Rut</label>
                         <?php echo inputrut("rut",$rut);?>

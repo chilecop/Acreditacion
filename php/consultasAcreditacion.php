@@ -669,5 +669,16 @@
     $row = mysql_fetch_array($resultado);
     return $row['ID_TIPO_PASE'];
   }
+
+  function getSelectContratos($id){
+    $con = conectarse();
+    $sql = "SELECT * FROM orden_contrato WHERE ID_CONTRATISTA='$id'";
+    mysql_set_charset("utf8",$con);
+    $resultado = mysql_query($sql,$con);
+    echo '<option value="">Seleccionar contrato...</option>';
+    while($fila = mysql_fetch_array($resultado)){
+      echo "<option value='" . $fila['ID_OC'] . "'>" . $fila['N_CONTRATO'] . "</option>";
+    }
+  }
   
 ?>
