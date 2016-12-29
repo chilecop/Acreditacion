@@ -110,7 +110,7 @@ if($_SESSION['nombreUsuario']){
                       </div>
                        <div class="form-group">
                         <label class="sr-only">Rut</label>
-                        <input type="text" class="form-control" id="title" placeholder="Rut" name="rut" required>
+                        <?php echo inputrut("rut",$rut);?>
                       </div>
                       <div class="form-group">
                         <label class="sr-only">Nombre</label>
