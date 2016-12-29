@@ -124,8 +124,6 @@
             <h1 class="hidden-xs hidden-sm logo"><img src="images/joyglobal.png"></h1>
           </ul>
       </div>
-
-
       ';
 
 		/*echo '

@@ -163,6 +163,7 @@
 
 	$id = $_SESSION['idTrabajadorActual'];
 	$con = conectarse();
+	mysql_set_charset("utf8",$con);
 	//AGREGAMOS LA URL AL TRABAJADOR SI NO EXISTEN PROBLEMAS DE ARCHIVO
 	if(isset($okey)){
 		if(isset($_FILES["file"]))

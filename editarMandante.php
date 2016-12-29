@@ -97,7 +97,7 @@ if($_SESSION['nombreUsuario']){
                     <div class="col-md-6 col-lg-6">
                       <div class="form-group">
                         <label class="sr-only">Rut</label>
-                        <input type="text" class="form-control" id="title" placeholder="Rut" name="rut" value="<?php echo $rut; ?>" required>
+                        <input type="text" class="form-control" id="title" placeholder="Rut" name="rut" value="<?php echo $rut; ?>" required disabled>
                       </div>
                       <div class="form-group">
                         <label class="sr-only">Nombre de Fantasía</label>
