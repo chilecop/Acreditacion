@@ -43,13 +43,25 @@ if($_SESSION['nombreUsuario']){
             success: function(response)
             {
               var contratosRecibidos = JSON.parse(response);
-              for (var i = 0; i < contratosRecibidos.length; i++)
-              {
-                contratos.options[i] = new Option(contratosRecibidos[i].numero,contratosRecibidos[i].id);
+              var length = contratos.options.length;
+              for(i=0; i<length;i++){
+                contratos.options[i] = null;
               }
+              if(contratosRecibidos.length<1){
+                for(i=0; i<length;i++){
+                  contratos.options[i] = null;
+                }
+                contratos.options[0] = new Option("Seleccionar Empresa...",0);
+              }else{
+                for (var i = 0; i < contratosRecibidos.length; i++)
+                {                
+                  contratos.options[i] = new Option(contratosRecibidos[i].numero,contratosRecibidos[i].id);
+                }
+              }              
             }
           });
         }else{
+
           contratos.options[0] = new Option("Seleccionar Empresa...",0);
         }
       }  

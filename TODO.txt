@@ -1,2 +1,27 @@
-kjhkj
-HOLA mun
+/**
+* Para el proximo sprint a definir el día 03/01/2016
+*/
+***URGENTE***
+SOLICITADO POR: Stefany - FECHA 29/12/2016
+Las empresas contratistas no pueden ver las otras empresas en ingresarTrabajador2.
+
+SOLICITADO POR: Alfredo - FECHA 29/12/2016
+Arreglar ingresarTrabajador2 ya que al seleccionar la empresa y el contrato, se muestra el contrato
+de dicha empresa, pero al seleccionar otra empresa, no borra el contrato anterior.
+
+SOLICITADO POR: Stefany - FECHA: 29/12/2016
+Ver las jornadas al crear orden de contrato, ya que hay empresas que no tienen jornadas de trabajo.
+Además, al ingresar contrato, debe enviar al listar contratos, luego de ingresado este.
+
+SOLICITADO POR: Stefany - FECHA 29/12/2016
+ingresarTrabajador e ingresarTrabajador2 se debe modificar el termino del contrato, ya que puede
+ser indefinido el contrato.
+
+SOLICITADO POR: Stefany - FECHA 29/12/2016
+En documentación trabajador o documentación empresa, al guardar la documentación le debería enviar 
+a la página anterior, en vez de mostrar el mensaje. O bien devolver y mostrar el mensaje.
+
+SOLICITADO POR: Alfredo - FECHA 29/12/2016
+En la documentación al subir un archivo debería mostrar un mensaje cargando... mientras se sube el archivo,
+además no debería permitir guardar la documentación si aún se encuentra subiendo archivos.
+

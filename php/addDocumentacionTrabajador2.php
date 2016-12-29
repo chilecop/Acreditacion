@@ -2,6 +2,8 @@
 	include('conexion.php');
 	session_start();
 	$con = conectarse();
+	mysql_set_charset("utf8",$con);
+
 	$obs1 = $_POST['obs1'];
 	$obs2 = $_POST['obs2'];
 	$obs3 = $_POST['obs3'];
