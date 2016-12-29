@@ -30,7 +30,6 @@
 <file name="buscador.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331747911496" remote="131255947800000000" Dst="2" />
 <file name="documentacionControlRemuneraciones.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331755290765" remote="131250327000000000" Dst="2" />
 <file name="documentacionEmpresa.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332010833169" remote="131262767400000000" Dst="2" />
-<file name="documentacionPersonal - Copy.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332019924262" remote="131250327000000000" Dst="2" />
 <file name="documentacionPersonal.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332028948497" remote="131262770400000000" Dst="2" />
 <file name="editarContratista.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332058976584" remote="131254459200000000" Dst="2" />
 <file name="editarMandante.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272332102181952" remote="131242432200000000" Dst="2" />
@@ -60,4 +59,5 @@
 <file name="verContrato.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272333024238259" remote="131242432800000000" Dst="2" />
 <file name="verDocumento.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272333035964582" remote="131235585000000000" Dst="2" />
 <file name="verPersona.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272333042311441" remote="131269428600000000" Dst="2" />
+<file name="ingresarNuevoUsuario.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131275250517967394" remote="131275250400000000" Dst="0" />
 </dwsync>
