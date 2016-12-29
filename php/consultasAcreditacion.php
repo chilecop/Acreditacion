@@ -49,7 +49,7 @@
               </ul>
             </li>
 			
-			<li class="link">
+			      <li class="link">
               <a href="pasesDiarios.php">
                 <span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>
                 <span class="hidden-sm hidden-xs">Pases Diarios</span>
@@ -197,10 +197,15 @@
               </a>
             </li>
             <li class="link">
-              <a href="#">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                  <span class="hidden-sm hidden-xs">Buscador</span>
+              <a href="#personal" data-toggle="collapse" aria-controls="collapse-post">
+                <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                <span class="hidden-sm hidden-xs">Personal Acreditado</span>
               </a>
+              <ul class="collapse collapseable" id="personal">
+                <li><a href="buscador.php">Buscador</a></li>
+                <li><a href="ingresarTrabajador2.php">Ingresar Trabajador</a></li>
+                <li><a href="reportePersonal.php">Reporte Personal</a></li>
+              </ul>
             </li>
             <li class="link">
               <a href="#">
