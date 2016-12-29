@@ -7,7 +7,7 @@
 	$id_contratista = $_POST['id_contratista'];        
 	$con = conectarse();
 	mysql_set_charset("utf8",$con);
-	$sql = "INSERT INTO usuarios (id_tipo, id_contratista, rut, nombre_usuario, mail, f_registro, clave) VALUES ('3', '$id_contratista', '$rut', '$nombre', '$email', now(), contrasena)";
+	$sql = "INSERT INTO usuario (id_tipo, id_contratista, rut, nombre_usuario, mail, f_registro, clave) VALUES ('3', '$id_contratista', '$rut', '$nombre', '$email', now(), '$contrasena')";
 	mysql_query($sql,$con);
 
 	

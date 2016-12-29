@@ -92,17 +92,17 @@ if($_SESSION['nombreUsuario']){
             </header>
             <div class="content-inner">
               <div class="form-wrapper">
-              <p>Ingrese cada uno de los datos para agregar al trabajador al sistema. Todos los datos son requeridos.</p>
+              <p>Campos necesarios para la creasion de usuario.</p>
                 <form action="php/addUsuario.php" method="post">
                   <input type="hidden" name="id_contratista" value="<?php echo $id; ?>">
                   <div class="row">
                     <div class="col-md-4 col-lg-4">
                       <div class="form-group">
-                        <label class="sr-only">Rut</label>
+                        <label class="">Rut</label>
                         <?php echo inputrut("rut",$rut);?>
                       </div>
                       <div class="form-group">
-                        <label class="sr-only">Nombre</label>
+                        <label class="">Nombre</label>
                         <input type="text" class="form-control" id="title" placeholder="Nombre Completo" name="nombre" required>
                       </div>
                       <div class="form-group">
@@ -110,11 +110,11 @@ if($_SESSION['nombreUsuario']){
                         <input type="text" class="form-control" id="title" placeholder="Contraseña" name="contrasena" required>
                       </div> 
                       <div class="form-group">
-                        <label class="sr-only">Email</label>
+                        <label class="">Email</label>
                         <input type="email" class="form-control" id="title" placeholder="E-mail" name="email" required>
                       </div>
                       <div class="clearfix">
-                        <button type="submit" class="btn btn-primary pull-right"> Ingresar Trabajador</button>
+                        <button type="submit" class="btn btn-primary pull-right"> Ingresar Usuario</button>
                       </div>
                     </div>
                   </div>
