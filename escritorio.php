@@ -185,13 +185,19 @@ if($_SESSION['nombreUsuario']){
                           <td>3</td>
                           <td>Nómina Auditoría de Remuneraciones</td>
                           <td>05-12-2016</td>
-                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/nominaAuditoriaRemuneraciones.xls" download="nominaAuditoriaRemuneraciones.pdf">Descargar</a></td>
+                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/nominaAuditoriaRemuneraciones.xls" download="nominaAuditoriaRemuneraciones.xls">Descargar</a></td>
                         </tr>
                         <tr>
                           <td>4</td>
                           <td>Nómina Acreditación</td>
                           <td>05-12-2016</td>
-                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/nominaAcreditacion.pdf" download="nominaAcreditacion.pdf">Descargar</a></td>
+                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/nominaAcreditacion.xls" download="nominaAcreditacion.xls">Descargar</a></td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>Ficha inscripción Empresas Contratistas</td>
+                          <td>30-12-2016</td>
+                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/fichaInscripcionEmpresasContratistas.xls" download="fichaInscripcionEmpresasContratistas.xls">Descargar</a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -222,27 +228,27 @@ if($_SESSION['nombreUsuario']){
                       <tbody>
                         <tr>
                           <td>1</td>
-                          <td>Cristian Opazo Muñoz</td>
-                          <td>c.opazo@chilecop.cl</td>
-                          <td>9 78941564</td>
-                          <td>Gerente General</td>
-                          <td><a class="btn btn-default" href="mailto:c.opazo@chilecop.cl">Enviar E-mail</a></td>
+                          <td>Stefany Kunz</td>
+                          <td>s.kunz@chilecop.cl</td>
+                          <td>+56 9 44337239</td>
+                          <td>Administrador Acreditación</td>
+                          <td><a class="btn btn-default" href="mailto:s.kunz@chilecop.cl">Enviar E-mail</a></td>
                         </tr>
                         <tr>
                           <td>2</td>
-                          <td>Juan Carlos López</td>
-                          <td>j.lopez@chilecop.cl</td>
-                          <td>9 73885258</td>
+                          <td>Dpto. Acreditación</td>
+                          <td>acreditacion@chilecop.cl</td>
+                          <td></td>
                           <td>Subgerencia de Desarrollo</td>
-                          <td><a class="btn btn-default" href="mailto:j.lopez@chilecop.cl?cc=a.henriquez@chilecop.cl">Enviar E-mail</a></td>
+                          <td><a class="btn btn-default" href="mailto:acreditacion@chilecop.cl">Enviar E-mail</a></td>
                         </tr>
                         <tr>
                           <td>3</td>
-                          <td>Alfredo Henriquez Sandivari</td>
-                          <td>a.henriquez@chilecop.cl</td>
-                          <td>9 63424158</td>
-                          <td>Ingeniero Civil Informático</td>
-                          <td><a class="btn btn-default" href="mailto:a.henriquez@chilecop.cl?cc=j.lopez@chilecop.cl">Enviar E-mail</a></td>
+                          <td>Dpto. Informática</td>
+                          <td>informatica@chilecop.cl</td>
+                          <td>+56 9 73885258</td>
+                          <td>Subgerencia de Desarrollo</td>
+                          <td><a class="btn btn-default" href="mailto:informatica@chilecop.cl">Enviar E-mail</a></td>
                         </tr>
                       </tbody>
                     </table>

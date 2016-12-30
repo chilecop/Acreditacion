@@ -26,7 +26,7 @@ SOLICITADO POR: Alfredo - FECHA 29/12/2016
 En la documentación al subir un archivo debería mostrar un mensaje cargando... mientras se sube el archivo,
 además no debería permitir guardar la documentación si aún se encuentra subiendo archivos.
 
-SOLICITADO POR: Alfredo - FECHA 29/12/2016
+***DONE***SOLICITADO POR: Alfredo - FECHA 29/12/2016
 En el escritorio agregar a Stefany a la administración Chilecop.
 
 SOLICITADO POR: Stefy - FECHA 29/12/2016
