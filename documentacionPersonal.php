@@ -132,7 +132,7 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 			<script src="http://code.jquery.com/jquery.js"></script>
 			<script src="js/subirDocumentos.js"></script>
 		</head>
-		<body>
+		<body unload="javascript:verificarCarga()">
 			<div class="container-fluid display-table">
 				<div class="row display-table-row">
 					<!-- Panel de Navegación Izquierdo-->
