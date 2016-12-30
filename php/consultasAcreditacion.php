@@ -651,13 +651,17 @@
               </div>
             </form>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-              <label class="">Caduca:</label>
-              <input id="val'. $ndoc . '" type="date" value="'. $val . '">
-            </div>                        
-          </div>
-        </div>
+          '; 
+          $usuario = $_SESSION['nombreUsuario'];
+          if($usuario=="Admin"){
+            echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <label class="">Caduca:</label>
+                <input id="val'. $ndoc . '" type="date" value="'. $val . '">
+              </div>                        
+            </div>';
+          }
+        echo '</div>
       </div>';
   }
 
