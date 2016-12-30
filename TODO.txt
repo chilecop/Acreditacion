@@ -50,6 +50,6 @@ Ingresar Personal
 SOLICITADO POR: Alfredo - FECHA 30/12/2016
 Se debe bloquear caducidad en documentación empresa para la vista contratista.
 
-SOLICITADO POR: Alfredo - FECHA 30/12/2016
-Bloquear la ventana de documentos del personal al subir un archivo o al presionar el boton si es que aún
+***DONE***SOLICITADO POR: Alfredo - FECHA 30/12/2016
+Bloquear la ventana de documentos del personal al momento de cerrar o al presionar el boton si es que aún
 no se han cargado los documentos.
