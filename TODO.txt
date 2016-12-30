@@ -32,7 +32,7 @@ En el escritorio agregar a Stefany a la administración Chilecop.
 SOLICITADO POR: Stefy - FECHA 29/12/2016
 Generar cambio de clave al iniciar por primera vez con un usuario.
 
-SOLICITADO POR: Stefany - FECHA 29/12/2016
+***DONE***SOLICITADO POR: Stefany - FECHA 29/12/2016
 Quitar el caduca de la documentación para la vista de contratista.
 
 ***URGENTE***

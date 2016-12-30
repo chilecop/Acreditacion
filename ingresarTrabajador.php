@@ -34,21 +34,16 @@ if($_SESSION['nombreUsuario']){
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
-      $(function(){
-        $("input[name='file']").on("change", function(){
-          var formData = new FormData($("#formulario")[0]);
-          var ruta = "imagen-ajax.php";
-          $.ajax({
-            url: ruta,
-            type: "POST",
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(datos)
-            {
-              $("#respuesta").html(datos);
-            }
-          });
+      $(document).ready(function(){
+        $("select[name=id_tipo_contrato]").change(function(){
+          if($('select[name=id_tipo_contrato]').val()==1){
+            document.getElementById("terminoContrato").style.display='none';
+            document.getElementById("terminoPase").style.display='none';
+
+          } else {
+            document.getElementById("terminoContrato").style.display='block';
+            document.getElementById("terminoPase").style.display='block';
+          }
         });
       });
     </script>
@@ -153,27 +148,29 @@ if($_SESSION['nombreUsuario']){
                         <input type="text" class="form-control" id="title" placeholder="Fono" name="fono" required>
                       </div> 
                       <div class="form-group">
+                        <label>Tipo de Contrato</label>
+                        <?php getSelect(tipo_contrato,id_tipo_contrato,descripcion); ?>
+                      </div>    
+                      <div class="form-group">
                         <label class="">Inicio Contrato</label>
                         <input class="pull-right" type="date" name="fechainicio" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio Contrato" required/>
                       </div>
-                      <div class="form-group">
+                      <div id="terminoContrato" class="form-group" style="display:none;">
                         <label class="">Término Contrato</label>
-                        <input class="pull-right" type="date" name="fechatermino" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Termino Contrato" required/>
+                        <input class="pull-right" type="date" name="fechatermino"/>
                       </div>
+                      <?php if($nombreUsuario=="Admin"){ ?>
                       <div class="form-group">
                         <label class="">Inicio de Pase</label>
                         <input class="pull-right" type="date" name="iniciopase" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio Pase" required/>
                       </div>
-                      <div class="form-group">
+                      <div id="terminoPase" style="display:none;" class="form-group">
                         <label class="">Término de Pase</label>
-                        <input class="pull-right" type="date" name="terminopase" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Termino Pase" required/>
+                        <input class="pull-right" type="date" name="terminopase"/>
                       </div> 
+                      <?php } ?>
                     </div>
-                    <div class="col-md-4 col-lg-4">
-                      <div class="form-group">
-                        <label>Tipo de Contrato</label>
-                        <?php getSelect(tipo_contrato,id_tipo_contrato,descripcion); ?>
-                      </div>       
+                    <div class="col-md-4 col-lg-4">                         
                       <div class="form-group">
                         <label>Tipo de Pase</label>
                         <?php getSelect(tipo_pase,id_tipo_pase,descripcion); ?>

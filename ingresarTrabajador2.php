@@ -211,16 +211,18 @@ if($_SESSION['nombreUsuario']){
                       </div>
                       <div id="terminoContrato" style="display:none;" class="form-group">
                         <label class="">Término Contrato</label>
-                        <input class="pull-right" type="date" name="fechatermino" required/>
+                        <input class="pull-right" type="date" name="fechatermino"/>
                       </div>
+                      <?php if($nombreUsuario=="Admin"){ ?>
                       <div class="form-group">
                         <label class="">Inicio de Pase</label>
                         <input class="pull-right" type="date" name="iniciopase" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio Pase" required/>
                       </div>
                       <div id="terminoPase" style="display:none;" class="form-group">
                         <label class="">Término de Pase</label>
-                        <input class="pull-right" type="date" name="terminopase" required/>
+                        <input class="pull-right" type="date" name="terminopase"/>
                       </div> 
+                     <?php } ?>
                     </div>
                     <div class="col-md-4 col-lg-4">                           
                       <div class="form-group">
