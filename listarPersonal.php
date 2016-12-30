@@ -27,8 +27,10 @@ if($_SESSION['nombreUsuario']){
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<?php 
-		if(isset($_GET['msg'])){
-			echo "<script>alert('Personal ingresado correctamente.')</script>";
+		if(isset($_SESSION['mensajeAlerta'])){
+			echo "<script>alert('". $_SESSION['mensajeAlerta'] ."')</script>";
+			unset($_SESSION['mensajeAlerta']);
+
 		}
 		?>
 	</head>

@@ -516,7 +516,6 @@ $(function(){
 		if(document.getElementById("val23")!=null)
 		var vval23 = document.getElementById("val23").value;
 
-
 		$.ajax({
 			data: {
 				'obs1':vobs1,
@@ -569,7 +568,8 @@ $(function(){
 			url: "php/addDocumentacionTrabajador2.php",
 			success: function(data)
 			{
-				alert(data);
+				var link = "http://www.chilecop.cl/acreditacion/listarPersonal.php?id=" + data;
+				window.location=link;
 			}
 		});
 

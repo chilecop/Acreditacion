@@ -620,6 +620,11 @@
   }
 
   function imprimirDocumento($nombre,$date,$mod,$obs,$trabajadorActual,$url,$val,$ndoc){
+    $usuario = $_SESSION['nombreUsuario'];
+    $disabled = "";
+    if($usuario!="Admin"){
+      $disabled = "disabled";
+    }
     echo '
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <div class="documento col-sm-12 col-md-12">
@@ -635,7 +640,7 @@
             </div>
           </div>
           <div class="well well-sm comments-well">
-            <textarea id="obs'. $ndoc . '" style="width:100%;">' . $obs . '</textarea>
+            <textarea id="obs'. $ndoc . '" style="width:100%;" '. $disabled .'>' . $obs . '</textarea>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
             <form method="post" id="formulario' . $ndoc . '" enctype="multipart/form-data">

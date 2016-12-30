@@ -1,6 +1,7 @@
 <?php
 session_start();
 if($_SESSION['nombreUsuario']){
+$nombreUsuario = $_SESSION['nombreUsuario'];
 ?>
 <!DOCTYPE html>
 <html lang="es">

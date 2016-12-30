@@ -104,7 +104,7 @@
 	mysql_query($sql,$con);
 
 
-	$sql = "SELECT ec.N_FANTASIA, pa.NOMBRES, pa.APELLIDOS, oc.N_CONTRATO FROM personal_acreditado pa, empresa_contratista ec, orden_contrato oc
+	$sql = "SELECT ec.N_FANTASIA, pa.NOMBRES, pa.APELLIDOS, oc.N_CONTRATO, oc.ID_OC FROM personal_acreditado pa, empresa_contratista ec, orden_contrato oc
 	WHERE pa.ID_ACREDITADO='$id' AND 
 	pa.ID_ORDEN_CONTRATO = oc.ID_OC AND 
 	oc.ID_CONTRATISTA = ec.ID_CONTRATISTA";
@@ -208,6 +208,6 @@
 	$para = "acreditacion@chilecop.cl";
 	//COMPOSICIÓN DEL CORREO
 	mail($para, $asunto, utf8_decode($html), $header);
-	
-	echo "DOCUMENTACIÓN ALMACENADA CORRECTAMENTE.";
+	$_SESSION['mensajeAlerta'] = "Documentación almacenada correctamente. Persona enviada a revisión.";
+	echo $fila['ID_OC'];
 ?>

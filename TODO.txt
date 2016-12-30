@@ -35,7 +35,7 @@ Generar cambio de clave al iniciar por primera vez con un usuario.
 ***DONE***SOLICITADO POR: Stefany - FECHA 29/12/2016
 Quitar el caduca de la documentación para la vista de contratista.
 
-***URGENTE***
+***DONE******URGENTE***
 SOLICITADO POR: Stefy - FECHA 29/12/2016
 Término de pase debe estar ligado con el contrato comercial adjudicado. El contratista no puede ver
 el inicio ni termino de pase.
@@ -43,3 +43,10 @@ el inicio ni termino de pase.
 
 SOLICITADO POR: Stefy - FECHA 29/12/2016
 No se puede ingresar dos contratos con el mismo número de contrato. Y al crear contrato debe mostrar una alerta.
+
+***DONE***SOLICITADO POR: Alfredo - FECHA 30/12/2016
+Los mensajes deben ser pasados por variable global y no por GET. 
+Ingresar Personal
+
+SOLICITADO POR: Alfredo - FECHA 30/12/2016
+Se debe bloquear caducidad en documentación empresa para la vista contratista.
