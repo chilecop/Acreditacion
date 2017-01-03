@@ -77,8 +77,6 @@ if($_SESSION['nombreUsuario']){
 	            				<th>Contacto</th>
 	            				<th>Fono</th>
 	            				<th>Representante</th>
-	            				<th>E-mail</th>
-	            				<th>Fecha Registro</th>
 	            			</tr>
 	            		</thead>
 	            		<tbody>

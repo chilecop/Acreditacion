@@ -370,9 +370,7 @@
               <td>".$row['RUT'] . "</td>
               <td>".$row['N_CONTACTO'] . "</td>
               <td>".$row['FONO'] . "</td>
-              <td>".$row['REP'] . "</td>
-              <td>".$row['MAIL_CONTACTO'] . "</td>
-              <td>".$row['F_REGISTRO'] . "</td>";
+              <td>".$row['REP'] . "</td>";
               echo "<td><a class='btn btn-xs btn-success' href='verContratista.php?id=".$row['ID_CONTRATISTA'] . "' role='button'>Ver</a></td>";
               echo "<td><a class='btn btn-xs btn-default' href='listarContratos.php?id=".$row['ID_CONTRATISTA'] . "' role='button'>Contratos</a></td>";
 			        echo" <td><a class='btn btn-xs btn-default' href='documentacionEmpresa.php?id=".$row['ID_CONTRATISTA']."' role='button'>Documentos Empresa</a></td>";
