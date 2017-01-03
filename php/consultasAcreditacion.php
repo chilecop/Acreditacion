@@ -14,32 +14,32 @@
           <ul>
             <li class="link">
               <a href="escritorio.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Escritorio</span>
               </a>
             </li>
             <li class="link">
               <a href="listarMandantes.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-queen" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Mandantes</span>
               </a>
             </li>
             <li class="link">
               <a href="listarContratistas.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-pawn" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Contratistas</span>
               </a>
             </li>
             <li class="link">
               <a href="vehiculos.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Acceso Vehicular</span>
               </a>
             </li>
 
             <li class="link">
               <a href="#personal" data-toggle="collapse" aria-controls="collapse-post">
-                <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <span class="hidden-sm hidden-xs">Personal Acreditado</span>
               </a>
               <ul class="collapse collapseable" id="personal">
@@ -58,13 +58,13 @@
 
             <li class="link">
               <a href="#">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Reportes</span>
               </a>
             </li>
             <li class="link">
               <a href="anuncio.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Anuncios</span>
               </a>
             </li>
@@ -80,26 +80,26 @@
           <ul>
             <li class="link">
               <a href="escritorio.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Escritorio</span>
               </a>
             </li>
             <li class="link">
               <a href="verContratista.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-pawn" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Mi empresa</span>
               </a>
             </li>
             <li class="link">
               <a href="listarContratos.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Mis Contratos</span>
               </a>
             </li>
 
             <li class="link">
               <a href="#personal" data-toggle="collapse" aria-controls="collapse-post">
-                <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <span class="hidden-sm hidden-xs">Personal Acreditado</span>
               </a>
               <ul class="collapse collapseable" id="personal">
@@ -117,7 +117,7 @@
             
             <li class="link">
               <a href="#">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Reportes</span>
               </a>
             </li>
@@ -178,25 +178,25 @@
           <ul>
             <li class="link">
               <a href="escritorio.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Escritorio</span>
               </a>
             </li>
             <li class="link">
               <a href="ingresarMandante.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-queen" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Mi empresa</span>
               </a>
             </li>
             <li class="link">
               <a href="listarContratistas.php">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-pawn" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Contratistas</span>
               </a>
             </li>
             <li class="link">
               <a href="#personal" data-toggle="collapse" aria-controls="collapse-post">
-                <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <span class="hidden-sm hidden-xs">Personal Acreditado</span>
               </a>
               <ul class="collapse collapseable" id="personal">
@@ -207,7 +207,7 @@
             </li>
             <li class="link">
               <a href="#">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Reportes</span>
               </a>
             </li>
@@ -375,12 +375,11 @@
               <td>".$row['F_REGISTRO'] . "</td>";
               echo "<td><a class='btn btn-xs btn-success' href='verContratista.php?id=".$row['ID_CONTRATISTA'] . "' role='button'>Ver</a></td>";
               echo "<td><a class='btn btn-xs btn-default' href='listarContratos.php?id=".$row['ID_CONTRATISTA'] . "' role='button'>Contratos</a></td>";
-			  echo" <td><a class='btn btn-xs btn-default' href='documentacionEmpresa.php?id=".$row['ID_CONTRATISTA']."' role='button'>Documentos Empresa</a></td>";
-              if($usuario=="Admin"){
-			 
-			  echo "
-			  <td><a class='btn btn-xs btn-warning' href='listarUsuarios.php?id=".$row['ID_CONTRATISTA']."' role='button'>Ver Usuarios</a></td>
-			  <td><a class='btn btn-xs btn-warning' href='editarContratista.php?id=".$row['ID_CONTRATISTA']."&nombre=". $row['N_FANTASIA'] ."' role='button'>editar</a></td>";
+			        echo" <td><a class='btn btn-xs btn-default' href='documentacionEmpresa.php?id=".$row['ID_CONTRATISTA']."' role='button'>Documentos Empresa</a></td>";
+              if($usuario=="Admin"){			 
+			        echo "
+			          <td><a class='btn btn-xs btn-warning' href='listarUsuarios.php?id=".$row['ID_CONTRATISTA']."' role='button'>Ver Usuarios</a></td>
+			          <td><a class='btn btn-xs btn-warning' href='editarContratista.php?id=".$row['ID_CONTRATISTA']."&nombre=". $row['N_FANTASIA'] ."' role='button'>Editar</a></td>";
               }
           echo "</tr>";
     }
