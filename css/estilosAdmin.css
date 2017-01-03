@@ -358,3 +358,7 @@ html, body{
 .imagen-articulo{
 	max-width: 90%;
 }
+
+.apuntador{
+	cursor: pointer;
+}

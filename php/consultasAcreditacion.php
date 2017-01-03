@@ -660,7 +660,11 @@
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <label class="">Caduca:</label>
                 <input id="val'. $ndoc . '" type="date" value="'. $val . '">
-              </div>                        
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <label class="">Liberar Documento:</label>
+                <a class="apuntador" onClick="liberarDocumento('. $ndoc .')">Eliminar</a>
+              </div>                     
             </div>';
           }
         echo '</div>

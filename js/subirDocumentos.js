@@ -590,6 +590,21 @@ window.onbeforeunload = function exitAlert(){
 	}
 }
 
+function liberarDocumento(ndoc){
+	$.ajax({
+		url: "php/liberarDocumento.php",
+		type: "POST",
+		data: {'ndoc':ndoc},
+		success: function(datos)
+		{
+			var respuesta = "#respuesta" + ndoc;
+			$(respuesta).html("");
+			alert("Documento liberado exitosamente.");
+		}
+	});
+	
+}
+
 /**
 * Funcion que permite guardar toda la informacion de cada uno de los archivos.
 */
