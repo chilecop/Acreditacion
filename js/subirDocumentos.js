@@ -18,12 +18,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta1").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta1").html(datos.link);
 			}
 		});
 	});
@@ -39,12 +43,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta2").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta2").html(datos.link);
 			}
 		});
 	});
@@ -60,12 +68,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta3").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta3").html(datos.link);
 			}
 		});
 	});
@@ -81,12 +93,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta4").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta4").html(datos.link);
 			}
 		});
 	});
@@ -102,12 +118,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta5").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta5").html(datos.link);
 			}
 		});
 	});
@@ -123,12 +143,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta6").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta6").html(datos.link);
 			}
 		});
 	});
@@ -144,12 +168,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta7").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta7").html(datos.link);
 			}
 		});
 	});
@@ -165,12 +193,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta8").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta8").html(datos.link);
 			}
 		});
 	});
@@ -186,12 +218,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta9").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta9").html(datos.link);
 			}
 		});
 	});
@@ -207,13 +243,17 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta10").html(datos);
-			}
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta10").html(datos.link);
+				}
 		});
 	});
 });
@@ -228,12 +268,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta11").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta11").html(datos.link);
 			}
 		});
 	});
@@ -249,12 +293,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta12").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta12").html(datos.link);
 			}
 		});
 	});
@@ -270,12 +318,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta13").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta13").html(datos.link);
 			}
 		});
 	});
@@ -291,12 +343,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta14").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta14").html(datos.link);
 			}
 		});
 	});
@@ -312,12 +368,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta15").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta15").html(datos.link);
 			}
 		});
 	});
@@ -333,12 +393,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta16").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta16").html(datos.link);
 			}
 		});
 	});
@@ -354,12 +418,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta17").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta17").html(datos.link);
 			}
 		});
 	});
@@ -375,12 +443,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta18").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta18").html(datos.link);
 			}
 		});
 	});
@@ -396,12 +468,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta19").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta19").html(datos.link);
 			}
 		});
 	});
@@ -417,12 +493,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta20").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta20").html(datos.link);
 			}
 		});
 	});
@@ -438,12 +518,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta21").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta21").html(datos.link);
 			}
 		});
 	});
@@ -459,12 +543,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta22").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta22").html(datos.link);
 			}
 		});
 	});
@@ -480,12 +568,16 @@ $(function(){
 			url: ruta,
 			type: "POST",
 			data: formData,
+			dataType:'json',
 			contentType: false,
 			processData: false,
 			success: function(datos)
 			{
 				cargando = 0;
-				$("#respuesta23").html(datos);
+				if(datos.mensaje!='okey'){
+					alert(datos.mensaje);
+				}
+				$("#respuesta23").html(datos.link);
 			}
 		});
 	});
