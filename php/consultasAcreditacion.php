@@ -324,10 +324,18 @@
   }
 
   function listarPersonal($id){
-    $usuario = $_SESSION['nombreUsuario'];
     $con = conectarse();
-    mysql_set_charset("utf8",$con);
-    $sql="SELECT * FROM personal_acreditado WHERE ID_ORDEN_CONTRATO='$id'";
+    $usuario = $_SESSION['nombreUsuario'];
+    if($usuario=="Contratista"){
+      $idEmpresa = $_SESSION["idContratista"];
+      $sql="SELECT * 
+      FROM personal_acreditado pa, orden_contrato oc 
+      WHERE pa.ID_ORDEN_CONTRATO='$id' AND
+      oc.ID_OC ='$id' AND
+      oc.ID_CONTRATISTA='$idEmpresa'";
+    }else{
+      $sql="SELECT * FROM personal_acreditado WHERE ID_ORDEN_CONTRATO='$id'";
+    }
     $resultado = mysql_query($sql,$con);
     $estado = 0;
 
@@ -437,7 +445,18 @@
     function getVerDocumentacion($id){
     $con = conectarse();
     mysql_set_charset("utf8",$con);
-    $query = "SELECT * FROM documentacion WHERE ID_ACREDITADO='$id'";
+    $usuario = $_SESSION['nombreUsuario'];
+    if($usuario=="Contratista"){
+      $idEmpresa = $_SESSION["idContratista"];
+      $query = "SELECT doc.* 
+      FROM documentacion doc, personal_acreditado pa, orden_contrato oc
+      WHERE doc.ID_ACREDITADO='$id' AND
+      pa.ID_ACREDITADO='$id' AND
+      oc.ID_OC =pa.ID_ORDEN_CONTRATO AND
+      oc.ID_CONTRATISTA='$idEmpresa'";
+    }else{
+      $query = "SELECT * FROM documentacion WHERE ID_ACREDITADO='$id'";
+    }    
     $resultado = mysql_query($query, $con);
     $fila = mysql_fetch_array($resultado);
     mysql_close($con);
