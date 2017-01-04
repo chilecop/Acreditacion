@@ -33,25 +33,6 @@ if($_SESSION['nombreUsuario']){
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>
-      $(function(){
-        $("input[name='file']").on("change", function(){
-          var formData = new FormData($("#formulario")[0]);
-          var ruta = "imagen-ajax.php";
-          $.ajax({
-            url: ruta,
-            type: "POST",
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(datos)
-            {
-              $("#respuesta").html(datos);
-            }
-          });
-        });
-      });
-    </script>
   </head>
   <body>
     <div class="container-fluid display-table">
@@ -105,10 +86,6 @@ if($_SESSION['nombreUsuario']){
                         <label class="">Nombre</label>
                         <input type="text" class="form-control" id="title" placeholder="Nombre Completo" name="nombre" required>
                       </div>
-                      <div class="form-group">
-                        <label class="">Contraseña</label>
-                        <input type="text" class="form-control" id="title" placeholder="Contraseña" name="contrasena" required>
-                      </div> 
                       <div class="form-group">
                         <label class="">Email</label>
                         <input type="email" class="form-control" id="title" placeholder="E-mail" name="email" required>

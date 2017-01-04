@@ -30,7 +30,7 @@
 	$resultado = mysql_query($sql,$con);
 	$fila = mysql_fetch_array($resultado);
 	$dempresa = $fila['ID_CONTRATISTA'];
-	//AHORA CREAMOS LA INSTANCIA	
+	//AHORA CREAMOS LA INSTANCIA
 	$sql = "INSERT INTO documentacion_contratista (ID_CONTRATISTA) VALUES ($dempresa)"; 
 	mysql_query($sql,$con);
 	//RETORNAMOS A LA PAGINA DE LOS CONTRATOS

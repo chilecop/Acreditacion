@@ -2,7 +2,7 @@
 
 $asunto = $_POST['asunto'];
 $observacion = $_POST['observacion'];
-$para = "ahenriquez@sodired.cl";
+$para = "acreditacion@chilecop.cl";
 
 
 $html = ' <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">

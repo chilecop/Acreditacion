@@ -134,6 +134,12 @@ if($_SESSION['nombreUsuario']){
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
   </body>
+  <?php
+    if(isset($_SESSION['mensajeAlerta'])){
+      echo "<script>alert('". $_SESSION['mensajeAlerta'] ."')</script>";
+      unset($_SESSION['mensajeAlerta']);
+    }
+  ?>
 </html>
 <?php
 }else{

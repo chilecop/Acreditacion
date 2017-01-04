@@ -590,11 +590,11 @@ window.onbeforeunload = function exitAlert(){
 	}
 }
 
-function liberarDocumento(ndoc){
+function liberarDocumento(ndoc,tipo){
 	$.ajax({
 		url: "php/liberarDocumento.php",
 		type: "POST",
-		data: {'ndoc':ndoc},
+		data: {'ndoc':ndoc,'tipo':tipo},
 		success: function(datos)
 		{
 			var respuesta = "#respuesta" + ndoc;

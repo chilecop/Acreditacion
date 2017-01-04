@@ -443,7 +443,7 @@
     return $fila['F_INICIO'] . "%$" . $fila['F_TERMINO'] . "%$" . $fila['F_INICIO_JORNADA'] . "%$" . $fila['F_TERMINO_JORNADA'] . "%$" . $fila['F_PRESENTACION_SERNAGEOMIN'] . "%$" . $fila['F_AFILIACION_MUTUAL'] . "%$" . $fila['N_CONTRATO'] . "%$" . $fila['DESCRIPCION_CONTRATO'] . "%$" . $fila['ADMINISTRADOR_CONTRATO'] . "%$" . $fila['FONO'] . "%$" . $fila['MAIL'] . "%$" . $fila['JORNADA_EXCEPCIONAL'] . "%$" . $fila['TIPO_JORNADA'] . "%$" . $fila['N_RESOLUCION'];
   }
 
-    function getVerDocumentacion($id){
+  function getVerDocumentacion($id){
     $con = conectarse();
     mysql_set_charset("utf8",$con);
     $usuario = $_SESSION['nombreUsuario'];
@@ -487,14 +487,23 @@
     $fila['URL_23'] . "%$" . $fila['VAL_23'] . "%$" . $fila['OBS_23'] . "%$" . $fila['MOD_23'];
   }
   
-  	function getVerDocEECC($id){
+  function getVerDocEECC($id){
     $con = conectarse();
     mysql_set_charset("utf8",$con);
     $query = "SELECT * FROM documentacion_contratista WHERE ID_CONTRATISTA='$id'";
     $resultado = mysql_query($query, $con);
     $fila = mysql_fetch_array($resultado);
     mysql_close($con);
-    return $fila['URL1'] . "%$" . $fila['VAL1'] . "%$" . $fila['MOD1'] . "%$" . $fila['URL2'] . "%$" . $fila['VAL2'] . "%$" . $fila['MOD2'] . "%$" . $fila['URL3'] . "%$" . $fila['VAL3'] .  "%$" . $fila['MOD3'] . "%$" . $fila['URL4'] . "%$" . $fila['VAL4'] . "%$" . $fila['MOD4'] . "%$" . $fila['URL5'] . "%$" . $fila['VAL5'] . "%$" . $fila['MOD5'] . "%$" . $fila['URL6'] . "%$" . $fila['VAL6'] . "%$" . $fila['MOD6'] . "%$" . $fila['URL7'] . "%$" . $fila['VAL7'] . "%$" . $fila['MOD7'] . "%$" . $fila['URL8'] . "%$" . $fila['VAL8'] . "%$" . $fila['MOD8'] . "%$" . $fila['URL9'] . "%$" . $fila['VAL9'] . "%$" . $fila['MOD9'] . "%$" . $fila['URL10'] . "%$" . $fila['VAL10'] . "%$" . $fila['MOD10'];
+    return $fila['URL1'] . "%$" . $fila['VAL1'] . "%$" . $fila['MOD1'] . 
+    "%$" . $fila['URL2'] . "%$" . $fila['VAL2'] . "%$" . $fila['MOD2'] . 
+    "%$" . $fila['URL3'] . "%$" . $fila['VAL3'] . "%$" . $fila['MOD3'] . 
+    "%$" . $fila['URL4'] . "%$" . $fila['VAL4'] . "%$" . $fila['MOD4'] . 
+    "%$" . $fila['URL5'] . "%$" . $fila['VAL5'] . "%$" . $fila['MOD5'] . 
+    "%$" . $fila['URL6'] . "%$" . $fila['VAL6'] . "%$" . $fila['MOD6'] . 
+    "%$" . $fila['URL7'] . "%$" . $fila['VAL7'] . "%$" . $fila['MOD7'] . 
+    "%$" . $fila['URL8'] . "%$" . $fila['VAL8'] . "%$" . $fila['MOD8'] . 
+    "%$" . $fila['URL9'] . "%$" . $fila['VAL9'] . "%$" . $fila['MOD9'] . 
+    "%$" . $fila['URL10'] . "%$" . $fila['VAL10'] . "%$" . $fila['MOD10'];
   }
 
   function getVehiculos(){
@@ -636,11 +645,22 @@
       }
   }
 
-  function imprimirDocumento($nombre,$date,$mod,$obs,$trabajadorActual,$url,$val,$ndoc){
+  function imprimirDocumento($nombre,$date,$mod,$obs,$idActual,$url,$val,$ndoc,$tipodocumento){
     $usuario = $_SESSION['nombreUsuario'];
     $disabled = "";
     if($usuario!="Admin"){
       $disabled = "disabled";
+    }
+    switch ($tipodocumento) {
+      case 'Persona':
+        $link = "http://www.chilecop.cl/acreditacion/archivos/" . $idActual . "/" . $url;
+        break;
+      case 'Empresa':
+        $link = "http://www.chilecop.cl/acreditacion/archivoseecc/" . $idActual . "/" . $url;
+        break;    
+      default:
+        # code...
+        break;
     }
     echo '
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -664,7 +684,7 @@
               <div class="form-group">
                 <label class="">
                   <div id="respuesta'. $ndoc .'">              
-                    <a target="_blank" href="http://www.chilecop.cl/acreditacion/archivos/'. $trabajadorActual . '/'. $url .'">' . $url . '</a>
+                    <a target="_blank" href="'. $link . '">' . $url . '</a>
                   </div>
                 </label>
                 <span class="btn btn-default btn-file">                            
@@ -683,7 +703,7 @@
               </div>
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <label class="">Liberar Documento:</label>
-                <a class="apuntador" onClick="liberarDocumento('. $ndoc .')">Eliminar</a>
+                <a class="apuntador" onClick="liberarDocumento('. $ndoc .','. "'" . $tipodocumento ."'".')">Eliminar</a>
               </div>                     
             </div>';
           }

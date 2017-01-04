@@ -174,58 +174,58 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 								<div class="row comments-row">
 								<?php 
 									if($tipoPase == 1 || $tipoPase == 4 || $tipoPase == 6)
-										imprimirDocumento("Contrato de Trabajo",$date1,$mod1,$obs1,$_SESSION['trabajadorActual'],$url1,$val1,"1"); 
+										imprimirDocumento("Contrato de Trabajo",$date1,$mod1,$obs1,$_SESSION['trabajadorActual'],$url1,$val1,"1","Persona"); 
 
 									if($tipoPase == 1)
-										imprimirDocumento("Inducción JoyGlobal",$date2,$mod2,$obs2,$_SESSION['trabajadorActual'],$url2,$val2,"2"); 
+										imprimirDocumento("Inducción JoyGlobal",$date2,$mod2,$obs2,$_SESSION['trabajadorActual'],$url2,$val2,"2","Persona"); 
 
-									imprimirDocumento("Fotografía tamaño carnet",$date3,$mod3,$obs3,$_SESSION['trabajadorActual'],$url3,$val3,"3");
+									imprimirDocumento("Fotografía tamaño carnet",$date3,$mod3,$obs3,$_SESSION['trabajadorActual'],$url3,$val3,"3","Persona");
 
-									imprimirDocumento("Consentimieno test alcohol y drogas",$date4,$mod4,$obs4,$_SESSION['trabajadorActual'],$url4,$val4,"4");
+									imprimirDocumento("Consentimieno test alcohol y drogas",$date4,$mod4,$obs4,$_SESSION['trabajadorActual'],$url4,$val4,"4","Persona");
 
 									if($tipoPase == 1 || $tipoPase == 4 || $tipoPase == 6)
-										imprimirDocumento("Fotocopia Cédula",$date5,$mod5,$obs5,$_SESSION['trabajadorActual'],$url5,$val5,"5");
+										imprimirDocumento("Fotocopia Cédula",$date5,$mod5,$obs5,$_SESSION['trabajadorActual'],$url5,$val5,"5","Persona");
 
 									
-									imprimirDocumento("Examen Pre-Ocupacional",$date6,$mod6,$obs6,$_SESSION['trabajadorActual'],$url6,$val6,"6");
+									imprimirDocumento("Examen Pre-Ocupacional",$date6,$mod6,$obs6,$_SESSION['trabajadorActual'],$url6,$val6,"6","Persona");
 
 									if($tipoPase == 1 || $tipoPase == 4)
-										imprimirDocumento("ODI",$date7,$mod7,$obs7,$_SESSION['trabajadorActual'],$url7,$val7,"7");
+										imprimirDocumento("ODI",$date7,$mod7,$obs7,$_SESSION['trabajadorActual'],$url7,$val7,"7","Persona");
 
 									if($tipoPase == 1)
-									imprimirDocumento("Reglamento Interno",$date8,$mod8,$obs8,$_SESSION['trabajadorActual'],$url8,$val8,"8");
+									imprimirDocumento("Reglamento Interno",$date8,$mod8,$obs8,$_SESSION['trabajadorActual'],$url8,$val8,"8","Persona");
 
 									if($tipoPase == 1 || $tipoPase == 4 || $tipoPase == 6)
 									imprimirDocumento("Entrega EPP",$date9,$mod9,$obs9,$_SESSION['trabajadorActual'],$url9,$val9,"9");
 									if($tipoPase == 1)
-									imprimirDocumento("Último Finiquito",$date10,$mod10,$obs10,$_SESSION['trabajadorActual'],$url10,$val10,"10");
+									imprimirDocumento("Último Finiquito",$date10,$mod10,$obs10,$_SESSION['trabajadorActual'],$url10,$val10,"10","Persona");
 									if($tipoPase == 1)
-									imprimirDocumento("Certificado Antecedentes",$date11,$mod11,$obs11,$_SESSION['trabajadorActual'],$url11,$val11,"11");
+									imprimirDocumento("Certificado Antecedentes",$date11,$mod11,$obs11,$_SESSION['trabajadorActual'],$url11,$val11,"11","Persona");
 									if($tipoPase == 1)
-									imprimirDocumento("Certificado de Estudios",$date12,$mod12,$obs12,$_SESSION['trabajadorActual'],$url12,$val12,"12");
+									imprimirDocumento("Certificado de Estudios",$date12,$mod12,$obs12,$_SESSION['trabajadorActual'],$url12,$val12,"12","Persona");
 									if($tipoPase == 1)
-									imprimirDocumento("Acreditación Prevencionista",$date13,$mod13,$obs13,$_SESSION['trabajadorActual'],$url13,$val13,"13");
+									imprimirDocumento("Acreditación Prevencionista",$date13,$mod13,$obs13,$_SESSION['trabajadorActual'],$url13,$val13,"13","Persona");
 									if($tipoPase == 1)
-									imprimirDocumento("Certificado de Aprobación",$date14,$mod14,$obs14,$_SESSION['trabajadorActual'],$url14,$val14,"14");
+									imprimirDocumento("Certificado de Aprobación",$date14,$mod14,$obs14,$_SESSION['trabajadorActual'],$url14,$val14,"14","Persona");
 
 
 
-									imprimirDocumento("Anexo 1",$date15,$mod15,$obs15,$_SESSION['trabajadorActual'],$url15,$val15,"15");
-									imprimirDocumento("Anexo 2",$date16,$mod16,$obs16,$_SESSION['trabajadorActual'],$url16,$val16,"16");
-									imprimirDocumento("Anexo 3",$date17,$mod17,$obs17,$_SESSION['trabajadorActual'],$url17,$val17,"17");
-									imprimirDocumento("Otros",$date18,$mod18,$obs18,$_SESSION['trabajadorActual'],$url18,$val18,"18");
+									imprimirDocumento("Anexo 1",$date15,$mod15,$obs15,$_SESSION['trabajadorActual'],$url15,$val15,"15","Persona");
+									imprimirDocumento("Anexo 2",$date16,$mod16,$obs16,$_SESSION['trabajadorActual'],$url16,$val16,"16","Persona");
+									imprimirDocumento("Anexo 3",$date17,$mod17,$obs17,$_SESSION['trabajadorActual'],$url17,$val17,"17","Persona");
+									imprimirDocumento("Otros",$date18,$mod18,$obs18,$_SESSION['trabajadorActual'],$url18,$val18,"18","Persona");
 
 									if($tipoPase == 3 || $tipoPase == 5)
-									imprimirDocumento("Guía de despacho o factura del material",$date19,$mod19,$obs19,$_SESSION['trabajadorActual'],$url19,$val19,"19");
+									imprimirDocumento("Guía de despacho o factura del material",$date19,$mod19,$obs19,$_SESSION['trabajadorActual'],$url19,$val19,"19","Persona");
 									if($tipoPase == 3 || $tipoPase == 5)
-									imprimirDocumento("Documentación legal del Vehículo",$date20,$mod20,$obs20,$_SESSION['trabajadorActual'],$url20,$val20,"20");
+									imprimirDocumento("Documentación legal del Vehículo",$date20,$mod20,$obs20,$_SESSION['trabajadorActual'],$url20,$val20,"20","Persona");
 									if($tipoPase == 3 || $tipoPase == 5)
-									imprimirDocumento("Check list del vehículo",$date21,$mod21,$obs21,$_SESSION['trabajadorActual'],$url21,$val21,"21");
+									imprimirDocumento("Check list del vehículo",$date21,$mod21,$obs21,$_SESSION['trabajadorActual'],$url21,$val21,"21","Persona");
 									if($tipoPase == 3 || $tipoPase == 5)
-									imprimirDocumento("Licencia municipal de conducir vigente",$date22,$mod22,$obs22,$_SESSION['trabajadorActual'],$url22,$val22,"22");
+									imprimirDocumento("Licencia municipal de conducir vigente",$date22,$mod22,$obs22,$_SESSION['trabajadorActual'],$url22,$val22,"22","Persona");
 
 									if($tipoPase == 6)
-									imprimirDocumento("Visa de trabajo",$date23,$mod23,$obs23,$_SESSION['trabajadorActual'],$url23,$val23,"23");
+									imprimirDocumento("Visa de trabajo",$date23,$mod23,$obs23,$_SESSION['trabajadorActual'],$url23,$val23,"23","Persona");
 								?>
 								</div>
 							</div>
