@@ -97,6 +97,7 @@ if($_SESSION['nombreUsuario']){
           </div>
 
           <div id="dashboard-con">
+            <!--
             <div class="row">
               <div class="col-md-6 dashboard-right-cell">
                 <div class="admin-content-con">
@@ -152,6 +153,7 @@ if($_SESSION['nombreUsuario']){
                 </div>
               </div>             
             </div>
+            -->
             <div class="row">
               <div class="col-md-12">
                 <div class="admin-content-con clearfix">

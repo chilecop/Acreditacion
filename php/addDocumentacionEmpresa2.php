@@ -16,5 +16,5 @@
 
 	$sql = "UPDATE documentacion_contratista SET VAL1='$mod1', VAL2='$mod2', VAL3='$mod3', VAL4='$mod4', VAL5='$mod5', VAL6='$mod6' , VAL7='$mod7' , VAL8='$mod8' , VAL9='$mod9' , VAL10='$mod10' WHERE ID_CONTRATISTA='$id'";
 	mysql_query($sql,$con);
-	echo $mod1;
+	echo "Documentación almacenada correctamente.";
 ?>

@@ -1,58 +1,39 @@
-﻿/**
-* Para el proximo sprint a definir el día 03/01/2016
+/**
+* Sprint Backlog Semana 03/01/2017
 */
-***DONE******URGENTE***
-SOLICITADO POR: Stefany - FECHA 29/12/2016
-Las empresas contratistas no pueden ver las otras empresas en ingresarTrabajador2.
 
-***DONE***SOLICITADO POR: Alfredo - FECHA 29/12/2016
-Arreglar ingresarTrabajador2 ya que al seleccionar la empresa y el contrato, se muestra el contrato
-de dicha empresa, pero al seleccionar otra empresa, no borra el contrato anterior.
+#37 Sub-Contratos
+Crear una nueva tabla que enlace las empresas contratistas con los subcontratistas. Un contratista puede tener varias empresas subcontratistas como una empresa subcontratista puede prestar servicios a varias empresas contratistas.
+Todas las empresas deben tener su propia clave de acceso.
 
-SOLICITADO POR: Stefany - FECHA: 29/12/2016
-Ver las jornadas al crear orden de contrato, ya que hay empresas que no tienen jornadas de trabajo.
-Además, al ingresar contrato, debe enviar al listar contratos, luego de ingresado este.
+#38 Buscador vista admin
+En el listarContratistas, debe haber un buscador para las empresas y paginación.
 
-***DONE***SOLICITADO POR: Stefany - FECHA 29/12/2016
-ingresarTrabajador e ingresarTrabajador2 se debe modificar el termino del contrato, ya que puede
-ser indefinido el contrato.
+#39 Documentacion de Contratos
+La documentación para los contratos debe ser añadida al sistema.
 
-***DONE***SOLICITADO POR: Stefany - FECHA 29/12/2016
-En documentación trabajador o documentación empresa, al guardar la documentación le debería enviar 
-a la página anterior, en vez de mostrar el mensaje. O bien devolver y mostrar el mensaje.
+#40 Documentación Empresa
+La documentación de empresa debe tener el mismo sistema de la documentación de trabajador, ya que presenta algunos problemas.
 
-***DONE***SOLICITADO POR: Alfredo - FECHA 29/12/2016
-En la documentación al subir un archivo debería mostrar un mensaje cargando... mientras se sube el archivo,
-además no debería permitir guardar la documentación si aún se encuentra subiendo archivos.
+#41 Contratos con mismo número
+No se puede ingresar dos contratos con el mismo número de contrato.
 
-***DONE***SOLICITADO POR: Alfredo - FECHA 29/12/2016
-En el escritorio agregar a Stefany a la administración Chilecop.
-
-SOLICITADO POR: Stefy - FECHA 29/12/2016
+#42 Cambio de clave usuario nuevo
 Generar cambio de clave al iniciar por primera vez con un usuario.
 
-***DONE***SOLICITADO POR: Stefany - FECHA 29/12/2016
-Quitar el caduca de la documentación para la vista de contratista.
+#43 Jornadas de Trabajo
+Ingresar las jornadas a la base de datos y mostrarlas en listado al crear trabajador.
 
-***DONE******URGENTE***
-SOLICITADO POR: Stefy - FECHA 29/12/2016
-Término de pase debe estar ligado con el contrato comercial adjudicado. El contratista no puede ver
-el inicio ni termino de pase.
-*************
+#44 Observación por persona
+Añadir la observación por persona al final de la documentación.
 
-SOLICITADO POR: Stefy - FECHA 29/12/2016
-No se puede ingresar dos contratos con el mismo número de contrato. Y al crear contrato debe mostrar una alerta.
+///////////OTROS//////////
 
-***DONE***SOLICITADO POR: Alfredo - FECHA 30/12/2016
-Los mensajes deben ser pasados por variable global y no por GET. 
-Ingresar Personal
+#44 Navegación del sistema
+Dar funcionalidad a la navegación del sistema.
 
-SOLICITADO POR: Alfredo - FECHA 30/12/2016
-Se debe bloquear caducidad en documentación empresa para la vista contratista.
+#45 Botones documentos 
+En el ingreso de documentos, debe haber un botón guardar progreso y otro que diga enviar a revisión que envíe el correo y bloquee la documentación.
 
-***DONE***SOLICITADO POR: Alfredo - FECHA 30/12/2016
-Bloquear la ventana de documentos del personal al momento de cerrar o al presionar el boton si es que aún
-no se han cargado los documentos.
 
-SOLICITADO POR: Alfredo - FECHA 03/01/2017
-Armar el escritorio con información o lo que se necesite.
+

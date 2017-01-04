@@ -14,9 +14,8 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 	tituloPanel();
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
-		$_SESSION['trabajadorActual'] = getRutTrabajador($id);
-		$_SESSION['idTrabajadorActual'] = $id;
-		$contenido = getVerDocumentacion($id);
+		$_SESSION['idDocumentoActual'] = $id;
+		$contenido = getVerDocumentacionContrato($id);
 		list($url1,$val1,$obs1,$mod1,
 			$url2,$val2,$obs2,$mod2,
 			$url3,$val3,$obs3,$mod3,
@@ -112,7 +111,7 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 		}
 
 		$tipoPase = getTipoPase($id);
-	}	
+	}
 	?>
 
 	<!-- Bootstrap CSS -->
@@ -251,12 +250,6 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 				<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 			</div>
 		</body>
-		<?php
-		if(isset($_SESSION['mensajeAlerta'])){
-			echo "<script>alert('". $_SESSION['mensajeAlerta'] ."')</script>";
-			unset($_SESSION['mensajeAlerta']);
-		}
-		?>
 		</html>
 <?php
 }else{

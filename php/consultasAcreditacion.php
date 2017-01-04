@@ -4,7 +4,7 @@
 
   include('conexion.php');
   include("Zebra_Pagination.php");
-	function imprimirMenu(){    
+	function imprimirMenu(){
     //ACÁ DESPUÉS HAY QUE DISCRIMINAR POR EL TIPO DE USUARIO
     $usuario = $_SESSION['nombreUsuario'];
     if($usuario=="Admin"){
@@ -291,6 +291,7 @@
               <td>".$row['FONO'] . "</td>
               <td>".$row['MAIL'] . "</td>
               <td><a class='btn btn-xs btn-success' href='verContrato.php?id=". $row['ID_OC'] ."' role='button'>Ver</a></td>
+              <td><a class='btn btn-xs btn-default' href='documentacionContrato.php?id=".$row['ID_OC']."' role='button'>Ver Documentos</a></td>
               <td><a class='btn btn-xs btn-default' href='listarPersonal.php?id=".$row['ID_OC']."' role='button'>gestionar personal</a></td>";
               if($usuario=="Admin"){
                 echo "<td><a class='btn btn-xs btn-default' href='#' role='button'>Observaciones</a></td>";

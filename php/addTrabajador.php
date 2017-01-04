@@ -54,8 +54,8 @@
 		$sql = "INSERT INTO documentacion (ID_ACREDITADO) VALUES ($acreditado)"; 
 		mysql_query($sql,$con);
 		//RETORNAMOS A LA PAGINA DE LOS CONTRATOS
-		$_SESSION['mensajeAlerta'] = "Personal ingresado correctamente.";
-		header("location: http://www.chilecop.cl/acreditacion/listarPersonal.php?id=$idcontrato");
+		$_SESSION['mensajeAlerta'] = "Personal ingresado correctamente. Ahora, debe ingresar los documentos de " . $nombre . " " . $apellidos . ". Puede ingresarlos inmediatamente, o bien paulatinamente volviendo a esta ventana, sin embargo, al ingresar un documento, no podrá modificarlo posteriormete.";
+		header("location: http://www.chilecop.cl/acreditacion/documentacionPersonal.php?id=$acreditado");
 		mysql_close($con);
 	}else{
 		header("location: http://www.chilecop.cl/acreditacion/listarPersonal.php?id=$idcontrato");

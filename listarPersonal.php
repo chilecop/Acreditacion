@@ -30,7 +30,6 @@ if($_SESSION['nombreUsuario']){
 		if(isset($_SESSION['mensajeAlerta'])){
 			echo "<script>alert('". $_SESSION['mensajeAlerta'] ."')</script>";
 			unset($_SESSION['mensajeAlerta']);
-
 		}
 		?>
 	</head>
