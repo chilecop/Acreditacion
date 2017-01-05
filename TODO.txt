@@ -11,6 +11,7 @@ En el listarContratistas, debe haber un buscador para las empresas y paginación
 
 #43 Jornadas de Trabajo
 Ingresar las jornadas a la base de datos y mostrarlas en listado al crear trabajador.
+TAMBIÉN SE DEBE AGREGAR EL SELECT EN EL EDITAR TRABAJADOR
 
 #44 Observación por persona
 Añadir la observación por persona al final de la documentación.
@@ -24,6 +25,9 @@ Dar funcionalidad a la navegación del sistema.
 En el ingreso de documentos, debe haber un botón guardar progreso y otro que diga enviar a revisión que envíe el correo y bloquee la documentación.
 
 #46 Terminar el mensaje masivo.
+
+#47 Notificaciones
+Muestra de alertas modo notificación, el usuario al hacer clic en la notificación lo lleva a la documentación correspondiente y le muestra todas las observaciones. Ahí mismo debe marcar como leída la observación para que desaparezca.
 
 
 

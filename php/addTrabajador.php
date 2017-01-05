@@ -22,6 +22,7 @@
 	$fechainicio = $_POST['fechainicio'];
 	$fechatermino = $_POST['fechatermino'];
 	$iniciopase = $_POST['iniciopase'];
+	$jornada = $_POST['jornada'];
 	$con = conectarse();
 	mysql_set_charset("utf8",$con);
 
@@ -33,7 +34,7 @@
 	$resultado = mysql_query($sql,$con);
 	$fila = mysql_fetch_array($resultado);
 
-	$sql = "INSERT INTO personal_acreditado (id_estado, id_orden_contrato, rut, nombres, apellidos, f_nacimiento, id_sexo, nacionalidad, id_visa, procedencia, cargo, direccion, fono_emergencia, id_tipo_contrato, id_tipo_pase, id_tipo_turno, region_id, fechainicio, fechatermino, terminopase, id_sector, fVencVisa, f_registro) VALUES ('3', '$idcontrato', '$rut', '$nombre', '$apellidos', '$fnac', '$sexo', '$nacionalidad', '$id_visa', '$procedencia','$cargo', '$direccion', '$fono', '$id_tipo_contrato','$id_tipo_pase','$id_tipo_turno','$region_id', '$fechainicio', '$fechatermino','". $fila['F_TERMINO'] . "','$id_sector', '$fVencVisa', now())";
+	$sql = "INSERT INTO personal_acreditado (id_estado, id_orden_contrato, rut, nombres, apellidos, f_nacimiento, id_sexo, nacionalidad, id_visa, procedencia, cargo, direccion, fono_emergencia, id_tipo_contrato, id_tipo_pase, id_tipo_turno, region_id, fechainicio, fechatermino, terminopase, id_sector, fVencVisa, f_registro, tipo_jornada) VALUES ('3', '$idcontrato', '$rut', '$nombre', '$apellidos', '$fnac', '$sexo', '$nacionalidad', '$id_visa', '$procedencia','$cargo', '$direccion', '$fono', '$id_tipo_contrato','$id_tipo_pase','$id_tipo_turno','$region_id', '$fechainicio', '$fechatermino','". $fila['F_TERMINO'] . "','$id_sector', '$fVencVisa', now(), '$jornada')";
 	$resultado = mysql_query($sql,$con);
 
 	if($resultado){

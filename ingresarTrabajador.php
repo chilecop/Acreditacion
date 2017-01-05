@@ -179,13 +179,19 @@ if($_SESSION['nombreUsuario']){
                         <label>Sector Asignado</label>
                         <?php getSelect(sectores,id_sector,descripcion); ?>
                       </div>  
+
                       <?php 
                       if($_SESSION['nombreUsuario']=="Admin"){
                       ?>
                         <div class="form-group">
                           <label>Tipo de Turno</label>
                           <?php getSelect(tipo_turno,id_tipo_turno,descripcion); ?>
-                        </div>      
+                        </div>  
+
+                        <div class="form-group">
+                          <label>Jornada de Trabajo</label>
+                          <?php getSelect(jornada,ID_REGISTRO,TIPO_JORNADA); ?>
+                        </div>
                       <?php
                         }
                       ?>
