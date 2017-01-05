@@ -9,18 +9,6 @@ Todas las empresas deben tener su propia clave de acceso.
 #38 Buscador vista admin
 En el listarContratistas, debe haber un buscador para las empresas y paginación.
 
-#39 Documentacion de Contratos
-La documentación para los contratos debe ser añadida al sistema.
-
-***DONE***#40 Documentación Empresa
-La documentación de empresa debe tener el mismo sistema de la documentación de trabajador, ya que presenta algunos problemas.
-
-#41 Contratos con mismo número
-No se puede ingresar dos contratos con el mismo número de contrato.
-
-#42 Cambio de clave usuario nuevo
-Generar cambio de clave al iniciar por primera vez con un usuario.
-
 #43 Jornadas de Trabajo
 Ingresar las jornadas a la base de datos y mostrarlas en listado al crear trabajador.
 

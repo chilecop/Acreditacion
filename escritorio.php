@@ -2,7 +2,7 @@
 session_start();
 //error_reporting(E_ALL);
 //ini_set('display_errors', '1');
-
+unset($_SESSION['primerInicio']);
 if($_SESSION['nombreUsuario']){
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ if($_SESSION['nombreUsuario']){
     <![endif]-->
     <script src="js/jquery-1.10.1.min.js"></script>
 
-    <script type="text/javascript" src="vendor/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <!--<script type="text/javascript" src="vendor/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
     <link rel="stylesheet" href="vendor/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <script type="text/javascript" src="vendor/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
     <link rel="stylesheet" href="vendor/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
@@ -40,9 +40,8 @@ if($_SESSION['nombreUsuario']){
     <script type="text/javascript" src="vendor/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
     <link rel="stylesheet" href="vendor/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
     <script type="text/javascript" src="vendor/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-
     <script type="text/javascript" src="vendor/chart/Chart.bundle.min.js"></script>
-    <script type="text/javascript" src="js/graficos.js"></script>
+    <script type="text/javascript" src="js/graficos.js"></script> 
 
 
     <script type="text/javascript">
@@ -62,6 +61,7 @@ if($_SESSION['nombreUsuario']){
          });
     </script>
     <script src="vendor/chart.js/src/chart.js"></script>
+    -->
   </head>
   <body>
     <div class="container-fluid display-table">
@@ -154,6 +154,35 @@ if($_SESSION['nombreUsuario']){
               </div>             
             </div>
             -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="admin-content-con clearfix">
+                    <header>
+                      <h5>Instructivo Inicial Plataforma Acreditación</h5>
+                    </header>
+
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Nombre Documento</th>
+                          <th>Fecha Modificación</th>
+                          <th>Botón Descarga</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Pasos ingreso personal</td>
+                          <td>05-01-2017</td>
+                          <td><a class="btn btn-warning" target="_blank" href="http://www.chilecop.cl/acreditacion/documentos/instructivoInterfaz.pdf">Ver</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+
             <div class="row">
               <div class="col-md-12">
                 <div class="admin-content-con clearfix">

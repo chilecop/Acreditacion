@@ -1,0 +1,14 @@
+/**
+* Sprint Backlog Semana 03/01/2017
+*/
+#39 Documentacion de Contratos
+La documentación para los contratos debe ser añadida al sistema.
+
+#40 Documentación Empresa
+La documentación de empresa debe tener el mismo sistema de la documentación de trabajador, ya que presenta algunos problemas.
+
+#41 Contratos con mismo número
+No se puede ingresar dos contratos con el mismo número de contrato.
+
+#42 Cambio de clave usuario nuevo
+Generar cambio de clave al iniciar por primera vez con un usuario.

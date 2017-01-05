@@ -25,13 +25,7 @@ if($_SESSION['nombreUsuario']){
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		<?php 
-		if(isset($_SESSION['mensajeAlerta'])){
-			echo "<script>alert('". $_SESSION['mensajeAlerta'] ."')</script>";
-			unset($_SESSION['mensajeAlerta']);
-		}
-		?>
+		<![endif]-->		
 	</head>
 	<body>
 		<div class="container-fluid display-table">
@@ -111,6 +105,12 @@ if($_SESSION['nombreUsuario']){
 		<!-- Bootstrap JavaScript -->
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	</body>
+	<?php 
+		if(isset($_SESSION['mensajeAlerta'])){
+			echo "<script>alert('". $_SESSION['mensajeAlerta'] ."')</script>";
+			unset($_SESSION['mensajeAlerta']);
+		}
+	?>
 </html>
 <?php
 }else{

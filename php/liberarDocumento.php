@@ -15,6 +15,11 @@ if($tipo=="Empresa"){
 	$sql = "UPDATE documentacion_contratista SET URL" . $ndoc . " = '' WHERE ID_CONTRATISTA='$id'";
 }
 
+if($tipo=="Contrato"){
+	$id = $_SESSION['contratoActual'];
+	$sql = "UPDATE documentacion_contrato SET URL_" . $ndoc . " = '' WHERE ID_OC='$id'";
+}
+
 $resultado = mysql_query($sql,$con);
 
 echo "ok";

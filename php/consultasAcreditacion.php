@@ -292,7 +292,7 @@
               <td>".$row['MAIL'] . "</td>
               <td><a class='btn btn-xs btn-success' href='verContrato.php?id=". $row['ID_OC'] ."' role='button'>Ver</a></td>
               <td><a class='btn btn-xs btn-default' href='documentacionContrato.php?id=".$row['ID_OC']."' role='button'>Ver Documentos</a></td>
-              <td><a class='btn btn-xs btn-default' href='listarPersonal.php?id=".$row['ID_OC']."' role='button'>gestionar personal</a></td>";
+              <td><a class='btn btn-xs btn-default' href='listarPersonal.php?id=".$row['ID_OC']."' role='button'>Gestionar Personal</a></td>";
               if($usuario=="Admin"){
                 echo "<td><a class='btn btn-xs btn-default' href='#' role='button'>Observaciones</a></td>";
                 echo "<td><a class='btn btn-xs btn-warning' href='editarOrdenContrato.php?id=".$row['ID_OC']."' role='button'>Editar</a></td>";
@@ -506,6 +506,19 @@
     "%$" . $fila['URL10'] . "%$" . $fila['VAL10'] . "%$" . $fila['MOD10'];
   }
 
+  function getVerDocContrato($id){
+    $con = conectarse();
+    mysql_set_charset("utf8",$con);
+    $query = "SELECT * FROM documentacion_contrato WHERE ID_OC='$id'";
+    $resultado = mysql_query($query, $con);
+    $fila = mysql_fetch_array($resultado);
+    mysql_close($con);
+    return $fila['URL_1'] . "%$" . $fila['VAL_1'] . "%$" . $fila['OBS_1'] . "%$" . $fila['MOD_1'] .
+    "%$" . $fila['URL_2'] . "%$" . $fila['VAL_2'] . "%$" . $fila['OBS_2'] . "%$" . $fila['MOD_2'] .
+    "%$" . $fila['URL_3'] . "%$" . $fila['VAL_3'] . "%$" . $fila['OBS_3'] . "%$" . $fila['MOD_3'] .
+    "%$" . $fila['URL_4'] . "%$" . $fila['VAL_4'] . "%$" . $fila['OBS_4'] . "%$" . $fila['MOD_4'];
+  }
+
   function getVehiculos(){
     $con = conectarse2();
     mysql_set_charset("utf8",$con);
@@ -589,6 +602,15 @@
     $fila = mysql_fetch_array($resultado);
     return $fila['RUT'];
   }
+
+  function getNumeroContrato($id){
+    $con = conectarse();
+    $sql = "SELECT N_CONTRATO FROM orden_contrato WHERE ID_OC='$id'";
+    mysql_set_charset("utf8",$con);
+    $resultado = mysql_query($sql,$con);
+    $fila = mysql_fetch_array($resultado);
+    return $fila['N_CONTRATO'];
+  }
   
   function getPasesDiarios(){
     $con = conectarse();
@@ -657,7 +679,10 @@
         break;
       case 'Empresa':
         $link = "http://www.chilecop.cl/acreditacion/archivoseecc/" . $idActual . "/" . $url;
-        break;    
+        break;  
+      case 'Contrato':
+        $link = "http://www.chilecop.cl/acreditacion/archivoscontrato/" . $idActual . "/" . $url;
+        break;  
       default:
         # code...
         break;

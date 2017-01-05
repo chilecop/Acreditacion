@@ -237,6 +237,12 @@ if($_SESSION['nombreUsuario']){
       })
     </script>
   </body>
+  <?php 
+    if(isset($_SESSION['mensajeAlerta'])){
+      echo "<script>alert('". $_SESSION['mensajeAlerta'] ."')</script>";
+      unset($_SESSION['mensajeAlerta']);
+    }
+  ?>
 </html>
 <?php
 }else{
