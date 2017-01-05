@@ -26,10 +26,10 @@
 <file name="addOrdenContrato.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331062013265" remote="131242345800000000" Dst="2" />
 <file name="addTrabajador.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331079203989" remote="131255677800000000" Dst="2" />
 <file name="buscador.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331081185015" remote="131257731000000000" Dst="2" />
-<file name="conexion.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331092518592" remote="131236505400000000" Dst="2" />
+<file name="conexion.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131281100080291924" remote="131274987600000000" Dst="0" />
 <file name="cambiarEstado.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331098397845" remote="131242345800000000" Dst="2" />
 <file name="consultas.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331103968815" remote="131242345800000000" Dst="2" />
-<file name="consultasAcreditacion.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331106004284" remote="131269659000000000" Dst="2" />
+<file name="consultasAcreditacion.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131281100405860545" remote="131281100400000000" Dst="0" />
 <file name="desconectar.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331187787699" remote="131250327600000000" Dst="2" />
 <file name="editContrato.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331239886477" remote="131242345800000000" Dst="2" />
 <file name="editMandante.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331269483016" remote="131242345800000000" Dst="2" />
@@ -45,4 +45,5 @@
 <file name="mensajeMasivo.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331624073886" remote="131254374600000000" Dst="2" />
 <file name="prueba.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131272331624073886" remote="131242346400000000" Dst="2" />
 <file name="addUsuario.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131275256218063421" remote="131275255800000000" Dst="0" />
+<file name="Zebra_Pagination.php" server="ftp.sd-1285173-h00001.ferozo.net/public_html/" local="131281100107813498" remote="131272572000000000" Dst="0" />
 </dwsync>
