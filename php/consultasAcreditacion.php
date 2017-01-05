@@ -410,7 +410,7 @@
     $resultado = mysql_query($query, $con);
     $fila = mysql_fetch_array($resultado);
     mysql_close($con);
-    return $fila['ID_SEXO'] . "%$" . $fila['ID_TIPO_PASE'] . "%$" . $fila['ID_ORDEN_CONTRATO'] . "%$" . $fila['ID_TIPO_TURNO'] . "%$" . $fila['ID_GRUPO_SANGUINEO'] . "%$" . $fila['RUT'] . "%$" . $fila['NOMBRES'] . "%$" . $fila['APELLIDOS'] . "%$" . $fila['CARGO'] . "%$" . $fila['F_NACIMIENTO'] . "%$" . $fila['NACIONALIDAD'] . "%$" . $fila['VISA'] . "%$" . $fila['F_ACREDITACION'] . "%$" . $fila['PROCEDENCIA'] . "%$" . $fila['ALERGIAS'] . "%$" . $fila['ID_COMUNA'] . "%$" . $fila['FONO_EMERGENCIA'] . "%$" . $fila['DIRECCION'] . "%$" . $fila['F_REGISTRO'] . "%$" . $fila['FECHAINICIO'] . "%$" . $fila['FECHATERMINO'] . "%$" . $fila['TERMINOPASE'] . "%$" . $fila['ID_SECTOR'];
+    return $fila['ID_SEXO'] . "%$" . $fila['ID_TIPO_PASE'] . "%$" . $fila['ID_ORDEN_CONTRATO'] . "%$" . $fila['ID_TIPO_TURNO'] . "%$" . $fila['ID_GRUPO_SANGUINEO'] . "%$" . $fila['RUT'] . "%$" . $fila['NOMBRES'] . "%$" . $fila['APELLIDOS'] . "%$" . $fila['CARGO'] . "%$" . $fila['F_NACIMIENTO'] . "%$" . $fila['NACIONALIDAD'] . "%$" . $fila['VISA'] . "%$" . $fila['F_ACREDITACION'] . "%$" . $fila['PROCEDENCIA'] . "%$" . $fila['ALERGIAS'] . "%$" . $fila['ID_COMUNA'] . "%$" . $fila['FONO_EMERGENCIA'] . "%$" . $fila['DIRECCION'] . "%$" . $fila['F_REGISTRO'] . "%$" . $fila['FECHAINICIO'] . "%$" . $fila['FECHATERMINO'] . "%$" . $fila['TERMINOPASE'] . "%$" . $fila['ID_SECTOR'] ."%$" . $fila['FVENCVISA'];
   }
 
 
