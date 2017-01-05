@@ -16,7 +16,7 @@ if($_SESSION['nombreUsuario']){
     }
     tituloPanel();
 	  $contenido = getEditPersona($id);
-    list($sexo,$tipopase,$contrato,$turno,$sangre,$rut,$nombres,$apellidos,$cargo,$f_nacimiento,$nacionalidad,$visa,$facreditacion,$procedencia,$alergias,$comuna,$fono_emergencia,$direccion,$fregistro) = explode("%$", $contenido);
+    list($sexo,$tipopase,$contrato,$turno,$sangre,$rut,$nombres,$apellidos,$cargo,$f_nacimiento,$nacionalidad,$visa,$facreditacion,$procedencia,$alergias,$comuna,$fono_emergencia,$direccion,$fregistro,$id_sector,$fechainicio,$fechatermino,$terminopase,$fvencvisa) = explode("%$", $contenido);
 	?>
 
     <!-- Bootstrap -->
@@ -74,18 +74,18 @@ if($_SESSION['nombreUsuario']){
               <p>Modifique los datos necesarios para actualizar al trabajador en el sistema. Todos los datos son requeridos.</p>
                 <form action="php/editarTrabajador.php" method="post">
                   <input type="hidden" name="id" value="<?php echo $id; ?>">
-                  <div class="row">
+                 <div class="row">
                     <div class="col-md-4 col-lg-4">
                       <div class="form-group">
-                        <label class="">Rut</label>
-                        <input type="text" class="form-control" id="title" placeholder="Rut" name="rut" value="<?php echo $rut; ?>" required disabled>
+                        <label class="sr-only">Rut</label>
+                        <?php echo inputrut("rut",$rut);?>
                       </div>
                       <div class="form-group">
-                        <label class="">Nombre</label>
-                        <input type="text" class="form-control" id="title" placeholder="Nombre" name="nombre" value="<?php echo $nombres; ?>" required>
+                        <label class="sr-only">Nombre</label>
+                        <input type="text" class="form-control" id="title" placeholder="Nombre" name="nombre" value="<?php echo $nombres; ?>"required>
                       </div>
                       <div class="form-group">
-                        <label class="">Apellidos</label>
+                        <label class="sr-only">Apellidos</label>
                         <input type="text" class="form-control" id="title" placeholder="Apellidos" name="apellidos" value="<?php echo $apellidos; ?>" required>
                       </div>
                       <div class="form-group">
@@ -94,56 +94,88 @@ if($_SESSION['nombreUsuario']){
                       </div>
                       <div class="form-group">
                           <label class="">Sexo</label><br>
-                          <input type="radio" name="sexo" value="1" <?php if($sexo==1)echo 'checked' ?>> Masculino<br>
-                          <input type="radio" name="sexo" value="2" <?php if($sexo==2)echo 'checked' ?>> Femenino<br>
+                          <input type="radio" name="sexo" value="1" required> Masculino<br>
+                          <input type="radio" name="sexo" value="2" required> Femenino<br>
                       </div>
                       <div class="form-group">
-                        <label class="">Nacionalidad</label>
-                        <input type="text" class="form-control" id="title" placeholder="Nacionalidad" name="nacionalidad" required value="<?php echo $nacionalidad; ?>">
-                      </div>                           
+                        <label class="sr-only">Nacionalidad</label>
+                        <input type="text" class="form-control" id="title" placeholder="Nacionalidad" name="nacionalidad" value="<?php echo $nacionalidad; ?>" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Tipo de Visa</label>
+                        <?php getSelect(visa,id_visa,descripcion); ?>
+                      </div>  
+                      <div class="form-group">
+                        <label class="">Fecha Vencimiento de Visa (si aplica)</label>
+                        <input type="date" class="form-control" id="title" name="fVencVisa" value="<?php echo $fvencvisa; ?>">
+                      </div>                                           
                     </div>
                     <div class="col-md-4 col-lg-4">   
                       <div class="form-group">
-                        <label class="">Cargo</label>
+                        <label class="sr-only">Cargo</label>
                         <input type="text" class="form-control" id="title" placeholder="Cargo" name="cargo" value="<?php echo $cargo; ?>" required>
                       </div>                   
                       <div class="form-group">
-                        <label class="">Dirección</label>
+                        <label class="sr-only">Dirección</label>
                         <input type="text" class="form-control" id="title" placeholder="Dirección" name="direccion" value="<?php echo $direccion; ?>" required>
                       </div>
                       <div class="form-group">
-                        <label class="">Fono</label>
-                        <input type="text" class="form-control" id="title" placeholder="Fono" name="fono" value="<?php echo $fono_emergencia; ?>" required>
-                      </div>   
-                      <div class="form-group">
-                        <label class="">Visa</label>
-                        <input type="text" class="form-control" id="title" placeholder="Visa" name="visa" value="<?php echo $visa; ?>">
-                      </div>  
-                      <div class="form-group">
-                        <label class="">Procedencia</label>
-                        <input type="text" class="form-control" id="title" placeholder="Procedencia" name="procedencia" value="<?php echo $procedencia; ?>">
-                      </div>  
-                    </div>
-                    <div class="col-md-4 col-lg-4">
-                      <div class="form-group">
-                        <label class="">Alergias</label>
-                        <textarea rows="4" cols="50" placeholder="Alergias" name="alergias" class="form-control"><?php echo $alergias; ?></textarea>
+                        <label>Region</label>
+                        <?php getSelect(regiones,region_id,region_nombre); ?>
                       </div>
                       <div class="form-group">
-                        <label>Grupo Sanguíneo</label>
-                        <?php getSelect(grupo_sanguineo,id_grupo_sanguineo,descripcion,$sangre); ?>
-                      </div>       
+                        <label class="sr-only">Ciudad</label>
+                        <input type="text" class="form-control" id="title" placeholder="Ciudad" name="procedencia" value="<?php echo $procedencia; ?>">
+                      </div> 
                       <div class="form-group">
-                        <label>Tipo de Pase</label>
-                        <?php getSelect(tipo_pase,id_tipo_pase,descripcion,$tipopase); ?>
+                        <label class="sr-only">Fono</label>
+                        <input type="text" class="form-control" id="title" placeholder="Fono" name="fono" value="<?php echo $fono_emergencia; ?>" required>
+                      </div> 
+                      <div class="form-group">
+                        <label>Tipo de Contrato</label>
+                        <?php getSelect(tipo_contrato,id_tipo_contrato,descripcion); ?>
                       </div>    
                       <div class="form-group">
-                        <label>Tipo de Turno</label>
-                        <?php getSelect(tipo_turno,id_tipo_turno,descripcion,$turno); ?>
-                      </div>      
+                        <label class="">Inicio Contrato</label>
+                        <input class="pull-right" type="date" name="fechainicio" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio Contrato" required/>
+                      </div>
+                      <div id="terminoContrato" class="form-group" style="display:none;">
+                        <label class="">Término Contrato</label>
+                        <input class="pull-right" type="date" name="fechatermino" value="<?php echo $ftermino; ?>"/>
+                      </div>
+                      <!--
+                      <div class="form-group">
+                        <label class="">Inicio de Pase</label>
+                        <input class="pull-right" type="date" name="iniciopase" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio Pase" required/>
+                      </div>
+                      <div id="terminoPase" style="display:none;" class="form-group">
+                        <label class="">Término de Pase</label>
+                        <input class="pull-right" type="date" name="terminopase"/>
+                      </div> 
+                      -->
+                    </div>
+                    <div class="col-md-4 col-lg-4">                         
+                      <div class="form-group">
+                        <label>Tipo de Pase</label>
+                        <?php getSelect(tipo_pase,id_tipo_pase,descripcion); ?>
+                      </div>  
+                      <div class="form-group">
+                        <label>Sector Asignado</label>
+                        <?php getSelect(sectores,id_sector,descripcion); ?>
+                      </div>  
+                      <?php 
+                      if($_SESSION['nombreUsuario']=="Admin"){
+                      ?>
+                        <div class="form-group">
+                          <label>Tipo de Turno</label>
+                          <?php getSelect(tipo_turno,id_tipo_turno,descripcion); ?>
+                        </div>      
+                      <?php
+                        }
+                      ?>
                                  
                       <div class="clearfix">
-                        <button type="submit" class="btn btn-warning pull-right"> Editar Trabajador</button>
+                        <button type="submit" class="btn btn-primary pull-right"> Ingresar Trabajador</button>
                       </div>
                     </div>
                   </div>
