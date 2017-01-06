@@ -16,7 +16,34 @@ if($_SESSION['nombreUsuario']){
     }
     tituloPanel();
 	  $contenido = getEditPersona($id);
-    list($sexo,$tipopase,$contrato,$turno,$sangre,$rut,$nombres,$apellidos,$cargo,$f_nacimiento,$nacionalidad,$visa,$facreditacion,$procedencia,$alergias,$comuna,$fono_emergencia,$direccion,$fregistro,$id_sector,$fechainicio,$fechatermino,$terminopase,$fvencvisa) = explode("%$", $contenido);
+    list(
+      $sexo,
+      $tipopase,
+      $contrato,
+      $turno,
+      $sangre,
+      $rut,
+      $nombres,
+      $apellidos,
+      $cargo,
+      $f_nacimiento,
+      $nacionalidad,
+      $visa,
+      $facreditacion,
+      $procedencia,
+      $alergias,
+      $comuna,
+      $fono_emergencia,
+      $direccion,
+      $fregistro,
+      $sector,
+      $fechainicio,
+      $fechatermino,
+      $iniciopase,
+      $terminopase,
+      $fvencvisa,
+      $regionid,
+      $idtipocontrato) = explode("%$", $contenido);
 	?>
 
     <!-- Bootstrap -->
@@ -31,6 +58,27 @@ if($_SESSION['nombreUsuario']){
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("select[name=id_tipo_contrato]").change(function(){
+          if($('select[name=id_tipo_contrato]').val()==1){
+            document.getElementById("terminoContrato").style.display='none';
+            document.getElementById("terminoPase").style.display='none';
+
+          } else {
+            document.getElementById("terminoContrato").style.display='block';
+            document.getElementById("terminoPase").style.display='block';
+          }
+        });
+      });
+
+      $(document).ready(function(){
+        if($("#id_tipo_contrato option:selected").val()!=1){
+          document.getElementById("terminoContrato").style.display='block';
+          document.getElementById("terminoPase").style.display='block';
+        }
+      });
+    </script>
   </head>
   <body>
     <div class="container-fluid display-table">
@@ -94,8 +142,8 @@ if($_SESSION['nombreUsuario']){
                       </div>
                       <div class="form-group">
                           <label class="">Sexo</label><br>
-                          <input type="radio" name="sexo" value="1" required> Masculino<br>
-                          <input type="radio" name="sexo" value="2" required> Femenino<br>
+                          <input <?php if($sexo==1) echo "checked"; ?> type="radio" name="sexo" value="1" required> Masculino<br>
+                          <input <?php if($sexo==2) echo "checked"; ?> type="radio" name="sexo" value="2" required> Femenino<br>
                       </div>
                       <div class="form-group">
                         <label class="sr-only">Nacionalidad</label>
@@ -103,11 +151,11 @@ if($_SESSION['nombreUsuario']){
                       </div>
                       <div class="form-group">
                         <label>Tipo de Visa</label>
-                        <?php getSelect(visa,id_visa,descripcion); ?>
+                        <?php getSelect('visa','id_visa','descripcion',$visa); ?>
                       </div>  
                       <div class="form-group">
                         <label class="">Fecha Vencimiento de Visa (si aplica)</label>
-                        <input type="date" class="form-control" id="title" name="fVencVisa" value="<?php echo $fvencvisa; ?>">
+                        <input type="date" class="form-control" id="title" name="fvencvisa" value="<?php echo $fvencvisa; ?>">
                       </div>                                           
                     </div>
                     <div class="col-md-4 col-lg-4">   
@@ -121,7 +169,7 @@ if($_SESSION['nombreUsuario']){
                       </div>
                       <div class="form-group">
                         <label>Region</label>
-                        <?php getSelect(regiones,region_id,region_nombre); ?>
+                        <?php getSelect('regiones','region_id','region_nombre',$regionid); ?>
                       </div>
                       <div class="form-group">
                         <label class="sr-only">Ciudad</label>
@@ -133,15 +181,15 @@ if($_SESSION['nombreUsuario']){
                       </div> 
                       <div class="form-group">
                         <label>Tipo de Contrato</label>
-                        <?php getSelect(tipo_contrato,id_tipo_contrato,descripcion); ?>
+                        <?php getSelect('tipo_contrato','id_tipo_contrato','descripcion',$idtipocontrato); ?>
                       </div>    
                       <div class="form-group">
                         <label class="">Inicio Contrato</label>
-                        <input class="pull-right" type="date" name="fechainicio" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio Contrato" required/>
+                        <input class="pull-right" type="date" name="fechainicio" value="<?php echo $fechainicio ?>" placeholder="Fecha Inicio Contrato" required/>
                       </div>
                       <div id="terminoContrato" class="form-group" style="display:none;">
                         <label class="">Término Contrato</label>
-                        <input class="pull-right" type="date" name="fechatermino" value="<?php echo $ftermino; ?>"/>
+                        <input class="pull-right" type="date" name="fechatermino" value="<?php echo $fechatermino; ?>"/>
                       </div>
                       <!--
                       <div class="form-group">
@@ -157,25 +205,26 @@ if($_SESSION['nombreUsuario']){
                     <div class="col-md-4 col-lg-4">                         
                       <div class="form-group">
                         <label>Tipo de Pase</label>
-                        <?php getSelect(tipo_pase,id_tipo_pase,descripcion); ?>
+                        <?php getSelect('tipo_pase','id_tipo_pase','descripcion',$tipopase); ?>
                       </div>  
                       <div class="form-group">
                         <label>Sector Asignado</label>
-                        <?php getSelect(sectores,id_sector,descripcion); ?>
+                        <?php getSelect('sectores','id_sector','descripcion',$sector); ?>
                       </div>  
+
                       <?php 
                       if($_SESSION['nombreUsuario']=="Admin"){
                       ?>
                         <div class="form-group">
                           <label>Tipo de Turno</label>
-                          <?php getSelect(tipo_turno,id_tipo_turno,descripcion); ?>
+                          <?php getSelect('tipo_turno','id_tipo_turno','descripcion',$turno); ?>
                         </div>      
                       <?php
                         }
                       ?>
                                  
                       <div class="clearfix">
-                        <button type="submit" class="btn btn-primary pull-right"> Ingresar Trabajador</button>
+                        <button type="submit" class="btn btn-warning pull-right"> Editar Trabajador</button>
                       </div>
                     </div>
                   </div>
@@ -198,10 +247,38 @@ if($_SESSION['nombreUsuario']){
     
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script> 
+      function limpiarut_(objeto){
+       objeto.value=objeto.value.replace("-.","K");
+       objeto.value=objeto.value.replace("k","K");
+       vDigitosAceptados = '0123456789K*';
+       if (objeto.value.substr(0,1) == "0")
+        { objeto.value = objeto.value.substr(1,objeto.value.length);
+        }
+        var texto = objeto.value;
+        var salida='';
+        for (var x=0; x < texto.length; x++){
+         pos = vDigitosAceptados.indexOf(texto.substr(x,1));
+         if (pos != -1) salida += texto.substr(x,1);
+       }
+       if (objeto.value != salida) objeto.value = salida;
+
+       if (objeto.value.slice(0, 1) == "9" || objeto.value.slice(0, 1) == "8" || objeto.value.slice(0, 1) == "7" || objeto.value.slice(0, 1) == "6" || objeto.value.slice(0, 1) == "5" || objeto.value.slice(0, 1) == "4" || objeto.value.slice(0, 1) == "3")
+       {
+         objeto.value = objeto.value.substr(0, 8);
+       }
+
+     }
+   </script>
   </body>
 </html>
 <?php
 }else{
   header("location: http://www.chilecop.cl/caccesodemo/index.html");
 }
+  function inputrut($name,$value='',$size=20,$leng=9,$otro=""){
+    global $con;            
+    $input="<input name='".$name."' id='".$name."'  type=\"text\" placeholder=\"Rut\" value='".$value."' size=".$size." class=\"form-control\"  maxlength=".$leng." onkeydown=\"javascript:limpiarut_(this)\" onkeyup=\"javascript:limpiarut_(this)\" ".$otro." required disabled>";          
+    return $input;  
+  }
 ?>
