@@ -9,10 +9,6 @@ Todas las empresas deben tener su propia clave de acceso.
 #38 Buscador vista admin
 En el listarContratistas, debe haber un buscador para las empresas y paginación.
 
-#43 Jornadas de Trabajo
-Ingresar las jornadas a la base de datos y mostrarlas en listado al crear trabajador.
-TAMBIÉN SE DEBE AGREGAR EL SELECT EN EL EDITAR TRABAJADOR
-
 ///////////OTROS//////////
 
 #44 Navegación del sistema
@@ -29,6 +25,11 @@ Muestra de alertas modo notificación, el usuario al hacer clic en la notificaci
 #48 Acreditacion inicio y termino de pase 
 Definir bien el proceso de acreditación para poder optimizar el botón de acreditacion con el inicio y termino de pase.
 
+#49 Información en Ver
+Completar la información en el ver del personal
+
+Jornadas en Editar
+#50 Agregar al editar las jornadas de trabajo jornadas de trabajo
 
 ###CONSULTAR RUT PERDIDOS  DEBIDO AL EDITAR
 

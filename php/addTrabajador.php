@@ -22,7 +22,7 @@
 	$fechainicio = $_POST['fechainicio'];
 	$fechatermino = $_POST['fechatermino'];
 	$iniciopase = $_POST['iniciopase'];
-	$jornada = $_POST['jornada'];
+	$jornada = $_POST['id_registro'];
 	$con = conectarse();
 	mysql_set_charset("utf8",$con);
 

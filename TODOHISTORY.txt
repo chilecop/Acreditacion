@@ -13,5 +13,12 @@ No se puede ingresar dos contratos con el mismo número de contrato.
 #42 Cambio de clave usuario nuevo
 Generar cambio de clave al iniciar por primera vez con un usuario.
 
+#43 Jornadas de Trabajo
+Ingresar las jornadas a la base de datos y mostrarlas en listado al crear trabajador.
+
 #44 Observación por persona
 Añadir la observación por persona al final de la documentación.
+
+/**
+* Sprint 09/01/2016
+*/
