@@ -1,5 +1,5 @@
 .comments-row{
-	margin-bottom: 5em;
+	margin-bottom: 1em;
 }
 
 .documento{
@@ -11,4 +11,9 @@
 .documento b{
 	text-transform: uppercase;
 	font-size: 13px;
+}
+
+textarea{
+	resize: none;
+	width: 100%;
 }

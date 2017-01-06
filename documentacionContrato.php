@@ -110,15 +110,178 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 
 									imprimirDocumento("ADICIONAL",$date4,$mod4,$obs4,$_SESSION['numeroContrato'],$url4,$val4,"4","Contrato");
 								?>
+								<?php 
+										if($nombreUsuario=="Admin"){
+									?>
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">						
+										<div class="documento col-sm-12 col-md-12">
+											<div class="row">
+												<div class="col-xs-8 col-sm-8 col-md-8">
+									              <b>Observación</b><br>
+									              <small></small>
+									            </div>
+											</div>
+											<div class="well well-sm comments-well">
+									            <textarea rows="5" class="observacion" id="observacion" name="observacion" placeholder="Ingrese una observación"></textarea>
+									        </div>
+											<div class="row">
+												<div class="col-xs-12 col-sm-12 col-md-12">
+										            <b>Documentos Relacionados</b><br>
+										            <small></small>
+										        </div>
+											</div>
+											<div class="well well-sm comments-well">
+												Seleccione los documentos relacionados a la observación...
+												<div class="row">
+													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+														<div class="checkbox">
+															<label>
+																<input name="check1" type="checkbox" id="docsCheck" value="1">
+																Contrato de trabajo
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="2">
+																Inducción JoyGlobal
+															</label>
+														</div>												
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="3">
+																Fotografía tamaño carnet
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="4">
+																Consentimiento test alcohol y drogas
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="5">
+																Fotocopia Cédula
+															</label>
+														</div>
+													</div>
+													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="6">
+																Examen pre-ocupacional
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="7">
+																ODI
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="8">
+																Reglamento Interno
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="9">
+																Entrega EPP
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="10">
+																Último Finiquito
+															</label>
+														</div>
+													</div>
+													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="11">
+																Certificado Antecedentes
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="12">
+																Certificado Estudios
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="13">
+																Acreditación Prevencionista
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="14">
+																Certificado de Aprobación
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="15">
+																Anexo 1
+															</label>
+														</div>
+													</div>
+													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="16">
+																Anexo 2
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="17">
+																Anexo 3
+															</label>
+														</div>
+														<div class="checkbox">
+															<label>
+																<input type="checkbox" id="docsCheck" value="18">
+																Otros
+															</label>
+														</div>														
+													</div>
+												</div>
+									        </div>
+									        <div class="row">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+													<button id="agregarObservacion" type="submit" class="btn btn-default pull-right">Añadir Observación</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<?php 
+									}
+									?>
 								</div>
+								<?php 
+								if($nombreUsuario=="Admin"){
+								?>
+									<div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+											<button id="guardarDocs" type="submit" class="btn btn-primary pull-right">Guardar Cambios</button>
+										</div>
+									</div>
+								<?php
+								} else {
+								?>
+									<div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+											<button id="guardarDocs" type="submit" class="btn btn-primary pull-right">Guardar Cambios y enviar trabajador a revisión</button>
+										</div>
+									</div>
+								<?php
+								}
+								?>
 							</div>
-
-							<div class="row">
-								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-									<button id="guardarDocs" type="submit" class="btn btn-primary pull-right">Guardar cambios y enviar contrato a revision</button>
-								</div>
-							</div>
-
 							<div class="row">
 								<footer id="admin-footer" class="clearfix">
 									<div class="pull-left"><?php copyright(); ?></div>
