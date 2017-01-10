@@ -102,8 +102,7 @@ $resultado = mysql_query($sql,$con);
 /**
 * Armado de la cabecera del mensaje
 */
-$header = 'From: ' . "Chilecop Administracion <a.henriquez@chilecop.cl> \r\n";
-$header .= "cc: acreditacion@chilecop.cl \r\n";
+$header = 'From: ' . "Chilecop Administracion <acreditacion@chilecop.cl> \r\n";
 $header .= "cc: informatica@chilecop.cl \r\n";
 while($fila = mysql_fetch_array($resultado)){
   $header .= "cc: " . $fila['MAIL_CONTACTO'] . " \r\n";
