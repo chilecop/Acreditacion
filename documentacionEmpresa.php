@@ -197,68 +197,68 @@ if($_SESSION['nombreUsuario']){
 													<div class="row">
 														<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 															<div class="checkbox">
-																<label>
-																	<input name="check1" type="checkbox" id="docsCheck" value="1">
+																<label for="1">
+																	<input id="1" type="checkbox" class="docsCheck" value="1">
 																	Ficha básica de Identificación
 																</label>
 															</div>
 															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="2">
+																<label for="2">
+																	<input id="2" type="checkbox" class="docsCheck" value="2">
 																	Listado de Trabajadores
 																</label>
 															</div>												
 															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="3">
+																<label for="3">
+																	<input id="3" type="checkbox" class="docsCheck" value="3">
 																	Autorización de Jornada Excepcional
 																</label>
 															</div>
 														</div>
 														<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="4">
+																<label for="4">
+																	<input id="4" type="checkbox" class="docsCheck" value="4">
 																	Contrato Comercial
 																</label>
 															</div>
 															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="5">
+																<label for="5">
+																	<input id="5" type="checkbox" class="docsCheck" value="5">
 																	Antecedentes Comerciales
 																</label>
 															</div>
 															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="6">
+																<label for="6">
+																	<input id="6" type="checkbox" class="docsCheck" value="6">
 																	Certificado Afiliación Mutualidad
 																</label>
 															</div>
 														</div>
 														<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="7">
+																<label for="7">
+																	<input id="7" type="checkbox" class="docsCheck" value="7">
 																	Antecedentes Laborales
 																</label>
 															</div>
 															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="8">
+																<label for="8">
+																	<input id="8" type="checkbox" class="docsCheck" value="8">
 																	Carpeta de Arranque
 																</label>
 															</div>
 															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="9">
+																<label for="9">
+																	<input id="9" type="checkbox" class="docsCheck" value="9">
 																	Carpeta Tributaria
 																</label>
 															</div>
 														</div>
 														<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="10">
+																<label for="10">
+																	<input id="10" type="checkbox" class="docsCheck" value="10">
 																	Certificado de Confidencialidad
 																</label>
 															</div>													

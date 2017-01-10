@@ -31,7 +31,7 @@ switch ($tipo) {
 
 	    //Estructura de la observacion
 	    $mensaje = "
-	    <b>Tipo de Observación:</b> Sección Personal<br>
+	    <b>Tipo de Observación:</b> Documentación Personal<br>
 	    <b>Nombre:</b> " . $fila['NOMBRES'] . " " . $fila['APELLIDOS'] . "<br>
 	    <b>Rut:</b> " . $fila['RUT'] . "<br>
 	    <b>Documentos Asociados:</b> " . $documentosText . "<br>
@@ -42,6 +42,13 @@ switch ($tipo) {
 	case 'Empresa':
 		$id = $_SESSION["idEmpresaActual"];
 		$idEmpresa = $_SESSION["idEmpresaActual"];
+    //Estructura de la observacion
+      $mensaje = "
+      <b>Tipo de Observación:</b> Documentación Empresa<br>
+      <b>Documentos Asociados:</b> " . $documentosText . "<br>
+      <b>Observación:</b> " . $observacion . "<br><br>
+      Para ver y corregir dichos documentos, haga clic <a href='http://www.chilecop.cl/acreditacion/documentacionEmpresa.php?id=". $id ."' target='_blank'>Aquí</a>.<br>
+      ";
 	    break;
 	case 'Contrato':
 		$id = $_SESSION['contratoActual'];
@@ -52,6 +59,13 @@ switch ($tipo) {
 		orden_contrato
 		WHERE
 		ID_OC='$id'";
+    //Estructura de la observacion
+      $mensaje = "
+      <b>Tipo de Observación:</b> Documentación Contrato<br>
+      <b>Documentos Asociados:</b> " . $documentosText . "<br>
+      <b>Observación:</b> " . $observacion . "<br><br>
+      Para ver y corregir dichos documentos, haga clic <a href='http://www.chilecop.cl/acreditacion/documentacionContrato.php?id=". $id ."' target='_blank'>Aquí</a>.<br>
+      ";
 	    break;
 	default:
 		# code...

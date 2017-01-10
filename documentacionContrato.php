@@ -135,33 +135,29 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 												<div class="row">
 													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
-															<label>
-																<input name="check1" type="checkbox" id="docsCheck" value="1">
-																Contrato Comercial
+															<label for="1">
+																<input id="1" type="checkbox" class="docsCheck" value="1">Contrato Comercial
 															</label>
 														</div>
 													</div>
 													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
-															<label>
-																<input type="checkbox" id="docsCheck" value="6">
-																Jornada Excepcional
+															<label for="2">
+																<input id="2" type="checkbox" class="docsCheck" value="2">Jornada Excepcional
 															</label>
 														</div>
 													</div>
 													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
-															<label>
-																<input type="checkbox" id="docsCheck" value="15">
-																Carpeta de Arranque
+															<label for="3">
+																<input id="3" type="checkbox" class="docsCheck" value="3">Carpeta de Arranque
 															</label>
 														</div>
 													</div>
 													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
-															<label>
-																<input type="checkbox" id="docsCheck" value="18">
-																Adicional
+															<label for="4">
+																<input id="4" type="checkbox" class="docsCheck" value="4">Adicional
 															</label>
 														</div>														
 													</div>

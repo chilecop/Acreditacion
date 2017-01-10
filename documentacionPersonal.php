@@ -327,14 +327,14 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 																Fotocopia Cédula
 															</label>
 														</div>
-													</div>
-													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
 															<label for="6">
 																<input id="6" type="checkbox" class="docsCheck" value="6">
 																Examen pre-ocupacional
 															</label>
 														</div>
+													</div>
+													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
 															<label for="7">
 																<input id="7" type="checkbox" class="docsCheck" value="7">
@@ -359,8 +359,6 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 																Último Finiquito
 															</label>
 														</div>
-													</div>
-													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
 															<label for="11">
 																<input id="11" type="checkbox" class="docsCheck" value="11">
@@ -373,6 +371,8 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 																Certificado Estudios
 															</label>
 														</div>
+													</div>
+													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
 															<label for="13">
 																<input id="13" type="checkbox" class="docsCheck" value="13">
@@ -391,8 +391,6 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 																Anexo 1
 															</label>
 														</div>
-													</div>
-													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
 															<label for="16">
 																<input id="16" type="checkbox" class="docsCheck" value="16">
@@ -409,6 +407,38 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 															<label for="18">
 																<input id="18" type="checkbox" class="docsCheck" value="18">
 																Otros
+															</label>
+														</div>
+													</div>
+													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+														<div class="checkbox">
+															<label for="19">
+																<input id="19" type="checkbox" class="docsCheck" value="19">
+																Otros
+															</label>
+														</div>	
+														<div class="checkbox">
+															<label for="20">
+																<input id="20" type="checkbox" class="docsCheck" value="20">
+																Guía de despacho o factura del material
+															</label>
+														</div>	
+														<div class="checkbox">
+															<label for="21">
+																<input id="21" type="checkbox" class="docsCheck" value="21">
+																Documentación legal del Vehículo
+															</label>
+														</div>	
+														<div class="checkbox">
+															<label for="22">
+																<input id="22" type="checkbox" class="docsCheck" value="22">
+																Licencia municipal de conducir vigente
+															</label>
+														</div>	
+														<div class="checkbox">
+															<label for="23">
+																<input id="23" type="checkbox" class="docsCheck" value="23">
+																Visa de trabajo
 															</label>
 														</div>														
 													</div>

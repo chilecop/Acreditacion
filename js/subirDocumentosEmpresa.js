@@ -335,15 +335,18 @@ $(function(){
 			var observacion = document.getElementById("observacion").value;
 		document.getElementById("observacion").value="";
 		var seleccionados = "";
+		var seleccionadosText = "";
 		var i = 0;
 		//SE CAPTURAN TODOS LOS CHECKBOX SELECCIONADOS
-		$('#docsCheck:checked').each(
+		$('.docsCheck:checked').each(
 		    function() {
 		    	if(i==0){
 		    		seleccionados = seleccionados + $(this).val();
+		    		seleccionadosText = seleccionadosText + $("label[for='"+ $(this).val() +"']").text();
 		    		i=1;
 		    	}else{
 		    		seleccionados = seleccionados + "," + $(this).val();
+		    		seleccionadosText = seleccionadosText + "," + $("label[for='"+ $(this).val() +"']").text();
 		    	}
 		    	$(this).attr('checked',false);
 		    }
@@ -352,7 +355,8 @@ $(function(){
 			data: {
 				'observacion':observacion,
 				'tipo':'Empresa',
-				'documentos':seleccionados},
+				'documentos':seleccionados,
+				'documentosText': seleccionadosText},
 			type: "POST",
 			url: "php/addObservacion.php",
 			success: function(data)
