@@ -335,5 +335,5 @@
 				'mensaje'=>'No puede volver a subir un documento. Solicite autorización enviando un correo a acreditacion@chilecop.cl'));
 		}
 	}
-	header('Content-Type: application/json');
+	header('Content-Type: application/json;');
 ?>

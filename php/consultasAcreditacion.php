@@ -397,11 +397,71 @@
   function getVerPersona($id){
     $con = conectarse();
     mysql_set_charset("utf8",$con);
-    $query = "SELECT * FROM personal_acreditado WHERE ID_ACREDITADO='$id'";
+    $query = "
+    SELECT 
+    pa.*, 
+    s.DESCRIPCION AS sexo,
+    tp.DESCRIPCION AS tipopase,
+    oc.N_CONTRATO AS ncontrato,
+    gs.DESCRIPCION AS gsanguineo,
+    tc.DESCRIPCION AS tcontrato,
+    reg.region_nombre AS region,
+    sec.DESCRIPCION AS sector,
+    v.DESCRIPCION AS tipovisa,
+    j.TIPO_JORNADA AS jornada
+    FROM 
+    personal_acreditado pa,
+    sexo s,
+    tipo_pase tp,
+    orden_contrato oc,
+    grupo_sanguineo gs,
+    tipo_contrato tc,
+    regiones reg,
+    sectores sec,
+    visa v,
+    jornada j
+    WHERE 
+    pa.ID_ACREDITADO='$id' AND
+    s.ID_SEXO = pa.ID_SEXO AND
+    pa.ID_TIPO_PASE = tp.ID_TIPO_PASE AND
+    pa.ID_ORDEN_CONTRATO = oc.ID_OC AND
+    pa.ID_GRUPO_SANGUINEO = gs.ID_GRUPO_SANGUINEO AND
+    pa.ID_TIPO_CONTRATO = tc.ID_TIPO_CONTRATO AND
+    pa.REGION_ID = reg.region_id AND
+    pa.ID_SECTOR = sec.ID_SECTOR AND
+    pa.ID_VISA = v.ID_VISA AND
+    pa.TIPO_JORNADA = j.ID_REGISTRO";
     $resultado = mysql_query($query, $con);
     $fila = mysql_fetch_array($resultado);
+
     mysql_close($con);
-    return $fila['ID_ESTADO'] . "%$" . $fila['RUT'] . "%$" . $fila['NOMBRES'] . "%$" . $fila['APELLIDOS'] . "%$" . $fila['CARGO'] . "%$" . $fila['F_NACIMIENTO'] . "%$" . $fila['PROCEDENCIA'] . "%$" . $fila['ALERGIAS'] . "%$" . $fila['FONO_EMERGENCIA'] . "%$" . $fila['DIRECCION'];
+    return 
+    $fila['ID_ESTADO'] . "%$" . 
+    $fila['RUT'] . "%$" . 
+    $fila['NOMBRES'] . "%$" . 
+    $fila['APELLIDOS'] . "%$" . 
+    $fila['CARGO'] . "%$" . 
+    $fila['F_NACIMIENTO'] . "%$" . 
+    $fila['PROCEDENCIA'] . "%$" . 
+    $fila['ALERGIAS'] . "%$" . 
+    $fila['FONO_EMERGENCIA'] . "%$" . 
+    $fila['DIRECCION'] . "%$" . 
+    $fila['NACIONALIDAD'] . "%$" .
+    $fila['FECHAINICIO'] . "%$" .
+    $fila['FECHATERMINO'] . "%$" .
+    $fila['INICIOPASE'] . "%$" .
+    $fila['TERMINOPASE'] . "%$" .
+    $fila['FVENCVISA'] . "%$" .
+    $fila['sexo'] . "%$" . 
+    $fila['tipopase'] . "%$" . 
+    $fila['ncontrato'] . "%$" . 
+    $fila['gsanguineo'] . "%$" . 
+    $fila['tcontrato'] . "%$" . 
+    $fila['region'] . "%$" . 
+    $fila['sector'] . "%$" . 
+    $fila['tipovisa'] . "%$" . 
+    $fila['jornada']. "%$" .
+    $fila['ID_TIPO_PASE'];
   }
 
   function getEditPersona($id){
@@ -782,6 +842,41 @@
     while($fila = mysql_fetch_array($resultado)){
       echo "<option value='" . $fila['ID_OC'] . "'>" . $fila['N_CONTRATO'] . "</option>";
     }
+  }
+
+  function imprimirDocumentoVer($nombre,$columna,$tipo,$rut,$id){
+    $con = conectarse();
+    switch ($tipo) {
+      case 'Persona':
+        $sql = "SELECT $columna AS URL FROM documentacion WHERE ID_ACREDITADO='$id'";
+        $resultado = mysql_query($sql,$con);
+        $fila = mysql_fetch_array($resultado);
+        break;
+      case 'Empresa':
+        $sql = "SELECT $columna AS URL FROM documentacion_contratista WHERE ID_CONTRATISTA='$id'";
+        $resultado = mysql_query($sql,$con);
+        $fila = mysql_fetch_array($resultado);
+        break;   
+      case 'Contrato':
+        $sql = "SELECT $columna AS URL FROM documentacion_contrato WHERE ID_OC='$id'";
+        $resultado = mysql_query($sql,$con);
+        $fila = mysql_fetch_array($resultado);
+        break;   
+      default:
+        # code...
+        break;
+    }    
+    mysql_close($con);
+    if($fila['URL']){
+    echo "
+        <p><b>". $nombre ."</b></p>
+        <p><a href='http://www.chilecop.cl/acreditacion/archivos/". $rut . "/" . $fila['URL'] . "' target='_blank'>". $fila['URL'] ."</a></p>";
+    }else{
+      echo "
+        <p><b>". $nombre ."</b></p>
+        <p>Sin información</p>
+        ";
+    }    
   }
   
 ?>

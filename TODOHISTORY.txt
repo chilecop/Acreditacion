@@ -22,3 +22,12 @@ Añadir la observación por persona al final de la documentación.
 /**
 * Sprint 09/01/2016
 */
+
+#49 Información en Ver
+Completar la información en el ver del personal.
+
+#54 Documentación en ver persona
+Mostrar la documentación en ver persona para apoyar el proceso de acreditación.
+
+
+

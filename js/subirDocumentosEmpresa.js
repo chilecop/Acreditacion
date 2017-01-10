@@ -318,7 +318,7 @@ $(function(){
 				url: "php/addDocumentacionEmpresa2.php",
 				success: function(data)
 				{
-					var link = "http://www.chilecop.cl/acreditacion/verContratista.php";
+					var link = "http://www.chilecop.cl/acreditacion/verContratista.php?id="+data;
 					window.location=link;
 				}
 			});

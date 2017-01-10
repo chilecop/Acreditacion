@@ -16,7 +16,7 @@
 	$mutualidad = $_POST['mutualidad'];            
 	$con = conectarse();
 	mysql_set_charset("utf8",$con);
-	$sql = "UPDATE empresa_contratista SET RUT='$rut', N_FANTASIA='$nombre', N_CONTACTO='$n_contacto', OBSERVACION='$observacion', FONO='$fono', F_REGISTRO='NOW()', REP='$representante', MAIL_CONTACTO='$email', C_COMPENSACION='$ccompensacion', MUTUALIDAD='$mutualidad', D_CASA_MATRIZ='$direccion', D_SUCURSAL='$direccion_sucursal', RESPONSABLE = '$responsable', MAIL_RESPONSABLE = '$emailresponsable' WHERE ID_CONTRATISTA='$id'";
+	$sql = "UPDATE empresa_contratista SET N_FANTASIA='$nombre', N_CONTACTO='$n_contacto', OBSERVACION='$observacion', FONO='$fono', F_REGISTRO='NOW()', REP='$representante', MAIL_CONTACTO='$email', C_COMPENSACION='$ccompensacion', MUTUALIDAD='$mutualidad', D_CASA_MATRIZ='$direccion', D_SUCURSAL='$direccion_sucursal', RESPONSABLE = '$responsable', MAIL_RESPONSABLE = '$emailresponsable' WHERE ID_CONTRATISTA='$id'";
 	mysql_query($sql,$con);
 	header('location: http://www.chilecop.cl/acreditacion/verContratista.php?id='.$id);
 	mysql_close($con);

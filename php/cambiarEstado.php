@@ -15,7 +15,7 @@ switch ($estadoActual) {
 		echo '3';
 		break;
 	case '3':
-		$sql = "UPDATE personal_acreditado SET ID_ESTADO='1' WHERE ID_ACREDITADO='$id'";
+		$sql = "UPDATE personal_acreditado SET ID_ESTADO='1', INICIOPASE=now() WHERE ID_ACREDITADO='$id'";
 		mysql_query($sql,$con);
 		echo '1';
 		break;	

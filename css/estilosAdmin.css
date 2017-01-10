@@ -362,3 +362,17 @@ html, body{
 .apuntador{
 	cursor: pointer;
 }
+
+.pie-imagen-articulo{
+	text-transform: uppercase;
+	margin: 0;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 5px;
+	text-align: center;
+	width: 90%;
+}
+
+.pie-imagen-articulo p{
+	margin: 0 0 5px;
+}
