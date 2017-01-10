@@ -8,7 +8,6 @@
 	$email = $_POST['email'];
 	$responsable = $_POST['responsable'];
 	$emailresponsable = $_POST['emailresponsable'];
-	$observacion = $_POST['observacion'];
 	$fono = $_POST['fono']; 
 	$direccion = $_POST['direccion']; 
 	$direccion_sucursal = $_POST['direccion_sucursal'];  

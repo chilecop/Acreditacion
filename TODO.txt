@@ -17,9 +17,6 @@ Dar funcionalidad a la navegación del sistema que aparece en la parte superior 
 Muestra de alertas modo notificación, el usuario al hacer clic en la notificación lo lleva a la documentación correspondiente y le muestra todas las observaciones. Ahí mismo debe marcar como leída la observación para que desaparezca.
 
 /////////OTROS////////
-#52 Editar Empresa
-Revisar editar empresa. Al volver debe ir a al listar empresa si es Admin.
-
 #54 Cerrar Sesión
 Cerrar la sesión después de un límite de tiempo.
 

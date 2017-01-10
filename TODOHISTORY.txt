@@ -44,6 +44,9 @@ Las observaciones deben tener la documentación de la sección, empresa y contra
 El pase de visita sin revisión está con problemas aún.
 
 #55 Observaciones al correo
-Las observaciones deben llegar al correo del responsable.
+Las observaciones de personas, empresas y contratos deben llegar al correo del responsable.
+
+#52 Editar Empresa
+Revisar editar empresa. Al volver debe ir a al listar empresa si es Admin.
 
 

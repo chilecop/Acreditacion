@@ -18,15 +18,12 @@ if($_SESSION['nombreUsuario']){
       $id = $_GET['id'];
     }
     $contenido = getVerEmpresaContratista($id);
-    list($n_fantasia,$n_contacto,$rut,$mail_contacto,$fono,$rep,$observacion,$f_registro,$d_casa_matriz,$d_sucursal,$mutualidad,$responsable,$emailresponsable) = explode("%$", $contenido);
+    list($n_fantasia,$n_contacto,$rut,$mail_contacto,$fono,$rep,$observacion,$f_registro,$d_casa_matriz,$d_sucursal,$mutualidad,$responsable,$emailresponsable,$caja) = explode("%$", $contenido);
     $nombre1="nombre_del_archivo.pdf"
     ?>
 
     <!-- Bootstrap -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="vendor/chosen/chosen.min.css">
-    <link rel="stylesheet" type="text/css" href="vendor/font-awesome-4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="vendor/summernote/summernote.css">
     <link rel="stylesheet" type="text/css" href="css/estilosAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/new-article.css">
     
@@ -134,11 +131,7 @@ if($_SESSION['nombreUsuario']){
                       <div class="form-group">
                         <label class="sr-only">Caja de Compensación</label>
                         <input type="text" class="form-control" id="title" placeholder="Caja de Compensación" name="ccompensacion" value="<?php echo $caja; ?>">
-                      </div>                      
-                      <div class="form-group">
-                        <label class="">Observación</label>
-                        <textarea rows="4" cols="50" placeholder="Observación" name="observacion" class="form-control" value="<?php echo $observacion; ?>"></textarea>
-                      </div>     
+                      </div>    
                       <div class="clearfix">
                         <button type="submit" class="btn btn-warning pull-right"> Editar Contratista</button>
                       </div>
@@ -163,27 +156,7 @@ if($_SESSION['nombreUsuario']){
     
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="vendor/chosen/chosen.jquery.min.js"></script>
-    <script type="text/javascript" src="vendor/summernote/summernote.min.js"></script>
-    <script src="js/default.js"></script>
-    <script type="text/javascript">
-      var config = {
-        '.chosen-select' : {},
-        'chosen-select-deselect' : {allow_single_deselect: true},
-        'chosen-select-no-single': {disable_search_threshold: 10},
-        '.chosen-select-no-result': {no_result_text: 'Oops, nothing found'},
-        '.chosen-select-width' : {width: "95%"}
-      }
-      for(var selector in config) {
-        $(selector).chosen(config[selector]);
-      }
-    </script>
-
-    <script type="text/javascript">
-      $('.summernote').summernote({
-        height: 200
-      })
-    </script>
+    <script src="js/default.js"></script>    
   </body>
 </html>
 <?php
