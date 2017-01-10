@@ -702,38 +702,27 @@
   
   function getPasesDiarios(){
     $con = conectarse();
-    mysql_set_charset("utf8",$con);
-    $sql="SELECT * FROM personal_acreditado WHERE ID_TIPO_PASE<>'1'";
-    $resultado = mysql_query($sql,$con);
     $hoy = date('y/m/d');
+    $sql="SELECT * FROM pasesDiarios";
+    $resultado = mysql_query($sql,$con);    
     while($row = mysql_fetch_array($resultado)){ 
-      //Segunda consulta
-      $id = $row['ID_ORDEN_CONTRATO'];
-      $sql = "SELECT oc.N_CONTRATO, ec.N_FANTASIA 
-              FROM orden_contrato oc, empresa_contratista ec 
-              WHERE oc.ID_OC = $id AND
-              oc.ID_CONTRATISTA = ec.ID_CONTRATISTA";        
-      $resultado = mysql_query($sql,$con);
-      $row2 = mysql_fetch_array($resultado);
       $fechaInicio = date('y/m/d',strtotime($row['FECHAINICIO']));
+      $fechaTermino = date('y/m/d',strtotime($row['FECHATERMINO']));
       echo "
           <tr>
-              <td>".$row['ID_ACREDITADO'] . "</td>
-              <td>".$row['NOMBRES'] . " " . $row['APELLIDOS'] ."</td>
-              <td>".$row['RUT'] . "</td>
-              <td>".$row2['N_CONTRATO'] . "</td>
-              <td>".$row2['N_FANTASIA'] . "</td>
-              <td>". $fechaInicio . "</td>";
-
-      if($row['ID_ESTADO']==1){
+              <td>". $row['ID_PASE'] . "</td>
+              <td>". $row['NOMBRE'] . " " . $row['APELLIDOS'] ."</td>
+              <td>". $row['RUT'] . "</td>
+              <td>". $row['EMPRESA'] . "</td>
+              <td>". $row['RAZON'] . "</td>
+              <td>". $fechaInicio . "</td>
+              <td>". $fechaTermino . "</td>";
+      if($fechaInicio<= $hoy && $hoy<=$fechaTermino){
         echo "<td><span style='cursor:default' class='btn btn-xs btn-success'>activo</span></td>";        
-      }
-      if($row['ID_ESTADO']==2){
+      }else{
         echo "<td><span style='cursor:default' class='btn btn-xs btn-danger'>inactivo</span></td>";     
       }
-      if($row['ID_ESTADO']==3){
-        echo "<td><span style='cursor:default' class='btn btn-xs btn-warning'>pendiente</span></td>";     
-      }
+      echo "<td><a class='btn btn-xs btn-danger' href='eliminarPases.php?id=".$row['id']."' role='button'>eliminar</a></td>";
       echo "</tr>";
     }    
     mysql_close($con);

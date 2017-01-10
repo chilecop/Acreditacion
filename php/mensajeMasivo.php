@@ -63,7 +63,7 @@ $html = ' <table width="100%" border="0" align="center" cellpadding="0" cellspac
               Para mayor informaci&oacute;n, puede responder este mismo correo o bien llamarnos a los numeros al pie de este mensaje.<br/><br/>       
               Saludos cordiales!<br/><br/>---<br />
               Equipo Chilecop<br />
-              Consultas, 12345678 - 9 876 54 321 - 8 888 88 888<br />---
+              Consultas, +56 9 44337239 - +56 9 73885258 - +56 9 63424158<br />---
               <br />http://www.chilecop.cl<br />Protecci&oacute;n a tu servicio<br />
               <br />
               <br />

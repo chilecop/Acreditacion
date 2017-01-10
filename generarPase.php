@@ -70,23 +70,23 @@ if($_SESSION['nombreUsuario']){
               <div class="form-wrapper">
                 <form action="php/generarPase.php" method="post">
                   <div class="form-group">
-                    <label class="sr-only">Nombre</label>
+                    <label class="">Nombre</label>
                     <input type="text" class="form-control" id="title" placeholder="Nombre" name="nombre" required>
                   </div>
                   <div class="form-group">
-                    <label class="sr-only">Apellido</label>
-                    <input type="text" class="form-control" id="title" placeholder="Apellido" name="apellido" required>
+                    <label class="">Rut</label>
+                    <?php echo inputrut("rut",$rut);?>
+                  </div>                
+                  <div class="form-group">
+                    <label class="">Empresa</label>
+                    <input type="text" class="form-control" id="title" placeholder="Empresa" name="empresa" required>
                   </div>
                   <div class="form-group">
-                    <label class="sr-only">Rut</label>
-                    <input type="text" class="form-control" id="title" placeholder="Rut" name="rut" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only">Cargo</label>
+                    <label class="">Cargo</label>
                     <input type="text" class="form-control" id="title" placeholder="Cargo" name="cargo" required>
                   </div>
                   <div class="form-group">
-                    <label class="sr-only">Razon</label>
+                    <label class="">Razon</label>
                     <input type="text" class="form-control" id="title" placeholder="Razon" name="razon" required>
                   </div>
                   <div class="form-group">
@@ -141,9 +141,38 @@ if($_SESSION['nombreUsuario']){
       })
     </script>
   </body>
+  <script> 
+      function limpiarut_(objeto){
+       objeto.value=objeto.value.replace("-.","K");
+       objeto.value=objeto.value.replace("k","K");
+       vDigitosAceptados = '0123456789K*';
+       if (objeto.value.substr(0,1) == "0")
+        { objeto.value = objeto.value.substr(1,objeto.value.length);
+        }
+        var texto = objeto.value;
+        var salida='';
+        for (var x=0; x < texto.length; x++){
+         pos = vDigitosAceptados.indexOf(texto.substr(x,1));
+         if (pos != -1) salida += texto.substr(x,1);
+       }
+       if (objeto.value != salida) objeto.value = salida;
+
+       if (objeto.value.slice(0, 1) == "9" || objeto.value.slice(0, 1) == "8" || objeto.value.slice(0, 1) == "7" || objeto.value.slice(0, 1) == "6" || objeto.value.slice(0, 1) == "5" || objeto.value.slice(0, 1) == "4" || objeto.value.slice(0, 1) == "3")
+       {
+         objeto.value = objeto.value.substr(0, 8);
+       }
+
+     }
+   </script>
 </html>
 <?php
 }else{
   header("location: http://www.chilecop.cl/accesoAcreditacion.html");
+}
+
+function inputrut($name,$value='',$size=20,$leng=9,$otro=""){
+  global $con;            
+  $input="<input name='".$name."' id='".$name."'  type=\"text\" placeholder=\"Rut\" value='".$value."' size=".$size." class=\"form-control\"  maxlength=".$leng." onkeydown=\"javascript:limpiarut_(this)\" onkeyup=\"javascript:limpiarut_(this)\" ".$otro." required>";          
+  return $input;  
 }
 ?>

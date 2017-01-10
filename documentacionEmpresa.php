@@ -199,117 +199,69 @@ if($_SESSION['nombreUsuario']){
 															<div class="checkbox">
 																<label>
 																	<input name="check1" type="checkbox" id="docsCheck" value="1">
-																	Contrato de trabajo
+																	Ficha básica de Identificación
 																</label>
 															</div>
 															<div class="checkbox">
 																<label>
 																	<input type="checkbox" id="docsCheck" value="2">
-																	Inducción JoyGlobal
+																	Listado de Trabajadores
 																</label>
 															</div>												
 															<div class="checkbox">
 																<label>
 																	<input type="checkbox" id="docsCheck" value="3">
-																	Fotografía tamaño carnet
+																	Autorización de Jornada Excepcional
 																</label>
 															</div>
+														</div>
+														<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 															<div class="checkbox">
 																<label>
 																	<input type="checkbox" id="docsCheck" value="4">
-																	Consentimiento test alcohol y drogas
+																	Contrato Comercial
 																</label>
 															</div>
 															<div class="checkbox">
 																<label>
 																	<input type="checkbox" id="docsCheck" value="5">
-																	Fotocopia Cédula
+																	Antecedentes Comerciales
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input type="checkbox" id="docsCheck" value="6">
+																	Certificado Afiliación Mutualidad
 																</label>
 															</div>
 														</div>
 														<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 															<div class="checkbox">
 																<label>
-																	<input type="checkbox" id="docsCheck" value="6">
-																	Examen pre-ocupacional
-																</label>
-															</div>
-															<div class="checkbox">
-																<label>
 																	<input type="checkbox" id="docsCheck" value="7">
-																	ODI
+																	Antecedentes Laborales
 																</label>
 															</div>
 															<div class="checkbox">
 																<label>
 																	<input type="checkbox" id="docsCheck" value="8">
-																	Reglamento Interno
+																	Carpeta de Arranque
 																</label>
 															</div>
 															<div class="checkbox">
 																<label>
 																	<input type="checkbox" id="docsCheck" value="9">
-																	Entrega EPP
+																	Carpeta Tributaria
 																</label>
 															</div>
+														</div>
+														<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 															<div class="checkbox">
 																<label>
 																	<input type="checkbox" id="docsCheck" value="10">
-																	Último Finiquito
+																	Certificado de Confidencialidad
 																</label>
-															</div>
-														</div>
-														<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="11">
-																	Certificado Antecedentes
-																</label>
-															</div>
-															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="12">
-																	Certificado Estudios
-																</label>
-															</div>
-															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="13">
-																	Acreditación Prevencionista
-																</label>
-															</div>
-															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="14">
-																	Certificado de Aprobación
-																</label>
-															</div>
-															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="15">
-																	Anexo 1
-																</label>
-															</div>
-														</div>
-														<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="16">
-																	Anexo 2
-																</label>
-															</div>
-															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="17">
-																	Anexo 3
-																</label>
-															</div>
-															<div class="checkbox">
-																<label>
-																	<input type="checkbox" id="docsCheck" value="18">
-																	Otros
-																</label>
-															</div>														
+															</div>													
 														</div>
 													</div>
 												</div>

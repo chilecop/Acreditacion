@@ -314,10 +314,10 @@
   function getPasesDiarios(){
     $con = conectarse();
     mysql_set_charset("utf8",$con);
+    $hoy = date('y/m/d');
     $sql="SELECT * FROM pasesDiarios";
     $resultado = mysql_query($sql,$con);
-    while($row = mysql_fetch_array($resultado)){
-      $hoy = date('y/m/d');
+    while($row = mysql_fetch_array($resultado)){      
       $fechaInicio = date('y/m/d',strtotime($row['fechaInicio']));
       $fechaTermino = date('y/m/d',strtotime($row['fechaTermino']));
       echo "

@@ -31,5 +31,19 @@ Mostrar la documentación en ver persona para apoyar el proceso de acreditación
 #48 Acreditacion inicio y termino de pase 
 Al aprobar una persona guarde la fecha de inicio de acreditación.
 
+#46 Terminar el mensaje masivo.
+El mensaje masivo debe llegar a todas las empresas contratistas.
+
+#51 Diagrama de flujo
+Realizar diagrama de flujo del proceso de acreditación
+
+#53 Observaciones
+Las observaciones deben tener la documentación de la sección, empresa y contratos ya que actualmente aparece las de persona.
+
+#50 Pase de Visita
+El pase de visita sin revisión está con problemas aún.
+
+#55 Observaciones al correo
+Las observaciones deben llegar al correo del responsable.
 
 
