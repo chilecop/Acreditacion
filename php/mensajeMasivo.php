@@ -1,4 +1,5 @@
 <?php
+include('conexion.php');
 
 $asunto = $_POST['asunto'];
 $observacion = $_POST['observacion'];
@@ -94,15 +95,23 @@ $html = ' <table width="100%" border="0" align="center" cellpadding="0" cellspac
   </tr>
 </table>';
 
+$con = conectarse();
+$sql = "SELECT MAIL_CONTACTO, MAIL_RESPONSABLE FROM empresa_contratista";
+$resultado = mysql_query($sql,$con);
+
+/**
+* Armado de la cabecera del mensaje
+*/
 $header = 'From: ' . "Chilecop Administracion <a.henriquez@chilecop.cl> \r\n";
-$header .= "cc: j.lopez@chilecop.cl \r\n";
-$header .= "cc: c.opazo@chilecop.cl \r\n";
-$header .= "cc: ahenriquez@sodired.cl \r\n";
+$header .= "cc: acreditacion@chilecop.cl \r\n";
+$header .= "cc: informatica@chilecop.cl \r\n";
+while($fila = mysql_fetch_array($resultado)){
+  $header .= "cc: " . $fila['MAIL_CONTACTO'] . " \r\n";
+  $header .= "cc: " . $fila['MAIL_RESPONSABLE'] . " \r\n";
+}
 $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
 $header .= "Mime-Version: 1.0 \r\n";
 $header .= "Content-Type:  text/html\r\n";
-
-
 
 //COMPOSICIÓN DEL CORREO
 mail($para, $asunto, utf8_decode($html), $header); 

@@ -19,9 +19,6 @@ El mensaje masivo debe llegar a todas las empresas contratistas.
 #47 Notificaciones
 Muestra de alertas modo notificación, el usuario al hacer clic en la notificación lo lleva a la documentación correspondiente y le muestra todas las observaciones. Ahí mismo debe marcar como leída la observación para que desaparezca.
 
-#48 Acreditacion inicio y termino de pase 
-Al aprobar una persona guarde la fecha de inicio de acreditación.
-
 #50 Pase de Visita
 El pase de visita sin revisión está con problemas aún.
 
