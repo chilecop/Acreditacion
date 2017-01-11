@@ -129,7 +129,7 @@ if($_SESSION['nombreUsuario']){
                       </div>
                       <div class="form-group">
                         <label class="">Contrato</label>
-                        <select name="idcontrato" id="contratos" required>
+                        <select name="idcontrato" id="contratos" class="form-control" required>
                           <option value="">Seleccionar Empresa...</option>
                         </select>
                       </div>

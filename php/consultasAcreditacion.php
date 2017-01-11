@@ -684,7 +684,7 @@
     $sql = "SELECT * FROM empresa_contratista";
     mysql_set_charset("utf8",$con);
     $resultado = mysql_query($sql,$con);
-    echo '<select name="empresa" id="empresa" onchange="llenarContratos()" required>';
+    echo '<select name="empresa" id="empresa" class="form-control" onchange="llenarContratos()" required>';
     echo '<option value="">Seleccionar...</option>';
     while($fila = mysql_fetch_array($resultado)){
       echo "<option value='" . $fila['ID_CONTRATISTA'] . "'>" . $fila['N_FANTASIA'] . "</option>";

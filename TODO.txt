@@ -16,6 +16,9 @@ Cerrar la sesión después de un límite de tiempo.
 #57 Bloquear mismo rut
 Al ingresar verificar que el rut no exista
 
+#58 Cambiar Mandante
+Cambiar la mandante ya que actualmente aparece Chilecop
+
 ////////REPORTES/////
 #56 Reporte 
 
