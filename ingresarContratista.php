@@ -171,6 +171,10 @@ if($_SESSION['nombreUsuario']){
                         <label class="">Dirección Sucursal</label>
                         <input type="text" class="form-control" id="title" placeholder="Dirección Sucursal" name="direccion_sucursal" >
                       </div>
+                      <div class="form-group">
+                        <label class="">Sub-Contratista de</label>
+                        <?php getSelectNoRequired(empresa_contratista,ID_CONTRATISTA,N_FANTASIA); ?>
+                      </div>
                     </div>
                     <div class="col-md-4 col-lg-4">
                       <div class="form-group">

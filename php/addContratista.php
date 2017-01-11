@@ -12,11 +12,23 @@
 	$mutualidad = $_POST['mutualidad'];
 	$ccompensacion = $_POST['ccompensacion'];
 	$observacion = $_POST['observacion'];
-	$fono = $_POST['fono'];              
+	$fono = $_POST['fono'];   
+	$contratista = $_POST['ID_CONTRATISTA'];           
 	$con = conectarse();
 	mysql_set_charset("utf8",$con);
 	$sql = "INSERT INTO empresa_contratista (n_fantasia, fono, rut, n_contacto, rep, mail_contacto, d_casa_matriz, d_sucursal, observacion, mutualidad, c_compensacion, f_registro, responsable, mail_responsable) VALUES ('$nombre', '$fono', '$rut', '$n_contacto', '$representante', '$email', '$direccion', '$direccion_sucursal','$observacion', '$mutualidad', '$ccompensacion', now(),'$responsable','$emailresponsable')";
 	mysql_query($sql,$con);
+
+	if($contratista!=0){
+		//Localizar id Empresa recien ingresada
+		$sql = "SELECT ID_CONTRATISTA FROM empresa_contratista ORDER BY ID_CONTRATISTA DESC LIMIT 1";
+		$resultado = mysql_query($sql,$con);
+		$fila = mysql_fetch_row($resultado);
+		$idSubContratista = $fila[0];
+		$sql = "INSERT INTO subcontratos (ID_CONTRATISTA, ID_SUBCONTRATISTA) VALUES ('$contratista','$idSubContratista')";
+		$resultado = mysql_query($sql,$con);
+	}
+
 	
 	//CREACIÓN DE LA CARPETA PARA LOS ARCHIVOS CORRESPONDIENTES
 	$directorio = "../archivoseecc/" . $rut;

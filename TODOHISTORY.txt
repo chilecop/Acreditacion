@@ -49,4 +49,10 @@ Las observaciones de personas, empresas y contratos deben llegar al correo del r
 #52 Editar Empresa
 Revisar editar empresa. Al volver debe ir a al listar empresa si es Admin.
 
+#37 Sub-Contratos
+Crear una nueva tabla que enlace las empresas contratistas con los subcontratistas. Un contratista puede tener varias empresas subcontratistas como una empresa subcontratista puede prestar servicios a varias empresas contratistas.
+Todas las empresas deben tener su propia clave de acceso. Se debe agregar en el ingresar empresa y editar empresa.
+
+
+
 

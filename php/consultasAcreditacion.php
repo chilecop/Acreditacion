@@ -247,6 +247,25 @@
     mysql_close($con);
   }
 
+  function getSelectNoRequired($tabla,$dato1,$dato2,$seleccion){
+    $con = conectarse();
+    mysql_set_charset("utf8",$con);
+    $sql="SELECT " . $dato1 . ", " . $dato2 . " FROM " . $tabla;
+    echo "<select id='". $dato1 ."' name='$dato1' class='form-control' id='$dato1'>";
+    echo "<option value='0'>NO APLICA</option>";
+    $resultado = mysql_query($sql,$con);
+    $selected = "";
+    while($row = mysql_fetch_array($resultado)){
+      if($seleccion==$row[$dato1]){
+        $selected = "selected";
+      }
+      echo "<option value='" . $row[$dato1] . "' " . $selected . ">" . $row[$dato2] . "</option>"; 
+      $selected = "";
+    }
+    echo "</select>";
+    mysql_close($con);
+  }
+
   function listarMandantes(){
     $usuario = $_SESSION['nombreUsuario'];
     $con = conectarse();

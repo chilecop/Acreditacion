@@ -1,10 +1,6 @@
 /**
 * Sprint Backlog Semana 03/01/2017
 */
-#37 Sub-Contratos
-Crear una nueva tabla que enlace las empresas contratistas con los subcontratistas. Un contratista puede tener varias empresas subcontratistas como una empresa subcontratista puede prestar servicios a varias empresas contratistas.
-Todas las empresas deben tener su propia clave de acceso. Se debe agregar en el ingresar empresa y editar empresa.
-
 #38 Buscador vista admin
 En el listarContratistas, debe haber un buscador para las empresas y paginación.
 
@@ -20,3 +16,5 @@ Muestra de alertas modo notificación, el usuario al hacer clic en la notificaci
 #54 Cerrar Sesión
 Cerrar la sesión después de un límite de tiempo.
 
+////////REPORTES/////
+#56 Reporte 
