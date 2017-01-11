@@ -41,6 +41,7 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 			$date4 = '00-00-0000'; } 
 			else {$date4 = date('d-m-Y', $time4);
 		}
+		$empresaId = getEmpresaContrato($id);
 	}	
 	?>
 
@@ -96,7 +97,15 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 						</div>
 						<div id="content">
 							<header class="clearfix">
-								<div class="col-xs-8 col-sm-8 col-md-8"><b>Contratos Vigentes <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Listar Personal <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Documentación - <?php echo $_SESSION['numeroContrato']; ?></b></div>
+								<div class="col-xs-8 col-sm-8 col-md-8"><b>
+								<?php if($nombreUsuario!="Contratista"){?>
+								<a href="listarContratistas.php" title="">Empresas Contratistas</a> 
+								<?php } ?>
+								<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+								<a href="listarContratos.php?id=<?php echo $empresaId; ?>" title="">Contratos Vigentes</a>
+								<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+								Documentación - <?php echo $_SESSION['numeroContrato']; ?></b>
+								</div>
 							</header>
 
 							<div class="content-inner">

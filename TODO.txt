@@ -6,9 +6,6 @@ En el listarContratistas, debe haber un buscador para las empresas y paginación
 
 ///////////OTROS//////////
 
-#44 Navegación del sistema
-Dar funcionalidad a la navegación del sistema que aparece en la parte superior en cada página.
-
 #47 Notificaciones
 Muestra de alertas modo notificación, el usuario al hacer clic en la notificación lo lleva a la documentación correspondiente y le muestra todas las observaciones. Ahí mismo debe marcar como leída la observación para que desaparezca.
 
@@ -16,5 +13,9 @@ Muestra de alertas modo notificación, el usuario al hacer clic en la notificaci
 #54 Cerrar Sesión
 Cerrar la sesión después de un límite de tiempo.
 
+#57 Bloquear mismo rut
+Al ingresar verificar que el rut no exista
+
 ////////REPORTES/////
 #56 Reporte 
+

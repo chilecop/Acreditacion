@@ -112,7 +112,7 @@ if($_SESSION['nombreUsuario']){
                     <p><?php echo $mutualidad; ?></p>
                     <div class="ver_buttons">
                       <a class='btn btn-xs btn-default' href='listarContratos.php?id=<?php echo $id; ?>' role='button'>Ver Contratos</a>
-                      <a class='btn btn-xs btn-default' href='documentacionEmpresa.php' role='button'>Ver Documentos</a>
+                      <a class='btn btn-xs btn-default' href='documentacionEmpresa.php?id=<?php echo $id;?>' role='button'>Ver Documentos</a>
                       <a class='btn btn-xs btn-warning' href='editarContratista.php?id=<?php echo $id; ?>' role='button'>Editar</a>
                   </div>     
                 </div>

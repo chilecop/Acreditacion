@@ -144,7 +144,12 @@ if($_SESSION['nombreUsuario']){
 
 						<div id="content">
 							<header class="clearfix">
-								<div class="col-xs-8 col-sm-8 col-md-8"><b>Contratos Vigentes <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Listar Personal <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Documentación - <?php echo $_SESSION['empresaActual']; ?></b></div>
+								<div class="col-xs-8 col-sm-8 col-md-8"><b>
+									<?php if($nombreUsuario=="Admin"){?>
+										<a href="listarContratistas.php" title="">Empresas Contratistas </a>
+									<?php } ?>
+									<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Documentación - <?php echo $_SESSION['empresaActual']; ?></b>
+								</div>
 							</header>
 
 							<div class="content-inner">

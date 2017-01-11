@@ -15,6 +15,7 @@ if($_SESSION['nombreUsuario']){
 	    if(isset($_GET['id'])){
 	    	$id = $_GET['id'];
 	    }
+	    $empresaId = getEmpresaContrato($id);
 	    ?>
 		<!-- Bootstrap CSS -->
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +63,15 @@ if($_SESSION['nombreUsuario']){
 
 	          <div id="content">
 	            <header class="clearfix">
-	              <div class="col-xs-8 col-sm-8 col-md-8"><b>Contratos Vigentes <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Personal Acreditado</b></div>
+	              <div class="col-xs-8 col-sm-8 col-md-8"><b>
+	              <?php if($nombreUsuario!="Contratista"){?>
+					<a href="listarContratistas.php" title="">Empresas Contratistas</a> 
+				  <?php } ?>
+				  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+	              <a href="listarContratos.php?id=<?php echo $empresaId; ?>">Contratos Vigentes</a>
+	              <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+	              Personal Acreditado
+	              </b></div>
 	              <?php if($usuario!="Mandante"){ ?>
 	              <div class="col-xs-4 col-sm-4 col-md-4">
 	              	<a class="btn btn-xs btn-success pull-right" href="ingresarTrabajador.php?id=<?php echo $id; ?>" role="button">Ingresar Personal</a>	

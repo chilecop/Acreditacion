@@ -65,8 +65,14 @@ if($_SESSION['nombreUsuario']){
 
 	          <div id="content">
 	            <header class="clearfix">
-	              <div class="col-xs-5 col-sm-3 col-md-3"><b>Contratos Vigentes</b></div>
-	              <div class="col-xs-7 col-sm-9 col-md-9">
+	              <div class="col-xs-8 col-sm-8 col-md-8"><b>
+	              	<?php if($nombreUsuario!="Contratista"){?>
+						<a href="listarContratistas.php" title="">Empresas Contratistas</a> 
+					<?php } ?>
+					<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+	              	Contratos Vigentes</b>
+	              </div>
+	              <div class="col-xs-4 col-sm-4 col-md-4">
 	              	<a class="btn btn-xs btn-success pull-right" href="ingresarOrdenContrato.php?id=<?php echo $id; ?>" role="button">Ingresar Contrato</a>	
 	              </div>
 	             </header>

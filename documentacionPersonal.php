@@ -157,6 +157,8 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 		}
 
 		$tipoPase = getTipoPase($id);
+		$contratoId = getContratoPersonal($id);
+		$empresaId = getEmpresaPersonal($id);
 	}	
 	?>
 
@@ -212,7 +214,15 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 						</div>
 						<div id="content">
 							<header class="clearfix">
-								<div class="col-xs-8 col-sm-8 col-md-8"><b>Contratos Vigentes <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Listar Personal <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Documentación - <?php echo $_SESSION['trabajadorActual']; ?></b></div>
+								<div class="col-xs-8 col-sm-8 col-md-8"><b>
+								<?php if($nombreUsuario!="Contratista"){?>
+									<a href="listarContratistas.php" title="">Empresas Contratistas</a> 
+								<?php } ?>
+								<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+								<a href="listarContratos.php?id=<?php echo $empresaId;?>">Contratos Vigentes</a>
+								<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+								<a href="listarPersonal.php?id=<?php echo $contratoId;?>">Personal Acreditado</a>
+								<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Documentación - <?php echo $_SESSION['trabajadorActual']; ?></b></div>
 							</header>
 
 							<div class="content-inner">

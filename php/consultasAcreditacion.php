@@ -57,7 +57,7 @@
             </li>
 
             <li class="link">
-              <a href="#">
+              <a href="reportePersonal.php">
                   <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Reportes</span>
               </a>
@@ -378,7 +378,7 @@
                 echo "<td><a class='btn btn-xs btn-default' href='#' role='button'>Observaciones</a></td>";
               }
               echo" <td><a class='btn btn-xs btn-default' href='documentacionPersonal.php?id=".$row['ID_ACREDITADO']."' role='button'>Ver documentos</a></td>
-              <td><a class='btn btn-xs btn-warning' href='editarPersonal.php?id=".$row['ID_ACREDITADO']."' role='button'>editar</a></td>
+              <td><a class='btn btn-xs btn-warning' href='editarPersonal.php?id=".$row['ID_ACREDITADO']."' role='button'>Editar</a></td>
           </tr>
           ";
     }
@@ -885,6 +885,42 @@
         <p>Sin información</p>
         ";
     }    
+  }
+
+  /**
+  * @Param: id de la persona
+  */
+  function getContratoPersonal($id){
+    $con = conectarse();
+    $sql = "SELECT ID_ORDEN_CONTRATO FROM personal_acreditado WHERE ID_ACREDITADO='$id'";
+    $resultado = mysql_query($sql,$con);
+    $fila = mysql_fetch_row($resultado);
+    return $fila['0'];
+  }
+
+  /**
+  * @Param: id de la persona
+  */
+  function getEmpresaPersonal($id){
+    $con = conectarse();
+    $sql = "SELECT oc.ID_CONTRATISTA FROM personal_acreditado pa, orden_contrato oc 
+    WHERE 
+    pa.ID_ACREDITADO='$id' AND
+    pa.ID_ORDEN_CONTRATO = oc.ID_OC";
+    $resultado = mysql_query($sql,$con);
+    $fila = mysql_fetch_row($resultado);
+    return $fila['0'];
+  }
+
+  /**
+  * @Param: id del contrato
+  */
+  function getEmpresaContrato($id){
+    $con = conectarse();
+    $sql = "SELECT ID_CONTRATISTA FROM orden_contrato WHERE ID_OC='$id'";
+    $resultado = mysql_query($sql,$con);
+    $fila = mysql_fetch_row($resultado);
+    return $fila['0'];
   }
   
 ?>

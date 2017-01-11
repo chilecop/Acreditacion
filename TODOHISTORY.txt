@@ -53,6 +53,8 @@ Revisar editar empresa. Al volver debe ir a al listar empresa si es Admin.
 Crear una nueva tabla que enlace las empresas contratistas con los subcontratistas. Un contratista puede tener varias empresas subcontratistas como una empresa subcontratista puede prestar servicios a varias empresas contratistas.
 Todas las empresas deben tener su propia clave de acceso. Se debe agregar en el ingresar empresa y editar empresa.
 
+#44 Navegación del sistema
+Dar funcionalidad a la navegación del sistema que aparece en la parte superior en cada página.
 
 
 
