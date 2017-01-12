@@ -99,7 +99,7 @@ if($_SESSION['nombreUsuario']){
 	            </header>
 	            <div class="content-inner">
 	            	<p>Ingrese las especificaciones del reporte que desee generar.</p>
-	            	<form action="php/generarReporteExcel.php" method="post" accept-charset="utf-8">	            	
+	            	<form action="php/generarReportePersonal.php" method="post" accept-charset="utf-8">	            	
 		            	<table class="table table-hover">
 		            		<tr>
 		            			<td>Estado del Personal</td>
@@ -109,6 +109,19 @@ if($_SESSION['nombreUsuario']){
 		            					<option value="1">Acreditado</option>
  		            					<option value="2">Rechazado</option>
 		            					<option value="3">Pendiente</option>
+		            				</select>
+		            			</td>
+		            		</tr>
+		            		<tr>
+		            			<td>Tipo de Pase</td>
+		            			<td>
+		            				<select class="form-control" name="tipoPase">
+		            					<option value="0">Todos los tipos</option>
+		            					<option value="1">Permanente</option>
+		            					<option value="3">Proveedores</option>
+		            					<option value="4">Visita Técnica</option>
+		            					<option value="5">Transportista</option>
+		            					<option value="6">Vendors</option>
 		            				</select>
 		            			</td>
 		            		</tr>
