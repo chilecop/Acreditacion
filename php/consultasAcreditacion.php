@@ -692,6 +692,19 @@
     echo '</select>';
   }
 
+  function getSelectEmpresasNoRequired(){
+    $con = conectarse();
+    $sql = "SELECT * FROM empresa_contratista";
+    mysql_set_charset("utf8",$con);
+    $resultado = mysql_query($sql,$con);
+    echo '<select name="empresa" id="empresa" class="form-control" onchange="llenarContratos()">';
+    echo '<option value="0">Todas las empresas</option>';
+    while($fila = mysql_fetch_array($resultado)){
+      echo "<option value='" . $fila['ID_CONTRATISTA'] . "'>" . $fila['N_FANTASIA'] . "</option>";
+    }
+    echo '</select>';
+  }
+
   function getRutTrabajador($id){
     $con = conectarse();
     $sql = "SELECT RUT FROM personal_acreditado WHERE ID_ACREDITADO='$id'";

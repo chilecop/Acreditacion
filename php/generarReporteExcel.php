@@ -16,6 +16,7 @@ header("Content-Disposition: attachment; filename=reportePersonal.xls");
 * Asignacion de las variables
 */
 $estado = $_POST['estado'];
+$tipo = $_POST['tipo'];
 
 /**
 * Generar query segun los datos solicitados
@@ -25,29 +26,48 @@ $estado = $_POST['estado'];
 $query = "SELECT count(*) AS total FROM personal_acreditado";
 $resultadoTotal = mysql_query($query, $con);
 if($estado==0){
-	$query = "
-	SELECT pa.ID_ACREDITADO,
-	 pa.RUT, pa.NOMBRES, 
-	 pa.APELLIDOS, 
-	 ec.N_FANTASIA, 
-	 oc.N_CONTRATO, 
-	 et.DESCRIPCION,
-	 pa.CARGO,
-	 pa.NACIONALIDAD,
-	 pa.DIRECCION,
-	 pa.F_NACIMIENTO,
-	 pa.FONO_EMERGENCIA,
-	 reg.region_nombre 
-	FROM personal_acreditado pa, 
-	estado_trabajador et, 
-	orden_contrato oc, 
-	empresa_contratista ec,
-	regiones reg
-		WHERE et.ID_ESTADO = pa.ID_ESTADO AND 
-		pa.ID_ORDEN_CONTRATO = oc.ID_OC AND 
-		oc.ID_CONTRATISTA = ec.ID_CONTRATISTA AND
-		reg.region_id = pa.REGION_ID";
-	$resultado = mysql_query($query, $con);
+	if($tipo==0){
+		$query = "
+		SELECT pa.ID_ACREDITADO,
+		 pa.RUT, pa.NOMBRES, 
+		 pa.APELLIDOS, 
+		 ec.N_FANTASIA, 
+		 oc.N_CONTRATO, 
+		 et.DESCRIPCION,
+		 pa.CARGO,
+		 pa.NACIONALIDAD,
+		 pa.DIRECCION,
+		 pa.F_NACIMIENTO,
+		 pa.FONO_EMERGENCIA,
+		 reg.region_nombre 
+		FROM personal_acreditado pa, 
+		estado_trabajador et, 
+		orden_contrato oc, 
+		empresa_contratista ec,
+		regiones reg
+			WHERE et.ID_ESTADO = pa.ID_ESTADO AND 
+			pa.ID_ORDEN_CONTRATO = oc.ID_OC AND 
+			oc.ID_CONTRATISTA = ec.ID_CONTRATISTA AND
+			reg.region_id = pa.REGION_ID";
+		$resultado = mysql_query($query, $con);
+	}
+
+	if($tipo==1){
+		$query = "
+		SELECT 
+		pa.ID_ACREDITADO,
+		pa.RUT,
+		pa.NOMBRES,
+		pa.APELLIDOS,
+		doc.*
+		FROM
+		personal_acreditado pa,
+		documentacion doc
+		WHERE
+		pa.ID_ACREDITADO = doc.ID_ACREDITADO
+		";
+		$resultado = mysql_query($query, $con);
+	}
 }
 $filaTotal = mysql_fetch_array($resultadoTotal);
 $total = $filaTotal['total'];
