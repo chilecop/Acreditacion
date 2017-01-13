@@ -54,7 +54,6 @@
 			}while($fila = mysql_fetch_array($resultado));
 		}else{
 			echo '<b>NO SE ENCONTRARON RESULTADOS.</b>';
-			echo 'Tipo Usuario: ' . $tipoUsuario;
 		}
 	}
 ?>

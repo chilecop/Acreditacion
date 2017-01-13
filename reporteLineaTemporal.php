@@ -1,7 +1,6 @@
 <?php
 session_start();
-$nombreUsuario = $_SESSION['nombreUsuario'];
-if($_SESSION['nombreUsuario'] && $nombreUsuario!="Contratista"){
+if($_SESSION['nombreUsuario']){
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,6 +22,8 @@ if($_SESSION['nombreUsuario'] && $nombreUsuario!="Contratista"){
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="js/reporteLineaTemporal.js"></script>
 	</head>
 	<body>
 		<div class="container-fluid display-table">
@@ -59,30 +60,43 @@ if($_SESSION['nombreUsuario'] && $nombreUsuario!="Contratista"){
 
 	          <div id="content">
 	            <header class="clearfix">
-	              <div class="col-xs-5 col-sm-3 col-md-3"><b>Empresas Contratistas</b></div>
-	              <?php if($usuario =="Admin"){ ?>
-	              <div class="col-xs-7 col-sm-9 col-md-9">
-	              	<a class="btn btn-xs btn-success pull-right" href="ingresarContratista.php" role="button">Ingresar Empresa</a>	
-	              </div>
-	              <?php }?>
+	              <div class="col-xs-5 col-sm-3 col-md-3"><b>Reporte Linea Temporal</b></div>
 	            </header>
-
 	            <div class="content-inner">
-	            	<table class="table table-hover">
-	            		<thead>
-	            			<tr>
-	            				<th>#</th>
-	            				<th>Nombre Mandante</th>
-	            				<th>Rut</th>
-	            				<th>Contacto</th>
-	            				<th>Fono</th>
-	            				<th>Representante</th>
-	            			</tr>
-	            		</thead>
-	            		<tbody>
-	            			<?php listarContratistas(); ?>
-	            		</tbody>
-	            	</table>
+	            	<p>Ingrese las especificaciones del reporte que desee generar.</p>
+	            	<form action="php/generarReporteLineaTiempo.php" method="post" accept-charset="utf-8">
+		            	<table class="table table-hover">
+		            		<tr>
+		            			<td>Empresa</td>
+		            			<td>
+		            				<?php getSelectEmpresasNoRequired(); ?>
+		            			</td>
+		            		</tr>
+		            		<tr>
+		            			<td>Contrato</td>
+		            			<td>
+		            				<select name="idcontrato" id="contratos" class="form-control" onchange="llenarTrabajadores()" required>
+			                          <option value="0">Seleccionar Contrato...</option>
+			                        </select>
+		            			</td>
+		            		</tr>
+		            		<tr>
+		            			<td>Trabajador</td>
+		            			<td>
+		            				<select name="trabajador" id="trabajadores" class="form-control" required>
+			                          <option value="0">Seleccionar Trabajador...</option>
+			                        </select>
+		            			</td>
+		            		</tr>
+		            		<tr>
+		            			<td>
+		            			</td>
+		            			<td>
+		            				<button class="btn btn-primary pull-right" type="submit">Generar Reporte</button>
+		            			</td>
+		            		</tr>	            		
+		            	</table>
+	            	</form>
 	            </div>
 	          </div>
 
@@ -97,7 +111,7 @@ if($_SESSION['nombreUsuario'] && $nombreUsuario!="Contratista"){
 	    </div>
 
 		<!-- jQuery -->
-		<script src="http://code.jquery.com/jquery.js"></script>
+		
 		<!-- Bootstrap JavaScript -->
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	</body>

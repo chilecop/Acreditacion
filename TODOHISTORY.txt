@@ -56,7 +56,16 @@ Todas las empresas deben tener su propia clave de acceso. Se debe agregar en el 
 #44 Navegación del sistema
 Dar funcionalidad a la navegación del sistema que aparece en la parte superior en cada página.
 
+#56 Reporte Documentación Trabajador
+Emitir un reporte que muestre todos los documentos que pueda tener un trabajador y que señale cual de esos tiene efectivamente. Que el reporte sea emisible por empresa,  por trabajador especifico o por el universo de personas en total.
 
+#58 Cambiar Mandante
+Cambiar la mandante ya que actualmente aparece Chilecop
 
-
-
+#59 Reporte Linea de Tiempo
+Linea Temporal del Trabajador: En este reporte deben verse las fechas guardadas de todo el proceso de acreditación de un trabajador. Estas son:
+o	Creación de empresa contratista
+o	Creación de usuario
+o	Generación de orden de contrato
+o	Guardado de cambios en carga de documentos
+o	Aprobación

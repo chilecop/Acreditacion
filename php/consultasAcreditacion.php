@@ -56,12 +56,18 @@
               </a>
             </li>
 
+
             <li class="link">
-              <a href="reportePersonal.php">
-                  <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span>
-                  <span class="hidden-sm hidden-xs">Reportes</span>
+              <a href="#reportes" data-toggle="collapse" aria-controls="collapse-post">
+                <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span>
+                <span class="hidden-sm hidden-xs">Reportes</span>
               </a>
+              <ul class="collapse collapseable" id="reportes">
+                <li><a href="reportePersonal.php">Personal Generalizado</a></li>
+                <li><a href="reporteLineaTemporal.php">Linea de Tiempo</a></li>
+              </ul>
             </li>
+
             <li class="link">
               <a href="anuncio.php">
                   <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>

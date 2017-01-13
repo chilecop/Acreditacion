@@ -1,6 +1,6 @@
 <?php
 session_start();
-$usuario = $_SESSION['nombreUsuario'];
+$nombreUsuario = $_SESSION['nombreUsuario'];
 if($_SESSION['nombreUsuario']){
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ if($_SESSION['nombreUsuario']){
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <?php 
+		<?php 
 	    include('php/consultasAcreditacion.php');
 	    tituloPanel();
 	    if(isset($_SESSION["idContratista"])){
