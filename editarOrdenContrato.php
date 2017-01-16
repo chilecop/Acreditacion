@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('php/destruye_sesion.php');
 if($_SESSION['nombreUsuario']){
 ?>
 <!DOCTYPE html>
@@ -150,46 +151,19 @@ if($_SESSION['nombreUsuario']){
                         <label class="">Término Jornada</label>
                         <input class="pull-right" type="date" name="terminojornada" value="<?php echo $fechaTerminoJornada; ?>" placeholder="Fecha Termino" required/>
                       </div>
-                      <form method="post" id="formulario" enctype="multipart/form-data">
-                        <div class="form-group">
-                          <label class="">Archivo Jornada</label>
-                          <span class="btn btn-default btn-file pull-right">
-                            Subir Archivo <input type="file" name="file">
-                          </span>
-                          <div id="respuesta"></div>
-                        </div>
-                      </form>
                       <div class="form-group">
                         <label class="">Emisión Sernageomín</label>
                         <input class="pull-right" type="date" name="sernageomin" value="<?php echo $emisionSernageomin; ?>" placeholder="Fecha Sernageomín" required/>
                       </div>
-                      <form method="post" id="formulario" enctype="multipart/form-data">
-                        <div class="form-group">
-                          <label class="">Archivo Sernageomín</label>
-                          <span class="btn btn-default btn-file pull-right">                            
-                            Subir Archivo <input type="file" name="file">
-                          </span>
-                          <div id="respuesta"></div>
-                        </div>
-                      </form>
                       <div class="form-group">
                         <label class="">Afiliación Mutual</label>
                         <input class="pull-right" type="date" name="fechamutual" value="<?php echo $mutual; ?>" placeholder="Afiliación Mutual" required/>
                       </div> 
-                      <form method="post" id="formulario" enctype="multipart/form-data">
-                        <div class="form-group">
-                          <label class="">Archivo Mutual</label>
-                          <span class="btn btn-default btn-file pull-right">
-                            Subir Archivo <input type="file" name="file">
-                          </span>
-                          <div id="respuesta"></div>
-                        </div>
-                      </form>
                     </div>
                     <div class="col-md-4 col-lg-4">
                       <div class="form-group">
                         <label>N° Contrato</label>
-                        <input type="text" class="form-control" id="title" placeholder="Número de Contrato" name="ncontrato" value="<?php echo $ncontrato; ?>" required>
+                        <input type="text" class="form-control" id="title" placeholder="Número de Contrato" name="ncontrato" value="<?php echo $ncontrato; ?>" disabled>
                       </div>
                       <div class="form-group">
                         <label>Descripción Contrato</label>

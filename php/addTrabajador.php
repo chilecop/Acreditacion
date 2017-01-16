@@ -26,6 +26,8 @@
 	$empresa = $_POST['empresa'];
 	$con = conectarse();
 	mysql_set_charset("utf8",$con);
+	$contratista = $_SESSION["idContratista"];
+	$idUser = $_SESSION["idUser"];
 
 	/**
 	* Antes de ingresar un trabajador, buscamos la caducidad del contrato
@@ -45,7 +47,6 @@
 			$directorio = "../archivos/" . $rut;
 			mkdir($directorio, 0777);
 
-
 			/**
 			 * CREACIÓN DE LA INSTANCIA PARA LA DOCUMENTACIÓN
 			 */		
@@ -57,6 +58,9 @@
 			//AHORA CREAMOS LA INSTANCIA	
 			$sql = "INSERT INTO documentacion (ID_ACREDITADO) VALUES ($acreditado)"; 
 			mysql_query($sql,$con);
+			//REGISTRAR ACCION
+			$sql = "INSERT INTO registro_acciones (ID_CONTRATISTA,ID_USUARIO,TIPO,REFERENCIA,ACCION,FECHAREGISTRO) VALUES ('$contratista','$idUser','Persona','$acreditado','Ingreso de Persona',now())";
+			$resultado = mysql_query($sql,$con);
 			//RETORNAMOS A LA PAGINA DE LOS CONTRATOS
 			$_SESSION['mensajeAlerta'] = "Personal ingresado correctamente. Ahora, debe ingresar los documentos de " . $nombre . " " . $apellidos . ". Puede ingresarlos inmediatamente, o bien paulatinamente volviendo a esta ventana, sin embargo, al ingresar un documento, no podrá modificarlo posteriormete.";
 			header("location: http://www.chilecop.cl/acreditacion/documentacionPersonal.php?id=$acreditado");

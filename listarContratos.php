@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('php/destruye_sesion.php');
 $nombreUsuario = $_SESSION['nombreUsuario'];
 if($_SESSION['nombreUsuario']){
 ?>

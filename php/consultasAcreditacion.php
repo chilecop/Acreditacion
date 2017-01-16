@@ -760,7 +760,7 @@
       }else{
         echo "<td><span style='cursor:default' class='btn btn-xs btn-danger'>inactivo</span></td>";     
       }
-      echo "<td><a class='btn btn-xs btn-danger' href='eliminarPases.php?id=".$row['id']."' role='button'>eliminar</a></td>";
+      echo "<td><a class='btn btn-xs btn-danger' href='eliminarPases.php?id=".$row['ID_PASE']."' role='button'>eliminar</a></td>";
       echo "</tr>";
     }    
     mysql_close($con);

@@ -15,7 +15,10 @@
 	$fono = $_POST['fono'];
 	$jexcepcional = $_POST['jexcepcional']; 
 	$tjornada = $_POST['tjornada']; 
-	$nresolucion = $_POST['nresolucion'];               
+	$nresolucion = $_POST['nresolucion'];
+	$contratista = $_SESSION["idContratista"];
+	$idUser = $_SESSION["idUser"];
+
 	$con = conectarse();
 	mysql_set_charset("utf8",$con);
 
@@ -46,6 +49,9 @@
 			//AHORA CREAMOS LA INSTANCIA	
 			$sql = "INSERT INTO documentacion_contrato (ID_OC) VALUES ($oc)"; 
 			mysql_query($sql,$con);
+			//REGISTRAR ACCION
+			$sql = "INSERT INTO registro_acciones (ID_CONTRATISTA,ID_USUARIO,TIPO,REFERENCIA,ACCION,FECHAREGISTRO) VALUES ('$contratista','$idUser','Contrato','$oc','Ingreso de Contrato',now())";
+			$resultado = mysql_query($sql,$con);			
 			//RETORNAMOS A LA PAGINA DE LOS CONTRATOS
 			$_SESSION['mensajeAlerta'] = "Contrato ingresado correctamente. Ahora, debe ingresar los documentos del contrato " . $ncontrato . ". Puede ingresarlos inmediatamente, o bien paulatinamente volviendo a esta ventana, sin embargo, al ingresar un documento, no podrá modificarlo posteriormete.";
 			header("location: http://www.chilecop.cl/acreditacion/documentacionContrato.php?id=$oc");

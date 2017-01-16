@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include('conexion.php');
 	$nombre = $_POST['nombre'];		
 	$rut = $_POST['rut'];
@@ -13,7 +14,9 @@
 	$ccompensacion = $_POST['ccompensacion'];
 	$observacion = $_POST['observacion'];
 	$fono = $_POST['fono'];   
-	$contratista = $_POST['ID_CONTRATISTA'];           
+	$contratista = $_POST['ID_CONTRATISTA'];
+	$idContratista = $_SESSION["idContratista"];
+	$idUser = $_SESSION["idUser"];
 	$con = conectarse();
 	mysql_set_charset("utf8",$con);
 	$sql = "INSERT INTO empresa_contratista (n_fantasia, fono, rut, n_contacto, rep, mail_contacto, d_casa_matriz, d_sucursal, observacion, mutualidad, c_compensacion, f_registro, responsable, mail_responsable) VALUES ('$nombre', '$fono', '$rut', '$n_contacto', '$representante', '$email', '$direccion', '$direccion_sucursal','$observacion', '$mutualidad', '$ccompensacion', now(),'$responsable','$emailresponsable')";
@@ -42,6 +45,9 @@
 	$resultado = mysql_query($sql,$con);
 	$fila = mysql_fetch_array($resultado);
 	$dempresa = $fila['ID_CONTRATISTA'];
+	//REGISTRAR ACCION
+	$sql = "INSERT INTO registro_acciones (ID_CONTRATISTA,ID_USUARIO,TIPO,REFERENCIA,ACCION,FECHAREGISTRO) VALUES ('$idContratista','$idUser','Empresa','$dempresa','Ingreso de Empresa',now())";
+	$resultado = mysql_query($sql,$con);
 	//AHORA CREAMOS LA INSTANCIA
 	$sql = "INSERT INTO documentacion_contratista (ID_CONTRATISTA) VALUES ($dempresa)"; 
 	mysql_query($sql,$con);

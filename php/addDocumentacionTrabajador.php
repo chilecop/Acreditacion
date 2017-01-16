@@ -6,6 +6,8 @@
 
 	//ID DEL TRABAJADOR ACTUAL
 	$id = $_SESSION['idTrabajadorActual'];
+	$idContratista = $_SESSION["idContratista"];
+	$idUser = $_SESSION["idUser"];
 
 	//SE COMPRUEBA CUAL ES EL ARCHIVO QUE SE QUIERE SUBIR
 	if(isset($_FILES["file1"]))
@@ -209,119 +211,146 @@
 				{
 					$sql = "UPDATE documentacion SET URL_1='$nombre', MOD_1=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc1Refresh']="Contrato de Trabajo";
+					$docName = $_SESSION['doc1Refresh'];
 				}
 				if(isset($_FILES["file2"]))
 				{
 					$sql = "UPDATE documentacion SET URL_2='$nombre', MOD_2=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc2Refresh']="Inducción JoyGlobal";
+					$docName = $_SESSION['doc2Refresh'];
 				}
 				if(isset($_FILES["file3"]))
 				{
 					$sql = "UPDATE documentacion SET URL_3='$nombre', MOD_3=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc3Refresh']="Fotografía Carnet";
+					$docName = $_SESSION['doc3Refresh'];
 				}
 				if(isset($_FILES["file4"]))
 				{
 					$sql = "UPDATE documentacion SET URL_4='$nombre', MOD_4=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc4Refresh']="Consentimiento Test Alcohol y Drogas";
+					$docName = $_SESSION['doc4Refresh'];
 				}
 				if(isset($_FILES["file5"]))
 				{
 					$sql = "UPDATE documentacion SET URL_5='$nombre', MOD_5=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc5Refresh']="Fotocopia Cédula";
+					$docName = $_SESSION['doc5Refresh'];
 				}
 				if(isset($_FILES["file6"]))
 				{
 					$sql = "UPDATE documentacion SET URL_6='$nombre', MOD_6=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc6Refresh']="Examen Pre-Ocupacional";
+					$docName = $_SESSION['doc6Refresh'];
 				}
 				if(isset($_FILES["file7"]))
 				{
 					$sql = "UPDATE documentacion SET URL_7='$nombre', MOD_7=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc7Refresh']="ODI";
+					$docName = $_SESSION['doc7Refresh'];
 				}
 				if(isset($_FILES["file8"]))
 				{
 					$sql = "UPDATE documentacion SET URL_8='$nombre', MOD_8=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc8Refresh']="Reglamento Interno";
+					$docName = $_SESSION['doc8Refresh'];
 				}
 				if(isset($_FILES["file9"]))
 				{
 					$sql = "UPDATE documentacion SET URL_9='$nombre', MOD_9=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc9Refresh']="Entrega EPP";
+					$docName = $_SESSION['doc9Refresh'];
 				}
 				if(isset($_FILES["file10"]))
 				{
 					$sql = "UPDATE documentacion SET URL_10='$nombre', MOD_10=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc10Refresh']="Último Finiquito";
+					$docName = $_SESSION['doc10Refresh'];
 				}
 				if(isset($_FILES["file11"]))
 				{
 					$sql = "UPDATE documentacion SET URL_11='$nombre', MOD_11=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc11Refresh']="Certificado Antecedentes";
+					$docName = $_SESSION['doc11Refresh'];
 				}
 				if(isset($_FILES["file12"]))
 				{
 					$sql = "UPDATE documentacion SET URL_12='$nombre', MOD_12=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc12Refresh']="Certificado Estudios";
+					$docName = $_SESSION['doc12Refresh'];
 				}
 				if(isset($_FILES["file13"]))
 				{
 					$sql = "UPDATE documentacion SET URL_13='$nombre', MOD_13=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc13Refresh']="Acreditación Prevencionista";
+					$docName = $_SESSION['doc13Refresh'];
 				}
 				if(isset($_FILES["file14"]))
 				{
 					$sql = "UPDATE documentacion SET URL_14='$nombre', MOD_14=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc14Refresh']="Certificado de Aprobación";
+					$docName = $_SESSION['doc15Refresh'];
 				}
 				if(isset($_FILES["file15"]))
 				{
 					$sql = "UPDATE documentacion SET URL_15='$nombre', MOD_15=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc15Refresh']="Anexo 1";
+					$docName = $_SESSION['doc15Refresh'];
 				}
 				if(isset($_FILES["file16"]))
 				{
 					$sql = "UPDATE documentacion SET URL_16='$nombre', MOD_16=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc16Refresh']="Anexo 2";
+					$docName = $_SESSION['doc16Refresh'];
 				}
 				if(isset($_FILES["file17"]))
 				{
 					$sql = "UPDATE documentacion SET URL_17='$nombre', MOD_17=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc17Refresh']="Anexo 3";
+					$docName = $_SESSION['doc17Refresh'];
 				}
 				if(isset($_FILES["file18"]))
 				{
 					$sql = "UPDATE documentacion SET URL_18='$nombre', MOD_18=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc18Refresh']="Otros";
+					$docName = $_SESSION['doc18Refresh'];
 				}
 				if(isset($_FILES["file19"]))
 				{
 					$sql = "UPDATE documentacion SET URL_19='$nombre', MOD_19=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc19Refresh']="Guía de despacho o factura del material";
+					$docName = $_SESSION['doc19Refresh'];
 				}
 				if(isset($_FILES["file20"]))
 				{
 					$sql = "UPDATE documentacion SET URL_20='$nombre', MOD_20=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc20Refresh']="Documentación legal del Vehículo";
+					$docName = $_SESSION['doc20Refresh'];
 				}
 				if(isset($_FILES["file21"]))
 				{
 					$sql = "UPDATE documentacion SET URL_21='$nombre', MOD_21=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc21Refresh']="Check list del vehículo";
+					$docName = $_SESSION['doc21Refresh'];
 				}
 				if(isset($_FILES["file22"]))
 				{
 					$sql = "UPDATE documentacion SET URL_22='$nombre', MOD_22=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc22Refresh']="Licencia municipal de conducir vigente";
+					$docName = $_SESSION['doc22Refresh'];
 				}
 				if(isset($_FILES["file23"]))
 				{
 					$sql = "UPDATE documentacion SET URL_23='$nombre', MOD_23=CURRENT_TIMESTAMP() WHERE ID_ACREDITADO='$id'";
 					$_SESSION['doc23Refresh']="Visa de trabajo";
+					$docName = $_SESSION['doc23Refresh'];
 				}
 			}
 			//RETORNAMOS EL LINK DEL NOMBRE DEL ARCHIVO
+			mysql_query($sql,$con);
+
+			//REGISTRAR ACCION
+			$sql = "INSERT INTO registro_acciones (ID_CONTRATISTA,ID_USUARIO,TIPO,REFERENCIA,ACCION,FECHAREGISTRO) VALUES ('$idContratista','$idUser','Documento Persona','$id','". $docName ."-". $nombre ."',now())";
 			mysql_query($sql,$con);
 
 			if(isset($okey)){

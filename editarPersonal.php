@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('php/destruye_sesion.php');
 if($_SESSION['nombreUsuario']){
 ?>
 <!DOCTYPE html>

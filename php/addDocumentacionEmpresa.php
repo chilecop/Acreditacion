@@ -5,6 +5,9 @@
 
 	//ID DEL TRABAJADOR ACTUAL
 	$id = $_SESSION['idEmpresaActual'];
+	$idContratista = $_SESSION["idContratista"];
+	$idUser = $_SESSION["idUser"];
+
 
 	//SE COMPRUEBA CUAL ES EL ARCHIVO QUE SE QUIERE SUBIR
 	if(isset($_FILES["file1"]))
@@ -128,54 +131,68 @@
 				{
 					$sql = "UPDATE documentacion_contratista SET URL1='$nombre', MOD1=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa1Refresh']="Ficha Básica de Identificación";
+					$docName = $_SESSION['docEmpresa1Refresh'];
 				}
 				if(isset($_FILES["file2"]))
 				{
 					$sql = "UPDATE documentacion_contratista SET URL2='$nombre', MOD2=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa2Refresh']="Listado de Trabajadores";
+					$docName = $_SESSION['docEmpresa2Refresh'];
 				}
 				if(isset($_FILES["file3"]))
 				{
 					$sql = "UPDATE documentacion_contratista SET URL3='$nombre', MOD3=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa3Refresh']="Autorización de Jornada Excepcional";
+					$docName = $_SESSION['docEmpresa3Refresh'];
 				}
 				if(isset($_FILES["file4"]))
 				{
 					$sql = "UPDATE documentacion_contratista SET URL4='$nombre', MOD4=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa4Refresh']="Contrato Comercial";
+					$docName = $_SESSION['docEmpresa4Refresh'];
 				}
 				if(isset($_FILES["file5"]))
 				{
 					$sql = "UPDATE documentacion_contratista SET URL5='$nombre', MOD5=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa5Refresh']="Antecedentes Comerciales";
+					$docName = $_SESSION['docEmpresa5Refresh'];
 				}
 				if(isset($_FILES["file6"]))
 				{
 					$sql = "UPDATE documentacion_contratista SET URL6='$nombre', MOD6=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa6Refresh']="Certificado Afiliación Mutualidad";
+					$docName = $_SESSION['docEmpresa6Refresh'];
 				}
 				if(isset($_FILES["file7"]))
 				{
 					$sql = "UPDATE documentacion_contratista SET URL7='$nombre', MOD7=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa7Refresh']="Antecedentes Laborales";
+					$docName = $_SESSION['docEmpresa7Refresh'];
 				}
 				if(isset($_FILES["file8"]))
 				{
 					$sql = "UPDATE documentacion_contratista SET URL8='$nombre', MOD8=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa8Refresh']="Carpeta de Arranque";
+					$docName = $_SESSION['docEmpresa8Refresh'];
 				}
 				if(isset($_FILES["file9"]))
 				{
 					$sql = "UPDATE documentacion_contratista SET URL9='$nombre', MOD9=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa9Refresh']="Carpeta Tributaria";
+					$docName = $_SESSION['docEmpresa9Refresh'];
 				}
 				if(isset($_FILES["file10"]))
 				{
 					$sql = "UPDATE documentacion_contratista SET URL10='$nombre', MOD10=CURRENT_TIMESTAMP() WHERE ID_CONTRATISTA='$id'";
 					$_SESSION['docEmpresa10Refresh']="Certificado de Confidencialidad";
+					$docName = $_SESSION['docEmpresa10Refresh'];
 				}
 			}
 			//RETORNAMOS EL LINK DEL NOMBRE DEL ARCHIVO
+			mysql_query($sql,$con);
+
+			//REGISTRAR ACCION
+			$sql = "INSERT INTO registro_acciones (ID_CONTRATISTA,ID_USUARIO,TIPO,REFERENCIA,ACCION,FECHAREGISTRO) VALUES ('$idContratista','$idUser','Documento Empresa','$id','". $docName ."-". $nombre ."',now())";
 			mysql_query($sql,$con);
 
 			if(isset($okey)){

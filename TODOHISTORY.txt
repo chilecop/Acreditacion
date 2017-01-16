@@ -76,3 +76,11 @@ o	Aprobación
 #57 Bloquear mismo rut
 Al ingresar verificar que el rut no exista
 
+#64 Registro
+Registrar cada cambio que realiza un usuario y el registro del inicio de sesión.
+* Ingresar / Editar -> Persona / Contrato / Empresa
+* Ingresar Documento -> Persona / Contrato / Empresa
+* Ingresar / Eliminar -> Pases Diarios
+
+#54 Cerrar Sesión
+Cerrar la sesión después de un límite de tiempo.

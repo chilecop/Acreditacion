@@ -3,6 +3,7 @@ session_start();
 //error_reporting(E_ALL);
 //ini_set('display_errors', '1');
 unset($_SESSION['primerInicio']);
+include('php/destruye_sesion.php');
 if($_SESSION['nombreUsuario']){
 ?>
 <!DOCTYPE html>
@@ -31,7 +32,6 @@ if($_SESSION['nombreUsuario']){
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="js/jquery-1.10.1.min.js"></script>
-
     <!--<script type="text/javascript" src="vendor/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
     <link rel="stylesheet" href="vendor/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <script type="text/javascript" src="vendor/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
