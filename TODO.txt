@@ -1,25 +1,23 @@
 /**
-* Sprint Backlog Semana 03/01/2017
+* Sprint Backlog Semana 16/01/2017
 */
 #38 Buscador vista admin
 En el listarContratistas, debe haber un buscador para las empresas y paginación.
 
-///////////OTROS//////////
-
 #47 Notificaciones
 Muestra de alertas modo notificación, el usuario al hacer clic en la notificación lo lleva a la documentación correspondiente y le muestra todas las observaciones. Ahí mismo debe marcar como leída la observación para que desaparezca.
 
-/////////OTROS////////
 #54 Cerrar Sesión
 Cerrar la sesión después de un límite de tiempo.
 
-#57 Bloquear mismo rut
-Al ingresar verificar que el rut no exista
-
 #62 Mayusculas
-Nombres de empresas con mayúsculas
+Nombres de empresas con mayúsculas.
 
-////////REPORTES/////
+#63 Caducidad
+Si el documento vence, debe alertar 30 días antes, y si no ha sido cambiado y vence quitar la acreditación de la persona.
+
+#64 Registro
+Registrar cada cambio que realiza un usuario y el registro del inicio de sesión.
 
 #60 Trabajadores acreditados 
 Trabajadores acreditados por periodo: Esto es una tabla, donde van 4 columnas; Empresa, N° de contrato, Fecha, N° de personas acreditadas en esa fecha por ese contrato.

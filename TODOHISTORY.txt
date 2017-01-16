@@ -69,3 +69,10 @@ o	Creación de usuario
 o	Generación de orden de contrato
 o	Guardado de cambios en carga de documentos
 o	Aprobación
+
+/**
+* Sprint 16/01/2016
+*/
+#57 Bloquear mismo rut
+Al ingresar verificar que el rut no exista
+
