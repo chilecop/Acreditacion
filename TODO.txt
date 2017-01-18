@@ -4,9 +4,6 @@
 #38 Buscador vista admin
 En el listarContratistas, debe haber un buscador para las empresas y paginación.
 
-#47 Notificaciones
-Muestra de alertas modo notificación, el usuario al hacer clic en la notificación lo lleva a la documentación correspondiente y le muestra todas las observaciones. Ahí mismo debe marcar como leída la observación para que desaparezca.
-
 #62 Mayusculas
 Nombres de empresas con mayúsculas.
 
@@ -25,4 +22,7 @@ En el ver se debe saber de que empresa es y de que contrato...
 
 #66 Historial de Observaciones
 Dentro de la observación de las personas, empresas y contratos debe aparecer un historial con las observaciones
-realizadas y de que usuario las realizó.
+realizadas y de que usuario las realizó. Poner además un botón eliminar para que no le siga apareciendo la observación.
+
+#67 Ver Todas las Notificaciones
+Botón ver todas las notificaciones

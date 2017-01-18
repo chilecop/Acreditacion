@@ -91,6 +91,7 @@ if($_SESSION['nombreUsuario']){
 				else {$date10 = date('d-m-Y', $time10);
 			}
 
+			$idContratista = $_SESSION['idContratista'];
 			?>
 
 			<!-- Bootstrap CSS -->
@@ -154,7 +155,11 @@ if($_SESSION['nombreUsuario']){
 							</header>
 
 							<div class="content-inner">
-
+								<?php 
+								if($idContratista){  
+									getObservaciones($id,$idContratista,"Empresa");  
+								} 
+								?>
 								<div class="row comments-row">
 									<?php
 									imprimirDocumento("FICHA BÁSICA DE IDENTIFICACIÓN",$date1,$mod1,$obs1,$_SESSION['empresaActual'],$url1,$val1,"1","Empresa");

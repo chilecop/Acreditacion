@@ -43,6 +43,7 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 			else {$date4 = date('d-m-Y', $time4);
 		}
 		$empresaId = getEmpresaContrato($id);
+		$idContratista = $_SESSION['idContratista'];
 	}	
 	?>
 
@@ -110,6 +111,10 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 							</header>
 
 							<div class="content-inner">
+								<?php 
+								if($idContratista){  
+									getObservaciones($id,$idContratista,"Contrato");  
+								} ?>
 								<div class="row comments-row">
 								<?php 									
 									imprimirDocumento("CONTRATO COMERCIAL",$date1,$mod1,$obs1,$_SESSION['numeroContrato'],$url1,$val1,"1","Contrato");

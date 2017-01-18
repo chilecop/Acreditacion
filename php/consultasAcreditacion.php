@@ -1013,5 +1013,60 @@
     $fila = mysql_fetch_array($resultado);
     echo $fila['TOTAL'];
   }
-  
+
+  function getObservaciones($idReferencia, $idContratista,$tipo){
+    $con = conectarse();
+    $sql = "
+    SELECT * 
+    FROM 
+    alerta_documentacion 
+    WHERE 
+    REFERENCIA='$idReferencia' AND 
+    ID_CONTRATISTA='$idContratista' AND
+    ID_TIPO='$tipo'";
+    $resultado = mysql_query($sql,$con);
+    $i = 1;
+    if($fila = mysql_fetch_array($resultado)){
+      $fecha = date_create($fila['FECHA_REGISTRO']);
+      echo '
+      <div class="row documento">
+        <div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+          <img src="images/warning.png" alt="">
+        </div>
+        <div class="obs col-xs-9 col-sm-11 col-md-11 col-lg-11">
+          <div class="obsTitle col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <span><b>¡ATENCIÓN!</b></span>
+          </div>
+          <div class="obsBajada col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <span>Actualmente posee las siguientes observaciones</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <hr><span><b>Observación #'. $i .':</b></span><br>
+                  <small>Realizada el ' . date_format($fecha, 'd-m-Y H:i:s') . '</small><br><br>
+                  <span>'. $fila['OBSERVACION'] .'</span><br><br>
+                        <span><b>Documentos Asociados:</b></span><br>
+                        <span>' . $fila['DOCUMENTOS'] .'</span>
+          </div>
+      ';
+      $i++;
+      while ($fila = mysql_fetch_array($resultado)) {
+        echo '        
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <hr><span><b>Observación #'. $i .':</b></span><br>
+                  <small>Realizada el ' . date_format($fecha, 'd-m-Y H:i:s') . '</small><br>
+                  <span>'. $fila['OBSERVACION'] .'</span><br><br>
+                        <span><b>Documentos Asociados:</b></span><br>
+                        <span>' . $fila['DOCUMENTOS'] .'</span>
+        </div>
+        ';
+        $i++;
+      }
+      echo '
+        </div>
+      </div>
+      ';
+    }
+  }
 ?>

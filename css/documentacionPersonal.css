@@ -17,3 +17,17 @@ textarea{
 	resize: none;
 	width: 100%;
 }
+
+.obs{
+	margin-top: 5px;
+	vertical-align: middle;
+}
+
+.obsBajada{
+	margin-top: 6px;
+}
+
+hr{
+	border-top: 1px solid #CCC;
+}
+

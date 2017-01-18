@@ -160,6 +160,7 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 		$tipoPase = getTipoPase($id);
 		$contratoId = getContratoPersonal($id);
 		$empresaId = getEmpresaPersonal($id);
+		$idContratista = $_SESSION['idContratista'];
 	}	
 	?>
 
@@ -227,6 +228,10 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 							</header>
 
 							<div class="content-inner">
+								<?php 
+								if($idContratista){  
+									getObservaciones($id,$idContratista,"Persona");  
+								} ?>
 								<div class="row comments-row">
 								<?php 
 									if($tipoPase == 1 || $tipoPase == 4 || $tipoPase == 6)
@@ -310,103 +315,71 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
 															<label for="1">
-																<input id="1" type="checkbox" class="docsCheck" value="1">
-																Contrato de trabajo
-															</label>
+																<input id="1" type="checkbox" class="docsCheck" value="1">Contrato de trabajo</label>
 														</div>
 														<div class="checkbox">
 															<label for="2">
-																<input id="2" type="checkbox" class="docsCheck" value="2">
-																Inducción JoyGlobal
-															</label>
+																<input id="2" type="checkbox" class="docsCheck" value="2">Inducción JoyGlobal</label>
 														</div>												
 														<div class="checkbox">
 															<label for="3">
-																<input id="3" type="checkbox" class="docsCheck" value="3">
-																Fotografía tamaño carnet
-															</label>
+																<input id="3" type="checkbox" class="docsCheck" value="3">Fotografía tamaño carnet</label>
 														</div>
 														<div class="checkbox">
 															<label for="4">
-																<input id="4" type="checkbox" class="docsCheck" value="4">
-																Consentimiento test alcohol y drogas
-															</label>
+																<input id="4" type="checkbox" class="docsCheck" value="4">Consentimiento test alcohol y drogas</label>
 														</div>
 														<div class="checkbox">
 															<label for="5">
-																<input id="5" type="checkbox" class="docsCheck" value="5">
-																Fotocopia Cédula
-															</label>
+																<input id="5" type="checkbox" class="docsCheck" value="5">Fotocopia Cédula</label>
 														</div>
 														<div class="checkbox">
 															<label for="6">
-																<input id="6" type="checkbox" class="docsCheck" value="6">
-																Examen pre-ocupacional
-															</label>
+																<input id="6" type="checkbox" class="docsCheck" value="6">Examen pre-ocupacional</label>
 														</div>
 													</div>
 													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
 															<label for="7">
-																<input id="7" type="checkbox" class="docsCheck" value="7">
-																ODI
-															</label>
+																<input id="7" type="checkbox" class="docsCheck" value="7">ODI</label>
 														</div>
 														<div class="checkbox">
 															<label for="8">
-																<input id="8" type="checkbox" class="docsCheck" value="8">
-																Reglamento Interno
-															</label>
+																<input id="8" type="checkbox" class="docsCheck" value="8">Reglamento Interno</label>
 														</div>
 														<div class="checkbox">
 															<label for="9">
-																<input id="9" type="checkbox" class="docsCheck" value="9">
-																Entrega EPP
-															</label>
+																<input id="9" type="checkbox" class="docsCheck" value="9">Entrega EPP</label>
 														</div>
 														<div class="checkbox">
 															<label for="10">
-																<input id="10" type="checkbox" class="docsCheck" value="10">
-																Último Finiquito
-															</label>
+																<input id="10" type="checkbox" class="docsCheck" value="10">Último Finiquito</label>
 														</div>
 														<div class="checkbox">
 															<label for="11">
-																<input id="11" type="checkbox" class="docsCheck" value="11">
-																Certificado Antecedentes
-															</label>
+																<input id="11" type="checkbox" class="docsCheck" value="11">Certificado Antecedentes</label>
 														</div>
 														<div class="checkbox">
 															<label for="12">
-																<input id="12" type="checkbox" class="docsCheck" value="12">
-																Certificado Estudios
-															</label>
+																<input id="12" type="checkbox" class="docsCheck" value="12">Certificado Estudios</label>
 														</div>
 													</div>
 													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 														<div class="checkbox">
 															<label for="13">
-																<input id="13" type="checkbox" class="docsCheck" value="13">
-																Acreditación Prevencionista
-															</label>
+																<input id="13" type="checkbox" class="docsCheck" value="13">Acreditación Prevencionista</label>
 														</div>
 														<div class="checkbox">
 															<label for="14">
-																<input id="14" type="checkbox" class="docsCheck" value="14">
-																Certificado de Aprobación
-															</label>
+																<input id="14" type="checkbox" class="docsCheck" value="14">Certificado de Aprobación</label>
 														</div>
 														<div class="checkbox">
 															<label for="15">
-																<input id="15" type="checkbox" class="docsCheck" value="15">
-																Anexo 1
-															</label>
+																<input id="15" type="checkbox" class="docsCheck" value="15">Anexo 1</label>
 														</div>
 														<div class="checkbox">
 															<label for="16">
-																<input id="16" type="checkbox" class="docsCheck" value="16">
-																Anexo 2
-															</label>
+																<input id="16" type="checkbox" class="docsCheck" value="16">Anexo 2</label>
 														</div>
 														<div class="checkbox">
 															<label for="17">

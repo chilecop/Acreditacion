@@ -86,7 +86,7 @@ if($tipo!="Empresa"){
 */
 $sql = "
 INSERT INTO alerta_documentacion (ID_CONTRATISTA,ID_TIPO,REFERENCIA,DOCUMENTOS,OBSERVACION) 
-VALUES ('$idEmpresa','$tipo','$id','$documentos','$observacion')";
+VALUES ('$idEmpresa','$tipo','$id','$documentosText','$observacion')";
 $resultado = mysql_query($sql,$con);
 
 /**
