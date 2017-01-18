@@ -25,6 +25,7 @@ if($_SESSION['nombreUsuario']){
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/estilosAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/notificaciones.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,6 +33,7 @@ if($_SESSION['nombreUsuario']){
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/notificaciones.js"></script>
     <!--<script type="text/javascript" src="vendor/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
     <link rel="stylesheet" href="vendor/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <script type="text/javascript" src="vendor/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
@@ -85,6 +87,25 @@ if($_SESSION['nombreUsuario']){
               <div class="col-md-7">
                 <ul class="pull-right">
                   <li id="welcome" class="hidden-xs"><?php echo '<b>' . $_SESSION['nombreUsuario'] . '</b>'; ?>, bienvenido al &aacute;rea de administraci&oacute;n</li>
+                  <li>
+                  <?php if(isset($_SESSION['idContratista'])){?>
+                  <li id="notification_li" class="fixed-width">
+                    <a href="#" id="notificationLink">
+                      <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                      <span class="label label-warning" id="notification_count"><?php notificacionesCount($_SESSION['idContratista']); ?></span>
+                    </a>
+                    <div id="notificationContainer">
+                      <div id="notificationTitle">Notificaciones</div>
+                      <div id="notificationsBody" class="notifications">
+                        <?php 
+                        if(isset($_SESSION['idContratista'])){
+                          notificaciones($_SESSION['idContratista']);
+                        }
+                        ?>
+                      </div>
+                    </div>
+                  </li>
+                  <?php } ?>
                   <li>
                     <a href="php/desconectar.php" class="logout">
                       <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>

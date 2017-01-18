@@ -16,7 +16,7 @@
 	$alergias = $_POST['alergias'];
 	$id_grupo_sanguineo = $_POST['id_grupo_sanguineo'];
 	$id_tipo_pase = $_POST['id_tipo_pase'];
-	$id_tipo_turno = $_POST['id_tipo_turno'];
+	$id_tipo_jornada = $_POST['ID_REGISTRO'];
 	$tipocontrato = $_POST['id_tipo_contrato'];
 	$fvencvisa = $_POST['fvencvisa'];
 	$regionid = $_POST['region_id'];
@@ -45,7 +45,7 @@
 	alergias='$alergias', 
 	id_grupo_sanguineo='$id_grupo_sanguineo', 
 	id_tipo_pase='$id_tipo_pase', 
-	id_tipo_turno='$id_tipo_turno', 
+	tipo_jornada='$id_tipo_jornada', 
 	f_registro='now()', 
 	fvencvisa='$fvencvisa', 
 	region_id='$regionid', 

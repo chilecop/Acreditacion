@@ -181,41 +181,43 @@ $(function(){
 });
 
 $(function(){
-	document.getElementById("agregarObservacion").addEventListener("click", function(){
-		if(document.getElementById("observacion")!=null)
-			var observacion = document.getElementById("observacion").value;
-		document.getElementById("observacion").value="";
-		var seleccionados = "";
-		var seleccionadosText = "";
-		var i = 0;
-		//SE CAPTURAN TODOS LOS CHECKBOX SELECCIONADOS
-		$('.docsCheck:checked').each(
-		    function() {
-		    	if(i==0){
-		    		seleccionados = seleccionados + $(this).val();
-		    		seleccionadosText = seleccionadosText + $("label[for='"+ $(this).val() +"']").text();
-		    		i=1;
-		    	}else{
-		    		seleccionados = seleccionados + "," + $(this).val();
-		    		seleccionadosText = seleccionadosText + "," + $("label[for='"+ $(this).val() +"']").text();
-		    	}
-		    	$(this).attr('checked',false);
-		    }
-		);
-		$.ajax({
-			data: {
-				'observacion':observacion,
-				'tipo':'Contrato',
-				'documentos':seleccionados,
-				'documentosText': seleccionadosText},
-			type: "POST",
-			url: "php/addObservacion.php",
-			success: function(data)
-			{
-				alert("Observación enviada satisfactoriamente.");
-					
-			}
-		});
+	if(document.getElementById("agregarObservacion")!=null){
+		document.getElementById("agregarObservacion").addEventListener("click", function(){
+			if(document.getElementById("observacion")!=null)
+				var observacion = document.getElementById("observacion").value;
+			document.getElementById("observacion").value="";
+			var seleccionados = "";
+			var seleccionadosText = "";
+			var i = 0;
+			//SE CAPTURAN TODOS LOS CHECKBOX SELECCIONADOS
+			$('.docsCheck:checked').each(
+			    function() {
+			    	if(i==0){
+			    		seleccionados = seleccionados + $(this).val();
+			    		seleccionadosText = seleccionadosText + $("label[for='"+ $(this).val() +"']").text();
+			    		i=1;
+			    	}else{
+			    		seleccionados = seleccionados + "," + $(this).val();
+			    		seleccionadosText = seleccionadosText + "," + $("label[for='"+ $(this).val() +"']").text();
+			    	}
+			    	$(this).attr('checked',false);
+			    }
+			);
+			$.ajax({
+				data: {
+					'observacion':observacion,
+					'tipo':'Contrato',
+					'documentos':seleccionados,
+					'documentosText': seleccionadosText},
+				type: "POST",
+				url: "php/addObservacion.php",
+				success: function(data)
+				{
+					alert("Observación enviada satisfactoriamente.");
+						
+				}
+			});
 
-	});
+		});
+	}
 });

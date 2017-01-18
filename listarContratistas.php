@@ -73,7 +73,7 @@ if($_SESSION['nombreUsuario'] && $nombreUsuario!="Contratista"){
 	            		<thead>
 	            			<tr>
 	            				<th>#</th>
-	            				<th>Nombre Mandante</th>
+	            				<th>Nombre Empresa</th>
 	            				<th>Rut</th>
 	            				<th>Contacto</th>
 	            				<th>Fono</th>

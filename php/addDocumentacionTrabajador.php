@@ -171,7 +171,7 @@
 				$size = $file["size"];
 				$carpeta = "../archivos/" . $_SESSION['trabajadorActual'] . "/";
 
-				if($tipo != 'image/jpeg' && $tipo && 'image/png' && $tipo != 'image/jpg'){
+				if($tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/jpg'){
 					echo json_encode(array('link' =>'Error, debe ser un archivo de imagen.',
 							'mensaje'=>'okey'));
 				}else {

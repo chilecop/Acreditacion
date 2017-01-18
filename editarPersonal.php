@@ -21,7 +21,7 @@ if($_SESSION['nombreUsuario']){
       $sexo,
       $tipopase,
       $contrato,
-      $turno,
+      $tipoJornada,
       $sangre,
       $rut,
       $nombres,
@@ -217,8 +217,8 @@ if($_SESSION['nombreUsuario']){
                       if($_SESSION['nombreUsuario']=="Admin"){
                       ?>
                         <div class="form-group">
-                          <label>Tipo de Turno</label>
-                          <?php getSelect('tipo_turno','id_tipo_turno','descripcion',$turno); ?>
+                          <label>Jornada de Trabajo</label>
+                          <?php getSelect('jornada','ID_REGISTRO','TIPO_JORNADA',$tipoJornada); ?>
                         </div>      
                       <?php
                         }

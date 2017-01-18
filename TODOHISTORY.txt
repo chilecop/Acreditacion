@@ -84,3 +84,4 @@ Registrar cada cambio que realiza un usuario y el registro del inicio de sesión
 
 #54 Cerrar Sesión
 Cerrar la sesión después de un límite de tiempo.
+

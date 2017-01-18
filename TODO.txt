@@ -18,3 +18,11 @@ Trabajadores acreditados por periodo: Esto es una tabla, donde van 4 columnas; E
 
 #61 Estadísticas generales
 Debe mostrar 5 columnas con valor numéricos sencillamente; N° de contrato, N° trabajadores ingresados, N° Aprobados, N° Rechazados, N° en revisión.
+
+//OTROS
+#65 Ver Personal
+En el ver se debe saber de que empresa es y de que contrato...
+
+#66 Historial de Observaciones
+Dentro de la observación de las personas, empresas y contratos debe aparecer un historial con las observaciones
+realizadas y de que usuario las realizó.

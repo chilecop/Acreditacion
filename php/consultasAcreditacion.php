@@ -500,7 +500,7 @@
     $fila['ID_SEXO'] . "%$" . 
     $fila['ID_TIPO_PASE'] . "%$" . 
     $fila['ID_ORDEN_CONTRATO'] . "%$" . 
-    $fila['ID_TIPO_TURNO'] . "%$" . 
+    $fila['TIPO_JORNADA'] . "%$" . 
     $fila['ID_GRUPO_SANGUINEO'] . "%$" . 
     $fila['RUT'] . "%$" . 
     $fila['NOMBRES'] . "%$" . 
@@ -940,6 +940,78 @@
     $resultado = mysql_query($sql,$con);
     $fila = mysql_fetch_row($resultado);
     return $fila['0'];
+  }
+
+  function notificaciones($idContratista){
+    $con = conectarse();
+    $sql = "SELECT * FROM alerta_documentacion WHERE ID_CONTRATISTA='$idContratista' AND VISIBLE='1' LIMIT 3";
+    $resultado = mysql_query($sql,$con);
+    $i = 0;
+    while ($fila = mysql_fetch_array($resultado)) {
+      switch ($fila['ID_TIPO']) {
+        case 'Persona':
+          $imagen = "notificacionPersona.jpg";
+          $titulo = "Documentación Persona";
+          $id = $fila['REFERENCIA'];
+          $sql = "SELECT RUT FROM personal_acreditado WHERE ID_ACREDITADO='$id'";
+          $resultado2 = mysql_query($sql,$con);
+          $fila2 = mysql_fetch_array($resultado2);
+          $url = "http://www.chilecop.cl/acreditacion/documentacionPersonal.php?id=" . $id;
+          $observacion = "RUT: " . $fila2['RUT'];
+          //BUSCAR CON LA SQL EL RUT O EL NUMERO CONTRATO O EL RUT EMPRESA
+          //ADEMÁS PONER LA FECHA ABAJO DE LA NOTIFICACIÓN
+          break;
+        case 'Empresa':
+          $imagen = "notificacionEmpresa.jpg";
+          $titulo = "Documentación Empresa";
+          $id = $fila['REFERENCIA'];
+          $sql = "SELECT RUT FROM empresa_contratista WHERE ID_CONTRATISTA='$id'";
+          $resultado2 = mysql_query($sql,$con);
+          $fila2 = mysql_fetch_array($resultado2);
+          $url = "http://www.chilecop.cl/acreditacion/documentacionEmpresa.php?id=" . $id;
+          $observacion = "RUT: " . $fila2['RUT'];
+          break;
+        case 'Contrato':
+          $imagen = "notificacionContrato.jpg";
+          $titulo = "Documentación Contrato";
+          $id = $fila['REFERENCIA'];
+          $sql = "SELECT N_CONTRATO FROM empresa_contratista WHERE ID_CONTRATISTA='$id'";
+          $resultado2 = mysql_query($sql,$con);
+          $fila2 = mysql_fetch_array($resultado2);
+          $url = "http://www.chilecop.cl/acreditacion/documentacionContrato.php?id=" . $id;
+          $observacion = "N° CONTRATO: " . $fila2['N_CONTRATO'];
+          break;        
+        default:
+          $imagen = "notificacionPersona.jpg";
+          $titulo = "Documentación Persona";
+          $id = $fila['REFERENCIA'];
+          $sql = "SELECT RUT FROM personal_acreditado WHERE ID_ACREDITADO='$id'";
+          $resultado2 = mysql_query($sql,$con);
+          $fila2 = mysql_fetch_array($resultado2);
+          $url = "http://www.chilecop.cl/acreditacion/documentacionPersonal.php?id=" . $id;
+          $observacion = "RUT: " . $fila2['RUT'];
+          break;
+      }
+      echo '
+        <div onclick="location.href=' . "'" . $url . "'" . '" class="notificacionItem">
+          <img src="images/' . $imagen . '" alt="">
+          <div class="notificacionTexto">
+            <div class="notificacionTitulo">' . $titulo . '</div>
+            <div class="notificacionDescripcion">Observación sobre la documentación <br> ' . $observacion .'</div>
+          </div>
+        </div>';
+      $i++;
+    }    
+    echo '    
+      <div id="notificationFooter"><a href="#">Ver más...</a></div>';
+  }
+
+  function notificacionesCount($idContratista){
+    $con = conectarse();
+    $sql = "SELECT count(*) AS TOTAL FROM alerta_documentacion WHERE ID_CONTRATISTA='$idContratista' AND VISIBLE='1'";
+    $resultado = mysql_query($sql,$con);
+    $fila = mysql_fetch_array($resultado);
+    echo $fila['TOTAL'];
   }
   
 ?>
