@@ -4,9 +4,6 @@
 #38 Buscador vista admin
 En el listarContratistas, debe haber un buscador para las empresas y paginación.
 
-#62 Mayusculas
-Nombres de empresas con mayúsculas.
-
 #63 Caducidad
 Si el documento vence, debe alertar 30 días antes, y si no ha sido cambiado y vence quitar la acreditación de la persona.
 
@@ -26,3 +23,6 @@ realizadas y de que usuario las realizó. Poner además un botón eliminar para 
 
 #67 Ver Todas las Notificaciones
 Botón ver todas las notificaciones
+
+#68 Crear Lista Negra
+

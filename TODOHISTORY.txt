@@ -88,4 +88,7 @@ Cerrar la sesión después de un límite de tiempo.
 #47 Notificaciones
 Muestra de alertas modo notificación, el usuario al hacer clic en la notificación lo lleva a la documentación correspondiente y le muestra todas las observaciones. Ahí mismo debe marcar como leída la observación para que desaparezca.
 
+#62 Mayusculas
+Nombres de empresas con mayúsculas.
+
 

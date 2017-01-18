@@ -359,9 +359,9 @@
       FROM personal_acreditado pa, orden_contrato oc 
       WHERE pa.ID_ORDEN_CONTRATO='$id' AND
       oc.ID_OC ='$id' AND
-      oc.ID_CONTRATISTA='$idEmpresa'";
+      oc.ID_CONTRATISTA='$idEmpresa' ORDER BY APELLIDOS";
     }else{
-      $sql="SELECT * FROM personal_acreditado WHERE ID_ORDEN_CONTRATO='$id'";
+      $sql="SELECT * FROM personal_acreditado WHERE ID_ORDEN_CONTRATO='$id' ORDER BY APELLIDOS";
     }
     $resultado = mysql_query($sql,$con);
     $estado = 0;
@@ -395,7 +395,7 @@
     $usuario = $_SESSION['nombreUsuario'];
     $con = conectarse();
     mysql_set_charset("utf8",$con);
-    $sql="SELECT * FROM empresa_contratista";
+    $sql="SELECT * FROM empresa_contratista ORDER BY N_FANTASIA";
     $resultado = mysql_query($sql,$con);
     while($row = mysql_fetch_array($resultado)){
       echo "
@@ -803,7 +803,7 @@
         break;
     }
     echo '
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="documento col-sm-12 col-md-12">
           <div class="row">
             <div class="col-xs-8 col-sm-8 col-md-8">

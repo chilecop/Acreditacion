@@ -376,3 +376,11 @@ html, body{
 .pie-imagen-articulo p{
 	margin: 0 0 5px;
 }
+
+td{
+	text-transform: uppercase;
+}
+
+a[role=button]{
+	text-transform: none;
+}
