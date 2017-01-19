@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-  var datos ={
+  /*var datos ={
     type: "pie",
     data : {
       datasets : [{
@@ -31,6 +31,7 @@ $(document).ready(function(){
       responsive : true,
     }
   };
+
   var canvas = document.getElementById("chart").getContext('2d');
   window.pie = new Chart(canvas, datos);
 
@@ -54,81 +55,54 @@ $(document).ready(function(){
     };
     datos.data.datasets.push(newData);
     window.pie.update();
-  },5000);
+  },5000);*/
 
   function getRandom(){
     return Math.round(Math.random()*100);
   }
 
+  function fecha(d, fecha)
+  {
+     var Fecha = new Date();
+     var sFecha = fecha || (Fecha.getDate() + "/" + (Fecha.getMonth() +1) + "/" + Fecha.getFullYear());
+     var sep = sFecha.indexOf('/') != -1 ? '/' : '-'; 
+     var aFecha = sFecha.split(sep);
+     var fecha = aFecha[2]+'/'+aFecha[1]+'/'+aFecha[0];
+     fecha= new Date(fecha);
+     fecha.setDate(fecha.getDate()+parseInt(d));
+     var anno=fecha.getFullYear();
+     var mes= fecha.getMonth()+1;
+     var dia= fecha.getDate();
+     mes = (mes < 10) ? ("0" + mes) : mes;
+     dia = (dia < 10) ? ("0" + dia) : dia;
+     var fechaFinal = dia+sep+mes+sep+anno;
+     return (fechaFinal);
+  }
+
   // GRÁFICO DE AREA DE TRABAJO
-  var datos2 ={
-    labels : ["14-09-2016","15-09-2016","16-09-2016","17-09-2016", "18-09-2016","19-09-2016","20-09-2016"],
+  var datosAcreditados ={
+    labels : [fecha(-6),fecha(-5),fecha(-4),fecha(-3), fecha(-2),fecha(-1),fecha(0)],
     datasets : [{
-      label : "Bodega",
+      label : "Acreditados",
       backgroundColor : "rgba(220,220,220,0.7)",
       data : [47,48,46,45,47,46,48]
     },
     {
-      label : "Taller",
+      label : "Rechazados",
       backgroundColor : "rgba(151,187,205,0.7)",
       data : [30,34,32,32,32,34,32]
     },
     {
-      label : "Administración",
+      label : "Pendientes",
       backgroundColor : "rgba(240,187,205,0.7)",
       data : [57,58,56,57,58,57,57]
-    },
-    {
-      label : "Casinos",
-      backgroundColor : "rgba(151,150,205,0.7)",
-      data : [16,14,14,13,14,14,15]
-    },
-    {
-      label : "Garita",
-      backgroundColor : "rgba(151,187,120,0.7)",
-      data : [48,48,46,47,48,48,48]
     },]
   };
 
-  var canvas2 = document.getElementById('chart2').getContext('2d');
+  var canvas2 = document.getElementById('chart').getContext('2d');
   window.bar = new Chart(canvas2, {
     type : "bar",
-    data: datos2
+    data: datosAcreditados
   })
 
-  // GRÁFICO TIPO DE PERSONAL
-  var datos3 ={
-    labels : ["14-09-2016","15-09-2016","16-09-2016","17-09-2016", "18-09-2016","19-09-2016","20-09-2016"],
-    datasets : [{
-      label : "Trabajador Planta",
-      backgroundColor : "rgba(255, 99, 132, 0.7)",
-      data : [238,224,256,235,267,260,255]
-    },
-    {
-      label : "Proveedor",
-      backgroundColor : "rgba(54, 162, 235, 0.7)",
-      data : [30,3,45,17,26,15,5]
-    },
-    {
-      label : "Cliente",
-      backgroundColor : "rgba(255, 206, 86, 0.7)",
-      data : [5,8,3,1,7,10,4]
-    },
-    {
-      label : "Visita",
-      backgroundColor : "rgba(75, 192, 192, 0.7)",
-      data : [18,12,5,25,13,20,11]
-    },
-    {
-      label : "Transportista",
-      backgroundColor : "rgba(153, 102, 255, 0.7)",
-      data : [7,3,11,7,8,4,6]
-    },]
-  };
-
-  var canvas3 = document.getElementById('chart3').getContext('2d');
-  window.bar = new Chart(canvas3, {
-    type : "bar",
-    data: datos3
-  })
 });

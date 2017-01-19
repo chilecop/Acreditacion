@@ -24,6 +24,46 @@ if($_SESSION['nombreUsuario'] && $nombreUsuario!="Contratista"){
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<!-- jQuery -->
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+			   // Interceptamos el evento submit
+			    $("input[name='search']").on("keyup", function() {
+			  // Enviamos el formulario usando AJAX
+			  		$('#respuestaBusquedaPersonal').show();
+			  		$('#respuestaBusquedaPersonal').html('<div><img style="max-width:20px;" src="images/loading.gif"/> <b>Cargando</b></div>');
+			  		var value=$.trim($("input[name='search']").val());
+			  		if(value.length>0){
+				        $.ajax({
+				            type: 'POST',
+				            url: "php/buscadorContratistas.php",
+				            data: $(this).serialize(),
+				            // Mostramos un mensaje con la respuesta de PHP
+				            success: function(data) {
+				            	$('#personalOriginal').hide();
+				            	$('#respuestaBusquedaPaginacion').hide();
+				                $('#respuestaBusquedaPersonal').html(data);
+				            }
+				        })        
+				        return false;
+			    	}else{
+			    		$.ajax({
+				            type: 'POST',
+				            url: "php/buscadorContratistas.php",
+				            data: $(this).serialize(),
+				            // Mostramos un mensaje con la respuesta de PHP
+				            success: function(data) {
+				            	$('#respuestaBusquedaPersonal').hide();
+				            	$('#personalOriginal').show();
+				            	$('#respuestaBusquedaPaginacion').show();
+				            }
+				        })        
+				        return false;
+			    	}
+			    }); 
+			})
+	    </script>
 	</head>
 	<body>
 		<div class="container-fluid display-table">
@@ -69,6 +109,7 @@ if($_SESSION['nombreUsuario'] && $nombreUsuario!="Contratista"){
 	            </header>
 
 	            <div class="content-inner">
+	            	<input name="search" placeholder="Buscar personal..." class="form-control">
 	            	<table class="table table-hover">
 	            		<thead>
 	            			<tr>
@@ -77,13 +118,20 @@ if($_SESSION['nombreUsuario'] && $nombreUsuario!="Contratista"){
 	            				<th>Rut</th>
 	            				<th>Contacto</th>
 	            				<th>Fono</th>
-	            				<th>Representante</th>
 	            			</tr>
 	            		</thead>
-	            		<tbody>
-	            			<?php listarContratistas(); ?>
+	            		<tbody id="respuestaBusquedaPersonal">
+	            			<div id="cargando"></div>
+	            		</tbody>
+	            		<tbody id="personalOriginal">
+	            			<?php listarContratistas(10); ?>
 	            		</tbody>
 	            	</table>
+	            	<div class="row">
+		            	<div id="respuestaBusquedaPaginacion" class="col-md-12">
+		            		<?php paginacion(10,"empresa_contratista"); ?>
+		            	</div>
+	            	</div>
 	            </div>
 	          </div>
 
@@ -96,9 +144,6 @@ if($_SESSION['nombreUsuario'] && $nombreUsuario!="Contratista"){
 	        </div>
 	      </div>
 	    </div>
-
-		<!-- jQuery -->
-		<script src="http://code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	</body>

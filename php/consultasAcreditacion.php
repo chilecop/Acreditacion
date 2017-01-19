@@ -391,11 +391,15 @@
     mysql_close($con);
   }
 
- function listarContratistas(){
+ function listarContratistas($nxp){
+    $paginas = new Zebra_Pagination();
+    $paginas->records_per_page($nxp);
+    $total = totalDatos("empresa_contratista");
+    $paginas->records($total);
     $usuario = $_SESSION['nombreUsuario'];
     $con = conectarse();
     mysql_set_charset("utf8",$con);
-    $sql="SELECT * FROM empresa_contratista ORDER BY N_FANTASIA";
+    $sql="SELECT * FROM empresa_contratista ORDER BY N_FANTASIA LIMIT " . (($paginas->get_page() - 1) * $nxp) ."," . $nxp;
     $resultado = mysql_query($sql,$con);
     while($row = mysql_fetch_array($resultado)){
       echo "
@@ -404,8 +408,7 @@
               <td>".$row['N_FANTASIA'] . "</td>
               <td>".$row['RUT'] . "</td>
               <td>".$row['N_CONTACTO'] . "</td>
-              <td>".$row['FONO'] . "</td>
-              <td>".$row['REP'] . "</td>";
+              <td>".$row['FONO'] . "</td>";
               echo "<td><a class='btn btn-xs btn-success' href='verContratista.php?id=".$row['ID_CONTRATISTA'] . "' role='button'>Ver</a></td>";
               echo "<td><a class='btn btn-xs btn-default' href='listarContratos.php?id=".$row['ID_CONTRATISTA'] . "' role='button'>Contratos</a></td>";
 			        echo" <td><a class='btn btn-xs btn-default' href='documentacionEmpresa.php?id=".$row['ID_CONTRATISTA']."' role='button'>Documentos Empresa</a></td>";
@@ -1068,5 +1071,26 @@
       </div>
       ';
     }
+  }
+
+  function totalDatos($tabla){
+    $con = conectarse();
+    mysql_set_charset("utf8",$con);
+    $query = "SELECT count(*) FROM " . $tabla;
+    $resultado = mysql_query($query, $con);
+    $fila = mysql_fetch_row($resultado);
+    return $fila['0'];
+    mysql_close($con);
+  }
+
+  function paginacion($nxp,$tabla){
+    $con = conectarse();
+    mysql_set_charset("utf8",$con);
+    $paginas = new Zebra_Pagination();
+    $total = totalDatos($tabla);
+    $paginas->records($total);
+    $paginas->records_per_page($nxp);
+    echo $paginas->render();
+    mysql_close($con);
   }
 ?>

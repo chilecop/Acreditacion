@@ -1,12 +1,6 @@
 /**
 * Sprint Backlog Semana 16/01/2017
 */
-#38 Buscador vista admin
-En el listarContratistas, debe haber un buscador para las empresas y paginación.
-
-#63 Caducidad
-Si el documento vence, debe alertar 30 días antes, y si no ha sido cambiado y vence quitar la acreditación de la persona.
-
 #60 Trabajadores acreditados 
 Trabajadores acreditados por periodo: Esto es una tabla, donde van 4 columnas; Empresa, N° de contrato, Fecha, N° de personas acreditadas en esa fecha por ese contrato.
 
@@ -25,4 +19,25 @@ realizadas y de que usuario las realizó. Poner además un botón eliminar para 
 Botón ver todas las notificaciones
 
 #68 Crear Lista Negra
+Se debe generar una lista negra donde se ingresen las personas que han sido despedidas y no se quiere
+que vuelva a ingresar por ninguna otra empresa. Analizar el caso de las personas permitidas que ingresan nuevamente
+por otra empresa.
+
+#69 Implementar Caducidad Documento
+Se debe realizar las consultas dentro del archivo verificarVencimientoDocumentacion para que envíe correo
+y alerta, como también desacredite cuando sea el caso.
+
+#70 Reporte Pases de Visita
+
+#71 Reporte Acreditados y Rechazados por mes
+
+#72 Reporte Visión Actual de Acr, Rech, Pend -> %Avance de acreditación
+
+#73 Reporte Personas en la instalación
+
+#74 Cambiar el sistema de CACCESO a una sola ventana, y el sistema discrimina si es entrada o salida
+
+#75 Reporte de Tipos de Pase por periodo y a modo general.
+
+#76 Los pases de visita, deben alertar si no salen durante el día.
 

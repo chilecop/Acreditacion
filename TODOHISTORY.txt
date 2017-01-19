@@ -91,4 +91,10 @@ Muestra de alertas modo notificación, el usuario al hacer clic en la notificaci
 #62 Mayusculas
 Nombres de empresas con mayúsculas.
 
+#63 Caducidad
+Si el documento vence, debe alertar 30 días antes, y si no ha sido cambiado y vence quitar la acreditación de la persona.
+
+#38 Buscador vista admin
+En el listarContratistas, debe haber un buscador para las empresas y paginación.
+
 

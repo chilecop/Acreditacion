@@ -34,6 +34,8 @@ if($_SESSION['nombreUsuario']){
     <![endif]-->
     <script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/notificaciones.js"></script>
+    <script type="text/javascript" src="vendor/chart/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="js/graficos.js"></script>
     <!--<script type="text/javascript" src="vendor/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
     <link rel="stylesheet" href="vendor/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <script type="text/javascript" src="vendor/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
@@ -175,6 +177,19 @@ if($_SESSION['nombreUsuario']){
               </div>             
             </div>
             -->
+            
+            <!--<div class="col-md-6">
+              <div class="row">
+                <div class="admin-content-con clearfix">
+                  <header class="clearfix">
+                  <h5 class="pull-left"><b>ACREDITACIONES MENSUALES</b></h5>
+                  </header>
+                  <div id="canvas-container">
+                    <canvas id="chart" width="500" height="350"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>-->
             <div class="row">
               <div class="col-md-12">
                 <div class="admin-content-con clearfix">
@@ -196,7 +211,7 @@ if($_SESSION['nombreUsuario']){
                           <td>1</td>
                           <td>Pasos ingreso personal</td>
                           <td>05-01-2017</td>
-                          <td><a class="btn btn-warning" target="_blank" href="http://www.chilecop.cl/acreditacion/documentos/instructivoInterfaz.pdf">Ver</a></td>
+                          <td><a class="btn btn-warning" target="_blank" href="http://www.chilecop.cl/acreditacion/documentos/instructivoInterfaz.pdf" role="button">Ver</a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -225,31 +240,31 @@ if($_SESSION['nombreUsuario']){
                           <td>1</td>
                           <td>Instructivo Acreditación</td>
                           <td>05-12-2016</td>
-                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/instructivoAcreditacion.pdf" download="instructivoAcreditacion.pdf">Descargar</a></td>
+                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/instructivoAcreditacion.pdf" download="instructivoAcreditacion.pdf" role="button">Descargar</a></td>
                         </tr>
                         <tr>
                           <td>2</td>
                           <td>Información Auditoría de Remuneraciones</td>
                           <td>05-12-2016</td>
-                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/informacionAuditoria.pdf" download="informacionAuditoria.pdf">Descargar</a></td>
+                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/informacionAuditoria.pdf" download="informacionAuditoria.pdf" role="button">Descargar</a></td>
                         </tr>
                         <tr>
                           <td>3</td>
                           <td>Nómina Auditoría de Remuneraciones</td>
                           <td>05-12-2016</td>
-                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/nominaAuditoriaRemuneraciones.xls" download="nominaAuditoriaRemuneraciones.xls">Descargar</a></td>
+                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/nominaAuditoriaRemuneraciones.xls" download="nominaAuditoriaRemuneraciones.xls" role="button">Descargar</a></td>
                         </tr>
                         <tr>
                           <td>4</td>
                           <td>Nómina Acreditación</td>
                           <td>05-12-2016</td>
-                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/nominaAcreditacion.xls" download="nominaAcreditacion.xls">Descargar</a></td>
+                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/nominaAcreditacion.xls" download="nominaAcreditacion.xls" role="button">Descargar</a></td>
                         </tr>
                         <tr>
                           <td>5</td>
                           <td>Ficha inscripción Empresas Contratistas</td>
                           <td>30-12-2016</td>
-                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/fichaInscripcionEmpresasContratistas.xls" download="fichaInscripcionEmpresasContratistas.xls">Descargar</a></td>
+                          <td><a class="btn btn-primary" href="http://www.chilecop.cl/acreditacion/documentos/fichaInscripcionEmpresasContratistas.xls" download="fichaInscripcionEmpresasContratistas.xls" role="button">Descargar</a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -284,7 +299,7 @@ if($_SESSION['nombreUsuario']){
                           <td>s.kunz@chilecop.cl</td>
                           <td>+56 9 44337239</td>
                           <td>Administrador Acreditación</td>
-                          <td><a class="btn btn-default" href="mailto:s.kunz@chilecop.cl">Enviar E-mail</a></td>
+                          <td><a class="btn btn-default" href="mailto:s.kunz@chilecop.cl" role="button">Enviar E-mail</a></td>
                         </tr>
                         <tr>
                           <td>2</td>
@@ -292,7 +307,7 @@ if($_SESSION['nombreUsuario']){
                           <td>acreditacion@chilecop.cl</td>
                           <td></td>
                           <td>Subgerencia de Desarrollo</td>
-                          <td><a class="btn btn-default" href="mailto:acreditacion@chilecop.cl">Enviar E-mail</a></td>
+                          <td><a class="btn btn-default" href="mailto:acreditacion@chilecop.cl" role="button">Enviar E-mail</a></td>
                         </tr>
                         <tr>
                           <td>3</td>
@@ -300,7 +315,7 @@ if($_SESSION['nombreUsuario']){
                           <td>informatica@chilecop.cl</td>
                           <td>+56 9 73885258</td>
                           <td>Subgerencia de Desarrollo</td>
-                          <td><a class="btn btn-default" href="mailto:informatica@chilecop.cl">Enviar E-mail</a></td>
+                          <td><a class="btn btn-default" href="mailto:informatica@chilecop.cl" role="button">Enviar E-mail</a></td>
                         </tr>
                       </tbody>
                     </table>

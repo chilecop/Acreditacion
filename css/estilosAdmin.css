@@ -384,3 +384,7 @@ td{
 a[role=button]{
 	text-transform: none;
 }
+
+input[name="search"]{
+	margin-bottom: 15px;
+}
