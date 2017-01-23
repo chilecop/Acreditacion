@@ -2,6 +2,7 @@
 session_start();
 include('php/destruye_sesion.php');
 if($_SESSION['nombreUsuario']){
+  $usuario = $_SESSION['nombreUsuario'];
   ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -42,7 +43,9 @@ if($_SESSION['nombreUsuario']){
       $sector,
       $tipovisa,
       $jornada,
-      $idtipopase) = explode("%$", $contenido);
+      $idtipopase,
+      $induccion,
+      $nfantasia) = explode("%$", $contenido);
 
     switch ($estado) {
       case '1':
@@ -128,6 +131,23 @@ if($_SESSION['nombreUsuario']){
 
           });
         });
+
+        $(document).ready(function() {
+          $('input[type=radio][name=induccion]').change(function() {
+              var id = document.getElementById("id").value;
+              var valor = this.value;
+              $.ajax({
+                data: {'id': id,'valor': valor},
+                type: "POST",
+                url: "php/cambiarInduccion.php",
+                success: function(data)
+                {
+                  alert("Modificación de inducción correcta, ahora es " + valor);
+                }
+            });
+          });
+      });
+
       </script>
     </head>
     <body>
@@ -165,7 +185,7 @@ if($_SESSION['nombreUsuario']){
 
             <div id="content">
               <header class="clearfix">
-                <div class="col-xs-5 col-sm-3 col-md-3"><b>Ver Personal</b></div>
+                <div class="col-xs-5 col-sm-3 col-md-3"><b>Ver Personal - <?php echo $nfantasia; ?></b></div>
                 <div class="col-xs-7 col-sm-9 col-md-9">
                   <a style="margin-left:1em; margin-bottom:0.5em;" class='btn btn-xs btn-warning pull-right' href='editarPersonal.php?id=<?php echo $id; ?>' role='button'>Editar</a>  
                   <a style="margin-left:1em; margin-bottom:0.5em;" class='btn btn-xs btn-default pull-right' href='documentacionPersonal.php?id=<?php echo $id; ?>' role='button'>Ver Documentación</a>
@@ -243,6 +263,11 @@ if($_SESSION['nombreUsuario']){
                         <p><?php echo $sector; ?></p>
                         <p><b>Jornada de Trabajo</b></p>
                         <p><?php echo $jornada; ?></p>
+                        <?php if($usuario == "Admin"){?>
+                        <p><b>Inducción</b></p>
+                        <input type="radio" name="induccion" value="Si" <?php if($induccion=="Si") echo "checked"; ?>> Si<br>
+                        <input type="radio" name="induccion" value="No" <?php if($induccion=="No") echo "checked"; ?>> No<br>
+                        <?php } ?>
                       </div>              
                     </div>
                   </div>

@@ -97,4 +97,12 @@ Si el documento vence, debe alertar 30 días antes, y si no ha sido cambiado y v
 #38 Buscador vista admin
 En el listarContratistas, debe haber un buscador para las empresas y paginación.
 
+#77 Botón Inducción
+Se agregó un botón en el ver personal que define si la persona posee o no inducción.
 
+/**
+* Sprint 23/01/2017
+*/
+#71 Reporte Acreditados y Rechazados por mes
+
+#72 Reporte Visión Actual de Acr, Rech, Pend -> %Avance de acreditación

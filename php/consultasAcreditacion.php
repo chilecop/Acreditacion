@@ -378,7 +378,8 @@
               <td>".$row['APELLIDOS'] . " " . $row['NOMBRES'] . "</td>
               <td>".$row['CARGO'] . "</td>
               <td>".$row['FONO_EMERGENCIA'] . "</td>
-              <td>".$row['NACIONALIDAD'] . "</td>";
+              <td>".$row['NACIONALIDAD'] . "</td>
+              <td>".$row['INDUCCION'] . "</td>";
               echo "<td><a class='btn btn-xs btn-success' href='verPersona.php?id=".$row['ID_ACREDITADO'] . "' role='button'>Ver</a></td>";
               if($usuario=="Admin"){
                 echo "<td><a class='btn btn-xs btn-default' href='#' role='button'>Observaciones</a></td>";
@@ -436,7 +437,8 @@
     reg.region_nombre AS region,
     sec.DESCRIPCION AS sector,
     v.DESCRIPCION AS tipovisa,
-    j.TIPO_JORNADA AS jornada
+    j.TIPO_JORNADA AS jornada,
+    ec.N_FANTASIA AS nfantasia
     FROM 
     personal_acreditado pa,
     sexo s,
@@ -447,7 +449,8 @@
     regiones reg,
     sectores sec,
     visa v,
-    jornada j
+    jornada j,
+    empresa_contratista ec
     WHERE 
     pa.ID_ACREDITADO='$id' AND
     s.ID_SEXO = pa.ID_SEXO AND
@@ -458,7 +461,8 @@
     pa.REGION_ID = reg.region_id AND
     pa.ID_SECTOR = sec.ID_SECTOR AND
     pa.ID_VISA = v.ID_VISA AND
-    pa.TIPO_JORNADA = j.ID_REGISTRO";
+    pa.TIPO_JORNADA = j.ID_REGISTRO AND
+    ec.ID_CONTRATISTA = oc.ID_CONTRATISTA";
     $resultado = mysql_query($query, $con);
     $fila = mysql_fetch_array($resultado);
 
@@ -489,7 +493,9 @@
     $fila['sector'] . "%$" . 
     $fila['tipovisa'] . "%$" . 
     $fila['jornada']. "%$" .
-    $fila['ID_TIPO_PASE'];
+    $fila['ID_TIPO_PASE']. "%$" .
+    $fila['INDUCCION']. "%$" .
+    $fila['nfantasia'];
   }
 
   function getEditPersona($id){
@@ -940,6 +946,14 @@
   function getEmpresaContrato($id){
     $con = conectarse();
     $sql = "SELECT ID_CONTRATISTA FROM orden_contrato WHERE ID_OC='$id'";
+    $resultado = mysql_query($sql,$con);
+    $fila = mysql_fetch_row($resultado);
+    return $fila['0'];
+  }
+
+  function getEmpresaNombre($id){
+    $con = conectarse();
+    $sql = "SELECT N_FANTASIA FROM empresa_contratista WHERE ID_CONTRATISTA='$id'";
     $resultado = mysql_query($sql,$con);
     $fila = mysql_fetch_row($resultado);
     return $fila['0'];

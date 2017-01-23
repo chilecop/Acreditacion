@@ -5,6 +5,7 @@ session_start();
 unset($_SESSION['primerInicio']);
 include('php/destruye_sesion.php');
 if($_SESSION['nombreUsuario']){
+  $usuario = $_SESSION['nombreUsuario'];
 ?>
 <!DOCTYPE html>
 <html lang="">
@@ -18,7 +19,7 @@ if($_SESSION['nombreUsuario']){
     tituloPanel();
     $hoy = date('j-m-Y');
     $fecha = date('Y-m-j');
-    $sietedias = strtotime ( '-6 day' , strtotime ( $hoy ) ) ;
+    $sietedias = strtotime ( '-6 day' , strtotime ( $hoy ) );
     $sietedias = date ( 'j-m-Y' , $sietedias );
     ?>
     <!-- Bootstrap -->
@@ -177,19 +178,30 @@ if($_SESSION['nombreUsuario']){
               </div>             
             </div>
             -->
-            
-            <!--<div class="col-md-6">
-              <div class="row">
+            <?php if($usuario=="Admin"){ ?>
+            <div class="row">
+              <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">        
                 <div class="admin-content-con clearfix">
                   <header class="clearfix">
-                  <h5 class="pull-left"><b>ACREDITACIONES MENSUALES</b></h5>
+                  <h5 class="pull-left"><b>ACREDITACIONES MENSUALES <?php echo date("Y"); ?></b></h5>
                   </header>
                   <div id="canvas-container">
                     <canvas id="chart" width="500" height="350"></canvas>
                   </div>
                 </div>
               </div>
-            </div>-->
+              <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">        
+                <div class="admin-content-con clearfix">
+                  <header class="clearfix">
+                  <h5 class="pull-left"><b>PORCENTAJE AVANCE EMPRESAS al <?php echo date("d"). " de " . date("F") . " del " . date("Y"); ?></b></h5>
+                  </header>
+                  <div id="canvas-container">
+                    <canvas id="chartTorta" width="500" height="350"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php } ?>
             <div class="row">
               <div class="col-md-12">
                 <div class="admin-content-con clearfix">

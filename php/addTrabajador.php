@@ -41,6 +41,7 @@
 
 		$sql = "INSERT INTO personal_acreditado (id_estado, id_orden_contrato, rut, nombres, apellidos, f_nacimiento, id_sexo, nacionalidad, id_visa, procedencia, cargo, direccion, fono_emergencia, id_tipo_contrato, id_tipo_pase, id_tipo_turno, region_id, fechainicio, fechatermino, terminopase, id_sector, fVencVisa, f_registro, tipo_jornada) VALUES ('3', '$idcontrato', '$rut', '$nombre', '$apellidos', '$fnac', '$sexo', '$nacionalidad', '$id_visa', '$procedencia','$cargo', '$direccion', '$fono', '$id_tipo_contrato','$id_tipo_pase','$id_tipo_turno','$region_id', '$fechainicio', '$fechatermino','". $fila['F_TERMINO'] . "','$id_sector', '$fVencVisa', now(), '$jornada')";
 		$resultado = mysql_query($sql,$con);
+		$sql = "INSERT INTO estado_trabajador_historial (ID_ACREDITADO) VALUES ()";
 
 		if($resultado){
 			//CREACIÓN DE LA CARPETA PARA LOS ARCHIVOS CORRESPONDIENTES
@@ -48,7 +49,7 @@
 			mkdir($directorio, 0777);
 
 			/**
-			 * CREACIÓN DE LA INSTANCIA PARA LA DOCUMENTACIÓN
+			 * CREACIÓN DE LA INSTANCIA PARA LA DOCUMENTACIÓN Y ESTADO TRABAJADOR
 			 */		
 			//PRIMERO CAPTURAMOS EL ID DEL RECIEN INSERTADO
 			$sql = "SELECT ID_ACREDITADO FROM personal_acreditado GROUP BY ID_ACREDITADO DESC LIMIT 1";
@@ -56,6 +57,8 @@
 			$fila = mysql_fetch_array($resultado);
 			$acreditado = $fila['ID_ACREDITADO'];
 			//AHORA CREAMOS LA INSTANCIA	
+			$sql = "INSERT INTO estado_trabajador_historial (ID_ACREDITADO,FECHA) VALUES ($acreditado,now())";
+			mysql_query($sql,$con);
 			$sql = "INSERT INTO documentacion (ID_ACREDITADO) VALUES ($acreditado)"; 
 			mysql_query($sql,$con);
 			//REGISTRAR ACCION

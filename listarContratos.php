@@ -71,7 +71,7 @@ if($_SESSION['nombreUsuario']){
 						<a href="listarContratistas.php" title="">Empresas Contratistas</a> 
 					<?php } ?>
 					<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
-	              	Contratos Vigentes</b>
+	              	Contratos Vigentes - <?php echo getEmpresaNombre($id); ?></b>
 	              </div>
 	              <div class="col-xs-4 col-sm-4 col-md-4">
 	              	<a class="btn btn-xs btn-success pull-right" href="ingresarOrdenContrato.php?id=<?php echo $id; ?>" role="button">Ingresar Contrato</a>	

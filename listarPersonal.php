@@ -91,6 +91,7 @@ if($_SESSION['nombreUsuario']){
 	            				<th>Cargo</th>
 	            				<th>Fono</th>
 	            				<th>Nacionalidad</th>
+	            				<th>Inducción</th>
 	            			</tr>
 	            		</thead>
 	            		<tbody>
