@@ -257,7 +257,7 @@ $nombreUsuario = $_SESSION['nombreUsuario'];
 									imprimirDocumento("Reglamento Interno",$date8,$mod8,$obs8,$_SESSION['trabajadorActual'],$url8,$val8,"8","Persona");
 
 									if($tipoPase == 1 || $tipoPase == 4 || $tipoPase == 6)
-									imprimirDocumento("Entrega EPP",$date9,$mod9,$obs9,$_SESSION['trabajadorActual'],$url9,$val9,"9");
+									imprimirDocumento("Entrega EPP",$date9,$mod9,$obs9,$_SESSION['trabajadorActual'],$url9,$val9,"9","Persona");
 									if($tipoPase == 1)
 									imprimirDocumento("Último Finiquito",$date10,$mod10,$obs10,$_SESSION['trabajadorActual'],$url10,$val10,"10","Persona");
 									if($tipoPase == 1)

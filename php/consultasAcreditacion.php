@@ -382,7 +382,7 @@
               <td>".$row['INDUCCION'] . "</td>";
               echo "<td><a class='btn btn-xs btn-success' href='verPersona.php?id=".$row['ID_ACREDITADO'] . "' role='button'>Ver</a></td>";
               if($usuario=="Admin"){
-                echo "<td><a class='btn btn-xs btn-default' href='#' role='button'>Observaciones</a></td>";
+                echo "<td><a class='btn btn-xs btn-default' href='acreditarPersonal.php?id=".$row['ID_ACREDITADO'] . "' role='button'>Acreditar</a></td>";
               }
               echo" <td><a class='btn btn-xs btn-default' href='documentacionPersonal.php?id=".$row['ID_ACREDITADO']."' role='button'>Ver documentos</a></td>
               <td><a class='btn btn-xs btn-warning' href='editarPersonal.php?id=".$row['ID_ACREDITADO']."' role='button'>Editar</a></td>
@@ -880,7 +880,7 @@
     }
   }
 
-  function imprimirDocumentoVer($nombre,$columna,$tipo,$rut,$id){
+  function imprimirDocumentoVer($nombre,$columna,$tipo,$rut,$id,$fecha,$nval){
     $con = conectarse();
     switch ($tipo) {
       case 'Persona':
@@ -903,16 +903,28 @@
         break;
     }    
     mysql_close($con);
+    
     if($fila['URL']){
-    echo "
-        <p><b>". $nombre ."</b></p>
-        <p><a href='http://www.chilecop.cl/acreditacion/archivos/". $rut . "/" . $fila['URL'] . "' target='_blank'>". $fila['URL'] ."</a></p>";
+      echo "<tr>";
+      echo "<td>" . $nombre . "</td>";
+      echo "<td><a href='http://www.chilecop.cl/acreditacion/archivos/". $rut . "/" . $fila['URL'] . "' target='_blank'>VER</a></td>";
+      if($fecha=="si"){
+        echo '<td id="TD' . $nval .'"><input id="'. $nval .'" type="date" class="form-control" value="00-00-0000"></td>';
+      }else{
+        echo "<td id='TD" . $nval ."'>SIN VENCIMIENTO</td>";
+      }
+      echo "</tr>";
     }else{
-      echo "
-        <p><b>". $nombre ."</b></p>
-        <p>Sin información</p>
-        ";
-    }    
+      echo "<tr>";
+      echo "<td>" . $nombre . "</td>";
+      echo "<td>ARCHIVO FALTANTE</td>";
+      if($fecha=="si"){
+        echo '<td id="TD' . $nval .'">ARCHIVO FALTANTE</td>';
+      }else{
+        echo "<td id='TD" . $nval ."'>SIN VENCIMIENTO</td>";
+      }
+      echo "</tr>";
+    } 
   }
 
   /**
@@ -1040,7 +1052,8 @@
     WHERE 
     REFERENCIA='$idReferencia' AND 
     ID_CONTRATISTA='$idContratista' AND
-    ID_TIPO='$tipo'";
+    ID_TIPO='$tipo' AND
+    VISIBLE='1'";
     $resultado = mysql_query($sql,$con);
     $i = 1;
     if($fila = mysql_fetch_array($resultado)){
@@ -1087,6 +1100,92 @@
     }
   }
 
+  function getObservacionesAcreditacion($idReferencia, $tipo){
+    $con = conectarse();
+    $sql = "
+    SELECT * 
+    FROM 
+    alerta_documentacion 
+    WHERE 
+    REFERENCIA='$idReferencia' AND 
+    ID_TIPO='$tipo'";
+    $resultado = mysql_query($sql,$con);
+    $i = 1;
+    echo '<table class="table">';
+    if($fila = mysql_fetch_array($resultado)){
+      $fecha = date_create($fila['FECHA_REGISTRO']);
+      echo '
+        <thead>
+          <tr>
+            <th>N° Obs.</th>
+            <th>Estado</th>
+            <th>Fecha</th>
+            <th>Observación</th>
+            <th>Documentos Asociados</th>
+            <th>Cambiar Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              '. $i .'
+            </td>';
+            if($fila['VISIBLE']==1){
+              echo "<td><span id='visibilidad' style='cursor:default' class='btn btn-xs btn-success'>Visible</span></td>";        
+            }else{
+              echo "<td><span id='visibilidad' style='cursor:default' class='btn btn-xs btn-danger'>Oculto</span></td>";     
+            }
+            echo '
+            <td>
+              ' . date_format($fecha, 'd-m-Y H:i:s') . '
+            </td>
+            <td>
+              '. $fila['OBSERVACION'] .'
+            </td>
+            <td>
+              ' . $fila['DOCUMENTOS'] .'
+            </td>';
+            if($fila['VISIBLE']==1){
+              echo '<td id="btnEstado"><a onclick="cambiarAlerta('. $fila['ID_REGISTRO'] .',0);">Ocultar</a></td>';        
+            }else{
+              echo '<td id="btnEstado"><a onclick="cambiarAlerta('. $fila['ID_REGISTRO'] .',1);">Mostrar</a></td>';  
+            }
+            echo'
+          </tr>
+      ';
+      $i++;
+      while ($fila = mysql_fetch_array($resultado)) {
+        echo '
+              <tr>
+                <td>
+                '. $i .'
+                </td>
+                <td>
+                ' . date_format($fecha, 'd-m-Y H:i:s') . '
+                </td>
+                <td>
+                '. $fila['OBSERVACION'] .'
+                </td>
+                <td>
+                ' . $fila['DOCUMENTOS'] .'
+                </td>
+              </tr>
+              ';
+              $i++;
+      }
+      echo "
+        </tbody>";
+    }else{
+      echo "
+      <thead><tr>
+        <th>No se han realizado observaciones.</th>
+      </tr></thead>";
+    }
+    echo "
+      </table>
+      ";
+  }
+
   function totalDatos($tabla){
     $con = conectarse();
     mysql_set_charset("utf8",$con);
@@ -1106,5 +1205,56 @@
     $paginas->records_per_page($nxp);
     echo $paginas->render();
     mysql_close($con);
+  }
+
+  function getPorcentajeAvance($idContratista){
+    $con = conectarse();
+    if($_SESSION['nombreUsuario']=="Contratista"){
+      if($idContratista){
+        $sql = "SELECT count(*) FROM personal_acreditado pa, orden_contrato oc 
+        WHERE oc.ID_CONTRATISTA='$idContratista' AND
+        pa.ID_ORDEN_CONTRATO = oc.ID_OC";
+        $resultado = mysql_query($sql, $con);
+        $fila = mysql_fetch_row($resultado);
+        $totalPersonal = $fila['0'];
+        //PREGUNTO POR LOS ACREDITADOS
+        $sql = "SELECT count(*) FROM personal_acreditado pa, orden_contrato oc 
+        WHERE oc.ID_CONTRATISTA='$idContratista' AND
+        pa.ID_ORDEN_CONTRATO = oc.ID_OC AND
+        pa.ID_ESTADO='1'";
+        $resultado = mysql_query($sql, $con);
+        $fila = mysql_fetch_row($resultado);
+        $personasAcreditadas = $fila['0'];
+        return round(($personasAcreditadas * 100)/$totalPersonal);
+      }  
+    }
+    if($_SESSION['nombreUsuario']=="Admin" || $_SESSION['nombreUsuario']=="Mandante"){
+      $sql = "SELECT count(*) FROM personal_acreditado";
+      $resultado = mysql_query($sql, $con);
+      $fila = mysql_fetch_row($resultado);
+      $totalPersonal = $fila['0'];
+      $sql = "SELECT count(*) FROM personal_acreditado WHERE ID_ESTADO='1'";
+      $resultado = mysql_query($sql, $con);
+      $fila = mysql_fetch_row($resultado);
+      $personasAcreditadas = $fila['0'];
+      return round(($personasAcreditadas * 100)/$totalPersonal);
+    }
+  }
+
+  function getContarPersonal($idContratista,$estado){
+    $con = conectarse();
+    if($_SESSION['nombreUsuario']=="Contratista"){
+      $sql = "SELECT count(*) FROM personal_acreditado pa, orden_contrato oc WHERE 
+      pa.ID_ORDEN_CONTRATO = oc.ID_OC AND
+      oc.ID_CONTRATISTA = '$idContratista'";
+    }else{
+      $sql = "SELECT count(*) FROM personal_acreditado pa WHERE 1";
+    }
+    if($estado){
+      $sql .= " AND pa.ID_ESTADO='$estado'";
+    }
+    $resultado = mysql_query($sql, $con);
+    $fila = mysql_fetch_row($resultado);
+    return $fila['0'];
   }
 ?>

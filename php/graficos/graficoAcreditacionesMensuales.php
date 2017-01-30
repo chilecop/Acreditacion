@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../conexion.php');
 
 //ARMAR EL DATO JSON Y MANDARLO DE VUELTA
@@ -7,12 +8,27 @@ $con = conectarse();
 
 $anio = date("Y");
 $primerDiaDelAnio = $anio . "-" . "01-01";
-$ultimoDiaDelAnio = $anio . "-" . "12-01";
-$sql = "
-SELECT *
-FROM estado_trabajador_historial
-WHERE FECHA
-BETWEEN '$primerDiaDelAnio' AND '$ultimoDiaDelAnio'";
+$ultimoDiaDelAnio = $anio . "-" . "12-31";
+
+if($_SESSION['nombreUsuario']=="Contratista"){
+	$contratista = $_SESSION["idContratista"];
+	$sql = "
+	SELECT eth.FECHA, eth.ESTADO 
+	FROM estado_trabajador_historial eth, personal_acreditado pa, orden_contrato oc
+	WHERE eth.FECHA
+	BETWEEN '$primerDiaDelAnio' AND '$ultimoDiaDelAnio' AND
+	pa.ID_ACREDITADO = eth.ID_ACREDITADO AND
+	pa.ID_ORDEN_CONTRATO = oc.ID_OC AND
+	oc.ID_CONTRATISTA = '$contratista'";
+} 
+
+if($_SESSION['nombreUsuario']=="Admin" || $_SESSION['nombreUsuario']=="Mandante"){
+	$sql = "
+	SELECT *
+	FROM estado_trabajador_historial
+	WHERE FECHA
+	BETWEEN '$primerDiaDelAnio' AND '$ultimoDiaDelAnio'";
+}
 
 $resultado = mysql_query($sql,$con);
 

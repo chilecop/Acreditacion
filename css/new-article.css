@@ -39,9 +39,8 @@
 
 .estado{
     border: 1px solid #ECECEC;
-    border-radius: 10px;
+    border-radius: 0px;
     color: #FFF;
-    cursor: pointer;
     font-size: 28px;
     font-weight: bold;
     height: 50px;

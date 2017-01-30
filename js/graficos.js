@@ -1,41 +1,6 @@
 
 $(document).ready(function(){
-  var datos ={
-    type: "pie",
-    data : {
-      datasets : [{
-        data : [
-        5,
-        10,
-        40,
-        12,
-        23,
-        ],
-        backgroundColor:[
-        "#F7464A",
-        "#46BFBD",
-        "#FDB45C",
-        "#949FB1",
-        "#4D5360",
-        ],
-      }],
-      labels : [
-      "Garita 1",
-      "Garita 2",
-      "Garita 3",
-      "Garita 4",
-      "Garita 5",
-      ]
-    },
-    options: {
-      responsive : true,
-    }
-  };
-
-  var canvas = document.getElementById("chart").getContext('2d');
-  window.pie = new Chart(canvas, datos);
-
-  setInterval(function(){
+  /*setInterval(function(){
     datos.data.datasets.splice(0);
     var newData = {
       data : [
@@ -55,7 +20,7 @@ $(document).ready(function(){
     };
     datos.data.datasets.push(newData);
     window.pie.update();
-  },1000);
+  },1000);*/
 
   /*
 

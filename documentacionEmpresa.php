@@ -18,7 +18,6 @@ if($_SESSION['nombreUsuario']){
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<?php 
 			include('php/consultasAcreditacion.php');
-			include('php/fechas.php');
 			tituloPanel();
 			if(isset($_SESSION["idContratista"])){
 				$id = $_SESSION["idContratista"];

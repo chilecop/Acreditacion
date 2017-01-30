@@ -106,3 +106,16 @@ Se agregó un botón en el ver personal que define si la persona posee o no indu
 #71 Reporte Acreditados y Rechazados por mes
 
 #72 Reporte Visión Actual de Acr, Rech, Pend -> %Avance de acreditación
+
+#65 Nombre de Empresa
+En el ver persona y en el listarPersonal y ListarContratos se debe saber de que empresa es y de que contrato.
+
+/**
+* Sprint 30-01-2017
+*/
+#81 Replicar Reportes
+Replicar los reportes de administración a la vista de contratistas. Y agregar barra de porcentaje de avances.
+http://getbootstrap.com/components/
+
+#78 Quitar Notificación
+Las notificaciones de las empresas contratistas el administrador las debe ocultar.

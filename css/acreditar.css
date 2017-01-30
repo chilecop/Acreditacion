@@ -1,0 +1,44 @@
+textarea{
+	resize: none;
+	width: 100%;
+}
+
+.obs{
+	margin-top: 5px;
+	vertical-align: middle;
+}
+
+.obsBajada{
+	margin-top: 6px;
+}
+
+hr{
+	border-top: 1px solid #CCC;
+}
+
+comments-row{
+	margin-bottom: 1em;
+}
+
+.documento{
+	background-color: #E3E4EB;
+	padding: 15px;
+	margin: 10px;
+}
+
+.documento b{
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+.imagen-persona{
+	text-align: center;
+}
+
+#btnEstado a{
+	cursor:pointer;
+}
+
+.acreditar{
+	margin-top: 10px;
+}

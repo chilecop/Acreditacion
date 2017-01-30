@@ -21,6 +21,11 @@ if($_SESSION['nombreUsuario']){
     $fecha = date('Y-m-j');
     $sietedias = strtotime ( '-6 day' , strtotime ( $hoy ) );
     $sietedias = date ( 'j-m-Y' , $sietedias );
+    $idContratista = $_SESSION['idContratista'];
+    setlocale(LC_ALL,"es_CL");
+
+    $contenido = getVerEmpresaContratista($idContratista);
+    list($n_fantasia,$n_contacto,$rut,$mail_contacto,$fono,$rep,$observacion,$f_registro,$d_casa_matriz,$d_sucursal,$mutualidad,$responsable,$emailresponsable) = explode("%$", $contenido);
     ?>
     <!-- Bootstrap -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -178,12 +183,119 @@ if($_SESSION['nombreUsuario']){
               </div>             
             </div>
             -->
-            <?php if($usuario=="Admin"){ ?>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="admin-content-con clearfix">
+                    <header class="clearfix">
+                      <?php if($usuario=="Contratista"){ ?>
+                      <h5 class="pull-left text-uppercase"><b>PROGRESO GENERAL DE LA EMPRESA</b></h5>
+                      <?php }else { ?>
+                      <h5 class="pull-left text-uppercase"><b>PROGRESO GENERAL DEL SISTEMA</b></h5>
+                      <?php } ?>
+                    </header>
+                    <div class="progress">
+                      <?php $porcentajeAvance = getPorcentajeAvance($_SESSION['idContratista']); ?>
+                      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<? echo $porcentajeAvance; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <? echo $porcentajeAvance; ?>%;">
+                        <? echo $porcentajeAvance; ?>%
+                      </div>
+                    </div>
+                    <div class="panel panel-default">                 
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Información</th>
+                            <th>Puntual</th>
+                            <th>Porcentaje</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <?php 
+                              $personalTotal = getContarPersonal($idContratista);
+                              $personalPendiente = getContarPersonal($idContratista,'3');
+                              $personalAcreditado = getContarPersonal($idContratista,'1');
+                              $personalRechazado = getContarPersonal($idContratista,'2');
+
+                            ?>
+                            <td>Total de Personal</td>
+                            <td><?php echo $personalTotal; ?></td>
+                            <td>100%</td>
+                          </tr>
+                          <tr>
+                            <td>Personal Acreditado</td>
+                            <td><?php echo $personalAcreditado; ?></td>
+                            <td><?php echo round(($personalAcreditado*100)/$personalTotal). "%"; ?></td>
+                          </tr>
+                          <tr>
+                            <td>Personal Pendiente</td>
+                            <td><?php echo $personalPendiente; ?></td>
+                            <td><?php echo round(($personalPendiente*100)/$personalTotal). "%"; ?></td>
+                          </tr>
+                          <tr>
+                            <td>Personal Rechazado</td>
+                            <td><?php echo $personalRechazado; ?></td>
+                            <td><?php echo round(($personalRechazado*100)/$personalTotal). "%"; ?></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="admin-content-con clearfix">
+                    <header class="clearfix">
+                      <h5 class="pull-left text-uppercase"><b>RESUMEN DE LA EMPRESA</b></h5>
+                    </header>
+                    <div class="panel panel-default">                 
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Información</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Nombre</td>
+                            <td><?php echo $n_fantasia; ?></td>
+                          </tr>
+                          <tr>
+                            <td>Rut</td>
+                            <td><?php echo $rut; ?></td>
+                          </tr>
+                          <tr>
+                            <td>Contacto</td>
+                            <td><?php echo $n_contacto; ?></td>
+                          </tr>
+                          <tr>
+                            <td>Fono</td>
+                            <td><?php echo $fono; ?></td>
+                          </tr>
+                          <tr>
+                            <td>E-mail</td>
+                            <td><?php echo $mail_contacto; ?></td>
+                          </tr>
+                          <tr>
+                            <td>Responsable</td>
+                            <td><?php echo $responsable; ?></td>
+                          </tr>
+                          <tr>
+                            <td>E-mail Responsable</td>
+                            <td><?php echo $emailresponsable; ?></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>             
+              </div>
+            </div>
             <div class="row">
               <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">        
                 <div class="admin-content-con clearfix">
                   <header class="clearfix">
-                  <h5 class="pull-left"><b>ACREDITACIONES MENSUALES <?php echo date("Y"); ?></b></h5>
+                  <h5 class="pull-left text-uppercase"><b>ACREDITACIONES MENSUALES <?php echo date("Y"); ?></b></h5>
                   </header>
                   <div id="canvas-container">
                     <canvas id="chart" width="500" height="350"></canvas>
@@ -193,15 +305,14 @@ if($_SESSION['nombreUsuario']){
               <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">        
                 <div class="admin-content-con clearfix">
                   <header class="clearfix">
-                  <h5 class="pull-left"><b>PORCENTAJE AVANCE EMPRESAS al <?php echo date("d"). " de " . date("F") . " del " . date("Y"); ?></b></h5>
+                  <h5 class="pull-left text-uppercase"><b>PORCENTAJE AVANCE al <?php echo date("d"). " de " . strftime("%B") . " del " . date("Y"); ?></b></h5>
                   </header>
                   <div id="canvas-container">
                     <canvas id="chartTorta" width="500" height="350"></canvas>
                   </div>
                 </div>
               </div>
-            </div>
-            <?php } ?>
+            </div>            
             <div class="row">
               <div class="col-md-12">
                 <div class="admin-content-con clearfix">

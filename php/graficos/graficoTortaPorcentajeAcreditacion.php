@@ -1,8 +1,22 @@
 <?php
+session_start();
 include('../conexion.php');
 $con = conectarse();
 
-$sql = "SELECT ID_ESTADO FROM personal_acreditado";
+if($_SESSION['nombreUsuario']=="Contratista"){
+	$contratista = $_SESSION["idContratista"];
+	$sql = "
+	SELECT ID_ESTADO 
+	FROM personal_acreditado pa, orden_contrato oc
+	WHERE 
+	pa.ID_ORDEN_CONTRATO = oc.ID_OC AND
+	oc.ID_CONTRATISTA = '$contratista'";
+}
+
+if($_SESSION['nombreUsuario']=="Admin" || $_SESSION['nombreUsuario']=="Mandante"){
+	$sql = "SELECT ID_ESTADO FROM personal_acreditado";
+}
+
 $resultado = mysql_query($sql,$con);
 
 $acreditados = 0;

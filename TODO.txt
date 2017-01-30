@@ -13,16 +13,12 @@ Debe mostrar 5 columnas con valor numéricos sencillamente; N° de contrato, N°
 #67 Ver Todas las Notificaciones
 Botón ver todas las notificaciones
 
-#78 Quitar Notificación
-Las notificaciones de las empresas contratistas el administrador las debe ocultar.
-
 #79 Mostrar Notificaciones en todas las páginas
 
 #68 Crear Lista Negra
 Se debe generar una lista negra donde se ingresen las personas que han sido despedidas y no se quiere
 que vuelva a ingresar por ninguna otra empresa. Analizar el caso de las personas permitidas que ingresan nuevamente
 por otra empresa.
-
 
 #70 Reporte Pases de Visita
 
@@ -34,14 +30,9 @@ por otra empresa.
 
 #76 Los pases de visita, deben alertar si no salen durante el día.
 
-
-
 /**
 * Sprint Backlog Semana 23/01/2017
 */
-#65 Nombre de Empresa
-En el ver persona y en el listarPersonal y ListarContratos se debe saber de que empresa es y de que contrato. 
-
 #66 Historial de Observaciones
 Dentro de la observación de las personas, empresas y contratos debe aparecer un historial con las observaciones
 realizadas y de que usuario las . Poner además un botón eliminar para que no le siga apareciendo la observación.
