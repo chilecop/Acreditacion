@@ -49,6 +49,9 @@
 			//AHORA CREAMOS LA INSTANCIA	
 			$sql = "INSERT INTO documentacion_contrato (ID_OC) VALUES ($oc)"; 
 			mysql_query($sql,$con);
+			//INSTANCIA PARA EL HISTORIAL DEL ESTADO DE LA EMPRESA
+			$sql = "INSERT INTO estado_contrato_historial (ID_OC, ESTADO, FECHA) VALUES ($oc,'3',now())"; 
+			mysql_query($sql,$con);
 			//REGISTRAR ACCION
 			$sql = "INSERT INTO registro_acciones (ID_CONTRATISTA,ID_USUARIO,TIPO,REFERENCIA,ACCION,FECHAREGISTRO) VALUES ('$contratista','$idUser','Contrato','$oc','Ingreso de Contrato',now())";
 			$resultado = mysql_query($sql,$con);			

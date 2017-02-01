@@ -1004,7 +1004,7 @@
           $imagen = "notificacionContrato.jpg";
           $titulo = "Documentación Contrato";
           $id = $fila['REFERENCIA'];
-          $sql = "SELECT N_CONTRATO FROM empresa_contratista WHERE ID_CONTRATISTA='$id'";
+          $sql = "SELECT N_CONTRATO FROM orden_contrato WHERE ID_OC='$id'";
           $resultado2 = mysql_query($sql,$con);
           $fila2 = mysql_fetch_array($resultado2);
           $url = "http://www.chilecop.cl/acreditacion/documentacionContrato.php?id=" . $id;
@@ -1082,6 +1082,7 @@
       ';
       $i++;
       while ($fila = mysql_fetch_array($resultado)) {
+        $fecha = date_create($fila['FECHA_REGISTRO']);
         echo '        
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <hr><span><b>Observación #'. $i .':</b></span><br>
@@ -1156,21 +1157,33 @@
       $i++;
       while ($fila = mysql_fetch_array($resultado)) {
         echo '
-              <tr>
-                <td>
-                '. $i .'
-                </td>
-                <td>
-                ' . date_format($fecha, 'd-m-Y H:i:s') . '
-                </td>
-                <td>
-                '. $fila['OBSERVACION'] .'
-                </td>
-                <td>
-                ' . $fila['DOCUMENTOS'] .'
-                </td>
-              </tr>
-              ';
+             <tr>
+            <td>
+              '. $i .'
+            </td>';
+            if($fila['VISIBLE']==1){
+              echo "<td><span id='visibilidad' style='cursor:default' class='btn btn-xs btn-success'>Visible</span></td>";        
+            }else{
+              echo "<td><span id='visibilidad' style='cursor:default' class='btn btn-xs btn-danger'>Oculto</span></td>";     
+            }
+            echo '
+            <td>
+              ' . date_format($fecha, 'd-m-Y H:i:s') . '
+            </td>
+            <td>
+              '. $fila['OBSERVACION'] .'
+            </td>
+            <td>
+              ' . $fila['DOCUMENTOS'] .'
+            </td>';
+            if($fila['VISIBLE']==1){
+              echo '<td id="btnEstado"><a onclick="cambiarAlerta('. $fila['ID_REGISTRO'] .',0);">Ocultar</a></td>';        
+            }else{
+              echo '<td id="btnEstado"><a onclick="cambiarAlerta('. $fila['ID_REGISTRO'] .',1);">Mostrar</a></td>';  
+            }
+            echo'
+          </tr>
+      ';
               $i++;
       }
       echo "

@@ -119,3 +119,13 @@ http://getbootstrap.com/components/
 
 #78 Quitar Notificación
 Las notificaciones de las empresas contratistas el administrador las debe ocultar.
+
+#66 Historial de Observaciones
+Dentro de la observación de las personas, empresas y contratos debe aparecer un historial con las observaciones
+realizadas y de que usuario las . Poner además un botón eliminar para que no le siga apareciendo la observación.
+
+#80 Vista Proceso Acreditación
+Cambiar las observaciones a la vista del proceso. Cambiar las fechas. Agregar estadísticas.
+
+#77 Finiquitar Persona
+La empresa contratista debe subir el finiquito con la causal para poder cambiar al trabajador.

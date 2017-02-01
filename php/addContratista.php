@@ -38,8 +38,7 @@
 	mkdir($directorio, 0777);
 	/**
 	 * CREACIÓN DE LA INSTANCIA PARA LA DOCUMENTACIÓN
-	 */
-	
+	 */	
 	//PRIMERO CAPTURAMOS EL ID DEL RECIEN INSERTADO
 	$sql = "SELECT ID_CONTRATISTA FROM empresa_contratista GROUP BY ID_CONTRATISTA DESC LIMIT 1";
 	$resultado = mysql_query($sql,$con);
@@ -50,6 +49,9 @@
 	$resultado = mysql_query($sql,$con);
 	//AHORA CREAMOS LA INSTANCIA
 	$sql = "INSERT INTO documentacion_contratista (ID_CONTRATISTA) VALUES ($dempresa)"; 
+	mysql_query($sql,$con);
+	//INSTANCIA PARA EL HISTORIAL DEL ESTADO DE LA EMPRESA
+	$sql = "INSERT INTO estado_empresa_historial (ID_CONTRATISTA, ESTADO, FECHA) VALUES ($dempresa,'3',now())"; 
 	mysql_query($sql,$con);
 	//RETORNAMOS A LA PAGINA DE LOS CONTRATOS
 	header('location: http://www.chilecop.cl/acreditacion/listarContratistas.php');

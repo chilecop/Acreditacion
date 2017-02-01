@@ -189,6 +189,7 @@ if($_SESSION['nombreUsuario']){
                 <div class="col-xs-7 col-sm-9 col-md-9">
                   <a style="margin-left:1em; margin-bottom:0.5em;" class='btn btn-xs btn-warning pull-right' href='editarPersonal.php?id=<?php echo $id; ?>' role='button'>Editar</a>  
                   <a style="margin-left:1em; margin-bottom:0.5em;" class='btn btn-xs btn-default pull-right' href='documentacionPersonal.php?id=<?php echo $id; ?>' role='button'>Ver Documentación</a>
+                  <a style="margin-left:1em; margin-bottom:0.5em;" class='btn btn-xs btn-danger pull-right' href='finiquitarPersona.php?id=<?php echo $id; ?>' role='button'>Finiquitar</a>
                   <!-- <a class="btn btn-xs btn-success pull-right" href='php/generarCredencial.php?id=<?php echo $id; ?>' role="button">Generar Credencial</a> -->
                 </div>
               </header>
@@ -271,7 +272,7 @@ if($_SESSION['nombreUsuario']){
                       </div>              
                     </div>
                   </div>
-                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                  <!--<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <div class="well well-sm comments-well">
                       <p><b>DOCUMENTOS ASOCIADOS</b></p>
                       <?php
@@ -316,7 +317,7 @@ if($_SESSION['nombreUsuario']){
                         imprimirDocumentoVer("Visa de trabajo","URL_23","Persona",$rut,$id);
                       ?>
                     </div>
-                  </div>                  
+                  </div>-->               
                 </div>
               </div>
 
@@ -335,6 +336,12 @@ if($_SESSION['nombreUsuario']){
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
       </body>
+      <?php 
+        if(isset($_SESSION['mensajeAlerta'])){
+          echo "<script>alert('". $_SESSION['mensajeAlerta'] ."')</script>";
+          unset($_SESSION['mensajeAlerta']);
+        }
+      ?>
       </html>
       <?php
     }else{
