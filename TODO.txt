@@ -1,4 +1,4 @@
-#ID = 84
+#ID = 85
 /**
 * Sprint Backlog Semana 16/01/2017
 */
@@ -33,19 +33,14 @@ por otra empresa.
 /**
 * Sprint Backlog Semana 23/01/2017
 */
-#69 Implementar Caducidad Documento
-Se debe realizar las consultas dentro del archivo verificarVencimientoDocumentacion para que envíe correo
-y alerta, como también desacredite cuando sea el caso.
-
 
 #82 Verificar Fecha
 Al acreditar debe verificar que la fecha ingresada de los documentos no sea menor al día actual.
 Además, debe verificar que todos los documentos de la persona tengan fecha superior al día actual. 
 
-#83 Quitar restricción
-Se debe quitar la restricción para subir documento, ya que al verificar la caducidad sigue
-estando el documento.
-
 #84 Estado empresa y contrato
 Ahora la empresa y el contrato tambien tienen estados, entonces estos tambien deben tener una vista de acreditacion para poder auditar. Control de Acceso y Casino deben consultar si la empresa y el contrato se encuentra acreditado, de lo contrario no debe conceder acceso.
+
+#85 Observación sin restricción
+La observación no puede ser ingresada en blanco
 

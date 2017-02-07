@@ -6,7 +6,7 @@ $con = conectarse();
 if($_SESSION['nombreUsuario']=="Contratista"){
 	$contratista = $_SESSION["idContratista"];
 	$sql = "
-	SELECT ID_ESTADO 
+	SELECT pa.ID_ESTADO 
 	FROM personal_acreditado pa, orden_contrato oc
 	WHERE 
 	pa.ID_ORDEN_CONTRATO = oc.ID_OC AND

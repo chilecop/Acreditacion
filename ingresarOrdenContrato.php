@@ -134,27 +134,27 @@ if($_SESSION['nombreUsuario']){
                     <div class="col-md-4 col-lg-4">                      
                       <div class="form-group">
                         <label class="">Inicio Contrato</label>
-                        <input class="pull-right" type="date" name="fechainicio" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio" required/>
+                        <input class="pull-right form-control" type="date" name="fechainicio" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio" required/>
                       </div>
                       <div class="form-group">
                         <label class="">Término Contrato</label>
-                        <input class="pull-right" type="date" name="fechatermino" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Termino" required/>
+                        <input class="pull-right form-control" type="date" name="fechatermino" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Termino" required/>
                       </div>
                       <div class="form-group">
                         <label class="">Inicio Jornada</label>
-                        <input class="pull-right" type="date" name="iniciojornada" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio" required/>
+                        <input class="pull-right form-control" type="date" name="iniciojornada" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Inicio" required/>
                       </div>
                       <div class="form-group">
                         <label class="">Término Jornada</label>
-                        <input class="pull-right" type="date" name="terminojornada" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Termino" required/>
+                        <input class="pull-right form-control" type="date" name="terminojornada" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Termino" required/>
                       </div>
                       <div class="form-group">
                         <label class="">Emisión Sernageomín</label>
-                        <input class="pull-right" type="date" name="sernageomin" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Sernageomín" required/>
+                        <input class="pull-right form-control" type="date" name="sernageomin" value="<?php echo date('Y-m-d'); ?>" placeholder="Fecha Sernageomín" required/>
                       </div> 
                       <div class="form-group">
                         <label class="">Afiliación Mutual</label>
-                        <input class="pull-right" type="date" name="fechamutual" value="<?php echo date('Y-m-d'); ?>" placeholder="Afiliación Mutual" required/>
+                        <input class="pull-right form-control" type="date" name="fechamutual" value="<?php echo date('Y-m-d'); ?>" placeholder="Afiliación Mutual" required/>
                       </div> 
                     </div>
                     <div class="col-md-4 col-lg-4">

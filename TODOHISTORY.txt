@@ -129,3 +129,7 @@ Cambiar las observaciones a la vista del proceso. Cambiar las fechas. Agregar es
 
 #77 Finiquitar Persona
 La empresa contratista debe subir el finiquito con la causal para poder cambiar al trabajador.
+
+#69 Implementar Caducidad Documento
+Se debe realizar las consultas dentro del archivo verificarVencimientoDocumentacion para que envíe correo
+y alerta, como también desacredite cuando sea el caso.

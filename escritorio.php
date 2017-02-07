@@ -23,9 +23,14 @@ if($_SESSION['nombreUsuario']){
     $sietedias = date ( 'j-m-Y' , $sietedias );
     $idContratista = $_SESSION['idContratista'];
     setlocale(LC_ALL,"es_CL");
-
-    $contenido = getVerEmpresaContratista($idContratista);
-    list($n_fantasia,$n_contacto,$rut,$mail_contacto,$fono,$rep,$observacion,$f_registro,$d_casa_matriz,$d_sucursal,$mutualidad,$responsable,$emailresponsable) = explode("%$", $contenido);
+    if($_SESSION['nombreUsuario']=="Mandante"){
+      $contenido = getVerMandante('2');
+      list($rut,$n_fantasia,$n_contacto,$observacion,$fono,$f_registro,$representatne,$emailresponsable) = explode("%$", $contenido);
+    }else{
+      $contenido = getVerEmpresaContratista($idContratista);
+      list($n_fantasia,$n_contacto,$rut,$mail_contacto,$fono,$rep,$observacion,$f_registro,$d_casa_matriz,$d_sucursal,$mutualidad,$responsable,$emailresponsable) = explode("%$", $contenido);
+    }
+    
     ?>
     <!-- Bootstrap -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

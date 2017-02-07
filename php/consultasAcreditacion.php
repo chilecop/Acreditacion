@@ -113,14 +113,7 @@
                 <li><a href="ingresarTrabajador2.php">Ingresar Trabajador</a></li>
               </ul>
             </li>
-			
-			<li class="link">
-              <a href="pasesDiarios.php">
-                <span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>
-                <span class="hidden-sm hidden-xs">Pases Diarios</span>
-              </a>
-            </li>
-            
+                        
             <li class="link">
               <a href="#">
                   <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span>
@@ -189,7 +182,7 @@
               </a>
             </li>
             <li class="link">
-              <a href="ingresarMandante.php">
+              <a href="editarMandante.php?id=2">
                   <span class="glyphicon glyphicon-queen" aria-hidden="true"></span>
                   <span class="hidden-sm hidden-xs">Mi empresa</span>
               </a>
@@ -315,12 +308,14 @@
               <td>".$row['ADMINISTRADOR_CONTRATO'] . "</td>
               <td>".$row['FONO'] . "</td>
               <td>".$row['MAIL'] . "</td>
-              <td><a class='btn btn-xs btn-success' href='verContrato.php?id=". $row['ID_OC'] ."' role='button'>Ver</a></td>
-              <td><a class='btn btn-xs btn-default' href='documentacionContrato.php?id=".$row['ID_OC']."' role='button'>Ver Documentos</a></td>
-              <td><a class='btn btn-xs btn-default' href='listarPersonal.php?id=".$row['ID_OC']."' role='button'>Gestionar Personal</a></td>";
+              <td><a class='btn btn-xs btn-success' href='verContrato.php?id=". $row['ID_OC'] ."' role='button'>Ver</a></td>";
+              if($usuario!="Mandante"){
+                echo "<td><a class='btn btn-xs btn-default' href='documentacionContrato.php?id=".$row['ID_OC']."' role='button'>Ver Documentos</a></td>";
+                echo "<td><a class='btn btn-xs btn-warning' href='editarOrdenContrato.php?id=".$row['ID_OC']."' role='button'>Editar</a></td>";
+              }
+              echo "<td><a class='btn btn-xs btn-default' href='listarPersonal.php?id=".$row['ID_OC']."' role='button'>Gestionar Personal</a></td>";
               if($usuario=="Admin"){
                 echo "<td><a class='btn btn-xs btn-default' href='#' role='button'>Observaciones</a></td>";
-                echo "<td><a class='btn btn-xs btn-warning' href='editarOrdenContrato.php?id=".$row['ID_OC']."' role='button'>Editar</a></td>";
               }
           echo "</tr>";
     }
@@ -384,10 +379,11 @@
               if($usuario=="Admin"){
                 echo "<td><a class='btn btn-xs btn-default' href='acreditarPersonal.php?id=".$row['ID_ACREDITADO'] . "' role='button'>Acreditar</a></td>";
               }
-              echo" <td><a class='btn btn-xs btn-default' href='documentacionPersonal.php?id=".$row['ID_ACREDITADO']."' role='button'>Ver documentos</a></td>
-              <td><a class='btn btn-xs btn-warning' href='editarPersonal.php?id=".$row['ID_ACREDITADO']."' role='button'>Editar</a></td>
-          </tr>
-          ";
+              if($usuario!="Mandante"){
+                echo" <td><a class='btn btn-xs btn-default' href='documentacionPersonal.php?id=".$row['ID_ACREDITADO']."' role='button'>Ver documentos</a></td>";
+                echo "<td><a class='btn btn-xs btn-warning' href='editarPersonal.php?id=".$row['ID_ACREDITADO']."' role='button'>Editar</a></td>";
+              }
+          echo "</tr>";
     }
     mysql_close($con);
   }
@@ -412,11 +408,13 @@
               <td>".$row['FONO'] . "</td>";
               echo "<td><a class='btn btn-xs btn-success' href='verContratista.php?id=".$row['ID_CONTRATISTA'] . "' role='button'>Ver</a></td>";
               echo "<td><a class='btn btn-xs btn-default' href='listarContratos.php?id=".$row['ID_CONTRATISTA'] . "' role='button'>Contratos</a></td>";
-			        echo" <td><a class='btn btn-xs btn-default' href='documentacionEmpresa.php?id=".$row['ID_CONTRATISTA']."' role='button'>Documentos Empresa</a></td>";
-              if($usuario=="Admin"){			 
-			        echo "
-			          <td><a class='btn btn-xs btn-warning' href='listarUsuarios.php?id=".$row['ID_CONTRATISTA']."' role='button'>Ver Usuarios</a></td>
-			          <td><a class='btn btn-xs btn-warning' href='editarContratista.php?id=".$row['ID_CONTRATISTA']."&nombre=". $row['N_FANTASIA'] ."' role='button'>Editar</a></td>";
+              if($usuario!="Mandante"){  
+			          echo" <td><a class='btn btn-xs btn-default' href='documentacionEmpresa.php?id=".$row['ID_CONTRATISTA']."' role='button'>Documentos Empresa</a></td>";
+			          echo "<td><a class='btn btn-xs btn-warning' href='editarContratista.php?id=".$row['ID_CONTRATISTA']."&nombre=". $row['N_FANTASIA'] ."' role='button'>Editar</a></td>";
+              }
+              if($usuario!="Admin"){  
+                echo "
+                <td><a class='btn btn-xs btn-warning' href='listarUsuarios.php?id=".$row['ID_CONTRATISTA']."' role='button'>Ver Usuarios</a></td>";
               }
           echo "</tr>";
     }

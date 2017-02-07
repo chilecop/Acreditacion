@@ -7,6 +7,7 @@
 		  }
 		 
 		mysql_select_db("chilecop_cademo", $con);
+		mysql_set_charset("utf8",$con);
 		return $con;
 	}
 ?>

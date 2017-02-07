@@ -74,7 +74,11 @@ if($_SESSION['nombreUsuario']){
 	              	Contratos Vigentes - <?php echo getEmpresaNombre($id); ?></b>
 	              </div>
 	              <div class="col-xs-4 col-sm-4 col-md-4">
-	              	<a class="btn btn-xs btn-success pull-right" href="ingresarOrdenContrato.php?id=<?php echo $id; ?>" role="button">Ingresar Contrato</a>	
+	              	<?php
+	              	if($nombreUsuario!="Mandante"){
+	              		echo '<a class="btn btn-xs btn-success pull-right" href="ingresarOrdenContrato.php?id=<?php echo $id; ?>" role="button">Ingresar Contrato</a>';
+	              	}
+	              	?>
 	              </div>
 	             </header>
 
